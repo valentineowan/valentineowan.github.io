@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Valentine Joseph Owan</title>
+  <meta name="description" content="About Valentine Joseph Owan, Lecturer in Educational Psychology at the University of Calabar, Nigeria." />
+
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --panel:#ffffff;
+      --text:#121826;
+      --muted:#4b5565;
+      --line:rgba(18,24,38,.10);
+      --accent:#2f5d9a;
+      --accent2:#1f7a6b;
+      --max:1100px;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(18,24,38,.08);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:radial-gradient(1200px 600px at 20% -10%, rgba(47,93,154,.12), transparent 55%),
+                 radial-gradient(1200px 600px at 90% 0%, rgba(31,122,107,.10), transparent 55%),
+                 var(--bg);
+      line-height:1.65;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
+
+    .topbar{
+      position:sticky; top:0; z-index:20;
+      background:rgba(246,247,251,.85);
+      backdrop-filter:saturate(140%) blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0; gap:16px;
+    }
+    .brand{display:flex; align-items:center; gap:12px; min-width:240px}
+    .mark{
+      width:40px; height:40px; border-radius:12px;
+      background:linear-gradient(135deg, rgba(47,93,154,.95), rgba(31,122,107,.90));
+      box-shadow:0 10px 22px rgba(18,24,38,.12);
+      flex:0 0 auto;
+    }
+    .brand h1{margin:0; font-size:15px; letter-spacing:.2px}
+    .brand p{margin:2px 0 0; color:var(--muted); font-size:12px}
+
+    .links{
+      display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .links a{
+      font-size:14px;
+      padding:10px 12px;
+      border-radius:12px;
+      color:var(--muted);
+    }
+    .links a:hover{background:rgba(18,24,38,.04); color:var(--text)}
+    .links a.active{color:var(--text); background:rgba(47,93,154,.10)}
+
+    header.hero{padding:34px 0 18px}
+    .heroCard{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:start;
+    }
+    @media (max-width: 860px){
+      .heroGrid{grid-template-columns:1fr}
+      .brand{min-width:auto}
+    }
+
+    .kicker{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:12px; color:var(--muted);
+      padding:6px 10px; border-radius:999px;
+      background:rgba(18,24,38,.04);
+      border:1px solid var(--line);
+      margin-bottom:10px;
+    }
+    .title{
+      margin:6px 0 8px;
+      font-size:30px;
+      line-height:1.18;
+      letter-spacing:-.4px;
+    }
+    .subtitle{margin:0; color:var(--muted); font-size:15px}
+
+    .btnRow{
+      margin-top:16px;
+      display:flex; flex-wrap:wrap; gap:10px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:11px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:var(--panel);
+      color:var(--text);
+      font-size:14px;
+      box-shadow:0 10px 24px rgba(18,24,38,.06);
+      transition:transform .08s ease, box-shadow .12s ease, border-color .12s ease;
+    }
+    .btn:hover{
+      transform:translateY(-1px);
+      border-color:rgba(47,93,154,.22);
+      box-shadow:0 14px 30px rgba(18,24,38,.08);
+    }
+    .btn.primary{
+      background:linear-gradient(135deg, rgba(47,93,154,.96), rgba(31,122,107,.92));
+      color:#fff;
+      border-color:transparent;
+    }
+
+    .card{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px;
+    }
+    .card h3{margin:0 0 8px; font-size:15px; letter-spacing:.2px}
+    .card p{margin:0; color:var(--muted); font-size:14px}
+
+    .tagRow{margin-top:10px; display:flex; flex-wrap:wrap; gap:8px}
+    .tag{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(18,24,38,.03);
+      color:var(--muted);
+    }
+
+    main{padding:14px 0 34px}
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap:14px;
+      margin-top:14px;
+    }
+    @media (max-width: 980px){ .grid{grid-template-columns:1fr 1fr} }
+    @media (max-width: 680px){ .grid{grid-template-columns:1fr} }
+
+    .sectionTitle{
+      margin:22px 0 10px;
+      font-size:16px;
+      letter-spacing:.2px;
+    }
+
+    .narrative p{
+      margin:0 0 12px;
+      color:var(--text);
+      font-size:15px;
+    }
+    .narrative p:last-child{margin-bottom:0}
+
+    footer{
+      border-top:1px solid var(--line);
+      padding:18px 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .footRow{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px; flex-wrap:wrap;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="index.html">
+          <span class="mark" aria-hidden="true"></span>
+          <span>
+            <h1>Valentine Joseph Owan</h1>
+            <p>Research Coach • Statistician • Methodologist</p>
+          </span>
+        </a>
+
+        <div class="links">
+          <a href="index.html">Home</a>
+          <a class="active" href="about.html" aria-current="page">About</a>
+          <a href="publications.html">Publications</a>
+	<a class="nav-link" href="updates.html">Updates</a>
+          <a href="contact.html">Contact</a>
+	<a class="nav-link" href="quotes.html">Quotes</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <section class="heroCard">
+        <div class="heroGrid">
+          <div>
+            <div class="kicker">University of Calabar • Nigeria</div>
+            <h2 class="title">About</h2>
+            <p class="subtitle">
+              Lecturer in the Department of Educational Psychology, University of Calabar.
+            </p>
+
+            <!-- Buttons now point to identity sections on this About page -->
+            <div class="btnRow" role="group" aria-label="About page shortcuts">
+              <a class="btn primary" href="assets/Valentine_Joseph_Owan_CV.pdf" target="_blank" rel="noopener">
+                Download Curriculum Vitae
+              </a>
+              <a class="btn" href="#academic-focus">Academic focus</a>
+              <a class="btn" href="#teaching">Teaching</a>
+              <a class="btn" href="#mentorship">Mentorship</a>
+              <a class="btn" href="#editorial">Editorial service</a>
+              <a class="btn" href="#education">Education</a>
+            </div>
+          </div>
+
+          <!-- Identity block (not repeating research interests list) -->
+          <aside class="card" style="box-shadow:none;">
+            <h3>Identity statement</h3>
+            <p>
+              Quantitative researcher and educator with attention to careful measurement, methodological reasoning,
+              and responsible use of statistical evidence in education and the social sciences.
+            </p>
+            <div class="tagRow" aria-label="Identity tags">
+              <span class="tag">Quantitative methods</span>
+              <span class="tag">Measurement development</span>
+              <span class="tag">SEM and modelling</span>
+              <span class="tag">Evaluation studies</span>
+              <span class="tag">Research ethics</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+
+      <section class="grid" aria-label="Key information">
+        <article class="card" id="academic-focus">
+          <h3>Academic focus</h3>
+          <p>
+            Work centred on psychometrics, educational measurement, structural equation modelling,
+            and applied statistical analysis for educational and social research questions.
+          </p>
+        </article>
+
+        <article class="card" id="teaching">
+          <h3>Teaching</h3>
+          <p>
+            Teaching emphasises conceptual understanding, methodological reasoning, and applied interpretation,
+            with strong attention to clarity in statistics and measurement.
+          </p>
+        </article>
+
+        <article class="card" id="mentorship">
+          <h3>Mentorship</h3>
+          <p>
+            Guidance for postgraduate and early career researchers in study design, quantitative analysis,
+            thesis organisation, academic writing, and publication strategy.
+          </p>
+        </article>
+      </section>
+
+      <section class="grid" aria-label="More information">
+        <article class="card" id="editorial">
+          <h3>Editorial service</h3>
+          <p>
+            Editorial and peer review responsibilities, with emphasis on methodological soundness,
+            clear reporting, and ethical scholarly practice.
+          </p>
+        </article>
+
+        <article class="card" id="education">
+          <h3>Education</h3>
+          <p>
+            PhD in view in Research, Measurement and Evaluation (University of Calabar).
+            Master of Education in Research, Measurement and Evaluation.
+            Master of Public Health in progress in Epidemiology and Biostatistics.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Research conduct</h3>
+          <p>
+            Strong interest in research integrity, authorship responsibility, journal literacy, and fair academic publishing,
+            especially under resource constraints.
+          </p>
+        </article>
+      </section>
+
+      <!-- Research interests appear once only -->
+      <h3 class="sectionTitle">Research interests</h3>
+      <section class="card" aria-label="Research interests">
+        <p style="margin:0; color:var(--muted); font-size:14px;">
+          Structural equation modelling, multivariate statistics, psychometrics, programme evaluation, research impact assessment,
+          research policy analysis, scientometrics, data science, and machine learning in education.
+        </p>
+      </section>
+
+      <h3 class="sectionTitle">Profile narrative</h3>
+      <section class="card narrative" aria-label="Profile narrative">
+        <p>
+          Valentine Joseph Owan is a Lecturer in the Department of Educational Psychology at the University of Calabar, Nigeria.
+          His work sits at the intersection of educational measurement, psychometrics, structural equation modelling, programme evaluation,
+          and applied statistical analysis. Across these areas, his scholarship is guided by a sustained interest in methodological precision,
+          measurement validity, and the responsible interpretation of quantitative evidence in educational and social research.
+        </p>
+
+        <p>
+          His academic orientation developed through early research experiences shaped by rigorous supervision, intensive revision,
+          and careful attention to conceptual organisation. These formative engagements cultivated habits that continue to define his work:
+          analytical discipline, clarity in scholarly writing, and strong sensitivity to citation accuracy and research ethics.
+          They also influenced his enduring concern for research integrity, authorship responsibility, and fairness in academic publishing.
+        </p>
+
+        <p>
+          His training pathway combines formal academic study, extensive independent learning, and broad collaborative research engagement.
+          He has contributed to studies involving scale development and validation, latent variable modelling, multivariate statistical analysis,
+          institutional research, and investigations of research productivity. Much of his work connects statistical methodology with practical
+          questions in educational assessment, evaluation, and policy relevant research.
+        </p>
+
+        <p>
+          Alongside technical research interests, his scholarly perspective has been informed by direct experience navigating academic work
+          within resource constrained environments. Encounters with infrastructural limitations, funding pressures, and publication barriers
+          reinforced his commitment to journal literacy, ethical publication decisions, and transparent methodological practice.
+          These experiences continue to shape his emphasis on clarity, rigour, and principled scholarship.
+        </p>
+
+        <p>
+          Valentine leads and participates in multidisciplinary research collaborations that support postgraduate researchers and early career academics.
+          Through mentoring, methodological guidance, and collaborative inquiry, he contributes to capacity development in quantitative methods,
+          research design, academic writing, and publication strategy. His mentoring philosophy prioritises intellectual honesty, patience in learning,
+          and alignment between authorship credit and genuine scholarly contribution.
+        </p>
+
+        <p>
+          His teaching approach mirrors these commitments. He emphasises conceptual understanding, methodological reasoning, and applied interpretation,
+          encouraging students to move beyond procedural familiarity toward analytical confidence, critical evaluation of evidence,
+          and thoughtful engagement with statistical techniques.
+        </p>
+
+        <p>
+          His research has appeared in peer reviewed international journals indexed in major scholarly databases. He views research productivity not merely
+          as publication output, but as a combination of ethical responsibility, collaborative contribution, methodological care,
+          and sustained engagement in scholarly development.
+        </p>
+
+        <p>
+          He remains committed to strengthening research culture, advancing methodological competence, promoting ethical authorship practices,
+          and supporting equitable participation of African scholars in global knowledge production. His academic practice is anchored in careful measurement,
+          transparent inquiry, and intellectual integrity.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footRow">
+        <span>© <span id="y"></span> Valentine Joseph Owan</span>
+        <span>University of Calabar • Educational Psychology</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
