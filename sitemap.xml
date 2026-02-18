@@ -26,4 +26,9 @@
     <priority>0.70</priority>
   </url>
 
+<url>
+  <loc>https://valentineowan.com/cv.html</loc>
+  <priority>0.85</priority>
+</url>
+
 </urlset>
