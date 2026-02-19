@@ -343,7 +343,18 @@ h1{
   text-decoration:none;
 }
 .footer-links a:hover{ color:var(--accent2); }
-
+/* Publication access badge */
+.pub-access-note{
+  display:inline-block;
+  font-size:0.78rem;
+  font-weight:500;
+  color:#ffffff;
+  background:#111827;          /* near-black */
+  padding:3px 8px;
+  border-radius:6px;
+  margin-right:10px;
+  letter-spacing:.2px;
+}
 /* Theses / projects mini-cards */
 .thesis-grid{
   display:grid;
