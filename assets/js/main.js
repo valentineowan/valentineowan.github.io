@@ -1,102 +1,76 @@
-(function () {
-  const year = document.getElementById("year");
-  if (year) year.textContent = String(new Date().getFullYear());
+/* ===== Footer upgrade: sitemap + logos + note ===== */
 
-  const toggle = document.querySelector(".nav-toggle");
-  const nav = document.getElementById("site-nav");
-  if (!toggle || !nav) return;
+.site-footer{
+  background: rgba(17,24,39,.02);
+}
 
-  function setOpen(open) {
-    nav.classList.toggle("open", open);
-    toggle.setAttribute("aria-expanded", open ? "true" : "false");
-  }
+.footer-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:14px;
+  flex-wrap:wrap;
+  padding-top: 10px;
+}
 
-  toggle.addEventListener("click", function () {
-    setOpen(!nav.classList.contains("open"));
-  });
+.footer-copy{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  font-size:13px;
+  color:var(--muted);
+}
 
-  nav.addEventListener("click", function (e) {
-    const link = e.target.closest("a");
-    if (link) setOpen(false);
-  });
+.footer-sep{
+  opacity:.7;
+}
 
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") setOpen(false);
-  });
-})();
+.footer-affil-text{
+  color:var(--muted);
+}
 
-/* Latest blog posts (Updates page only) */
-(function () {
-  const list = document.getElementById("blog-feed");
-  if (!list) return;
+.footer-note{
+  margin-top:10px;
+  color:var(--muted);
+  font-size:13px;
+}
 
-  const FEED_URL = "https://valentineowan.wordpress.com/feed/";
-  const MAX_POSTS = 6;
+.footer-logos{
+  margin-top:14px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+  padding-bottom: 4px;
+}
 
-  function stripHtml(html) {
-    const div = document.createElement("div");
-    div.innerHTML = html || "";
-    return (div.textContent || div.innerText || "").trim();
-  }
+.logo-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 10px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.7);
+  text-decoration:none;
+}
 
-  function escapeHtml(str) {
-    return String(str)
-      .replaceAll("&", "&amp;")
-      .replaceAll("<", "&lt;")
-      .replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#039;");
-  }
+.logo-link:hover{
+  background: rgba(17,24,39,.03);
+  border-color: rgba(47,111,237,.25);
+}
 
-  function formatDate(d) {
-    const date = new Date(d);
-    if (Number.isNaN(date.getTime())) return "";
-    return date.toLocaleDateString("en-GB", { day: "2-digit", month: "long", year: "numeric" });
-  }
+.footer-logo{
+  height:28px;
+  width:auto;
+  display:block;
+  filter: saturate(1.05) contrast(1.03);
+}
 
-  function setFallback(message) {
-    list.innerHTML = "";
-    const li = document.createElement("li");
-    li.className = "muted";
-    li.textContent = message || "Recent posts could not load in this browser. Use the blog link above.";
-    list.appendChild(li);
-  }
-
-  // RSS-to-JSON proxy to avoid CORS blocks on static sites like GitHub Pages
-  const api = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(FEED_URL);
-
-  fetch(api, { method: "GET" })
-    .then(function (r) {
-      if (!r.ok) throw new Error("Feed request failed");
-      return r.json();
-    })
-    .then(function (data) {
-      const items = Array.isArray(data.items) ? data.items.slice(0, MAX_POSTS) : [];
-      if (!items.length) {
-        setFallback("No posts found yet.");
-        return;
-      }
-
-      list.innerHTML = "";
-      items.forEach(function (item) {
-        const title = item.title || "Post";
-        const link = item.link || "https://valentineowan.wordpress.com/";
-        const dateText = formatDate(item.pubDate || item.publishedDate);
-        const excerptRaw = stripHtml(item.description || item.content || "");
-        const excerpt = excerptRaw.length > 180 ? excerptRaw.slice(0, 180) + "…" : excerptRaw;
-
-        const li = document.createElement("li");
-        li.innerHTML =
-          '<div><strong><a class="text-link" href="' + escapeHtml(link) + '" target="_blank" rel="noopener">' +
-          escapeHtml(title) +
-          "</a></strong></div>" +
-          (dateText ? '<div class="note">' + escapeHtml(dateText) + "</div>" : "") +
-          (excerpt ? '<div class="muted mt-6">' + escapeHtml(excerpt) + "</div>" : "");
-
-        list.appendChild(li);
-      });
-    })
-    .catch(function () {
-      setFallback();
-    });
-})();
+/* Responsive footer polish */
+@media (max-width:720px){
+  .footer-top{ gap:10px; }
+  .footer-links{ gap:10px; }
+  .footer-logo{ height:26px; }
+}
