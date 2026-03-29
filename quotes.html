@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quotes | Valentine Joseph Owan</title>
+  <meta name="description" content="A curated collection of aphorisms by Valentine Joseph Owan." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    :root{
+      --bg:#f3f5f7;
+      --panel:#ffffff;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#4b5563;
+      --line:rgba(17,24,39,.12);
+      --accent:#2f6fed;
+      --accent2:#0f766e;
+      --max:1100px;
+      --radius:16px;
+      --shadow: 0 10px 24px rgba(17,24,39,.08);
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1100px 700px at 20% 0%, rgba(53,92,125,.08), transparent 60%),
+        radial-gradient(1100px 700px at 90% 10%, rgba(42,157,143,.08), transparent 55%),
+        var(--bg);
+      line-height:1.65;
+    }
+
+    a{color:inherit; text-decoration:none}
+
+    .wrap{max-width:var(--max); margin:0 auto; padding:18px 18px 48px}
+
+    .quotes-hero{
+      margin-top:16px;
+      background: linear-gradient(135deg, rgba(53,92,125,.10), rgba(42,157,143,.08));
+      border:1px solid var(--line);
+      border-radius: calc(var(--radius) + 8px);
+      padding:28px 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .kicker{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      font-size:.92rem;
+      color:var(--muted);
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      margin:0 0 10px;
+    }
+
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 3px rgba(53,92,125,.12);
+    }
+
+    h1{
+      margin:0 0 8px;
+      font-size: clamp(1.8rem, 2.6vw, 2.4rem);
+      line-height:1.15;
+      letter-spacing:-.02em;
+    }
+
+    .sub{
+      margin:0;
+      color:var(--muted);
+      max-width:78ch;
+      font-size:1.02rem;
+    }
+
+    .toolbar{
+      margin-top:16px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .chips{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .chip{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.65);
+      backdrop-filter: blur(6px);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.95rem;
+      color:var(--muted);
+      cursor:pointer;
+      user-select:none;
+      transition:transform .06s ease, background .2s ease, border-color .2s ease, color .2s ease;
+      font: inherit;
+    }
+
+    .chip:hover{transform:translateY(-1px)}
+
+    .chip.active{
+      background: rgba(53,92,125,.12);
+      border-color: rgba(53,92,125,.25);
+      color: var(--text);
+    }
+
+    .search{
+      flex:1 1 280px;
+      max-width:420px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:999px;
+      background: rgba(255,255,255,.85);
+      border:1px solid var(--line);
+    }
+
+    .search input{
+      width:100%;
+      border:none;
+      outline:none;
+      background:transparent;
+      font-size:1rem;
+      color:var(--text);
+      font-family: inherit;
+    }
+
+    .search svg{flex:0 0 auto; opacity:.55}
+
+    main{margin-top:18px}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+      margin-top:14px;
+    }
+
+    .card{
+      grid-column: span 6;
+      background: var(--panel);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:16px 16px 14px;
+      box-shadow: 0 8px 18px rgba(17,24,39,.06);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(135deg, rgba(53,92,125,.08), rgba(42,157,143,.06));
+      opacity:0;
+      transition: opacity .25s ease;
+      pointer-events:none;
+    }
+
+    .card:hover::before{opacity:1}
+
+    .quote{
+      position:relative;
+      margin:0;
+      font-size:1.02rem;
+    }
+
+    .meta{
+      position:relative;
+      margin-top:10px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      border-top:1px solid var(--line);
+      padding-top:10px;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+
+    .pill{
+      font-size:.82rem;
+      border:1px solid var(--line);
+      padding:4px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.7);
+      white-space:nowrap;
+    }
+
+    .note{
+      margin-top:14px;
+      border:1px dashed rgba(17,24,39,.18);
+      border-radius: var(--radius);
+      padding:14px 16px;
+      background: rgba(255,255,255,.65);
+      color:var(--muted);
+      font-size:.98rem;
+    }
+
+    @media (max-width: 860px){
+      .card{grid-column: span 12;}
+      .search{max-width:100%}
+    }
+
+    .page-footer{
+      margin-top:22px;
+      color:var(--muted);
+      font-size:.95rem;
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html" class="brand-name">Valentine Joseph Owan</a>
+        <div class="brand-tag">Lecturer | Researcher and Statistician</div>
+      </div>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        Menu
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="publications.html">Publications</a>
+        <a class="nav-link" href="teaching.html">Teaching</a>
+        <a class="nav-link" href="cv.html">CV</a>
+        <a class="nav-link" href="updates.html">Updates</a>
+        <a class="nav-link active" href="quotes.html">Quotes</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <section class="quotes-hero" aria-labelledby="quotes-title">
+        <p class="kicker"><span class="dot"></span> Quotes</p>
+        <h1 id="quotes-title">Aphorisms by Owan</h1>
+        <p class="sub">
+          A set of reflective sayings written in a calm, readable style, suitable for a personal and professional website.
+        </p>
+
+        <div class="toolbar" aria-label="Quotes toolbar">
+          <div class="chips" role="tablist" aria-label="Quote categories">
+            <button class="chip active" data-filter="all" type="button" role="tab" aria-selected="true">All</button>
+            <button class="chip" data-filter="education" type="button" role="tab" aria-selected="false">Education and Learning</button>
+            <button class="chip" data-filter="success" type="button" role="tab" aria-selected="false">Failure Success and Growth</button>
+            <button class="chip" data-filter="character" type="button" role="tab" aria-selected="false">Character Conduct and Mindset</button>
+            <button class="chip" data-filter="literary" type="button" role="tab" aria-selected="false">More Literary Tone</button>
+          </div>
+
+          <div class="search" role="search">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M10 4a6 6 0 104.472 10.03l4.249 4.248l1.414-1.414l-4.248-4.249A6 6 0 0010 4m0 2a4 4 0 110 8a4 4 0 010-8Z"/>
+            </svg>
+            <input id="q" type="search" placeholder="Search quotes..." autocomplete="off" />
+          </div>
+        </div>
+
+        <div class="note">
+          Tip: Use the category buttons to filter, or search by keywords such as education, failure, future, discipline, courage, and growth.
+        </div>
+      </section>
+
+      <section class="grid" id="quotes">
+        <article class="card" data-cat="education">
+          <p class="quote">Growth requires a third eye. Education is that eye; it allows us to see possibilities where others see darkness, and to bring light into places once defined by limitation.</p>
+          <div class="meta"><span class="pill">Education and Learning</span><span>Owan Valentine</span></div>
+        </article>
+
+        <article class="card" data-cat="education">
+          <p class="quote">Learning is not the same as education. Learning is the continuous process, while education is the lasting transformation that learning produces in the individual.</p>
+          <div class="meta"><span class="pill">Education and Learning</span><span>Owan Valentine</span></div>
+        </article>
+
+        <article class="card" data-cat="education">
+          <p class="quote">Education is not measured by years spent in school or certificates acquired, but by the positive difference one creates through knowledge, skills, and sound judgement.</p>
+          <div class="meta"><span class="pill">Education and Learning</span><span>Owan Valentine</span></div>
+        </article>
+
+        <article class="card" data-cat="education">
+          <p class="quote">Education is not only about reaching the top of the tree, but about the discipline, patience, and strategy applied throughout the climb.</p>
+          <div class="meta"><span class="pill">Education and Learning</span><span>Owan Valentine</span></div>
+        </article>
+
+        <article class="card" data-cat="education">
+          <p class="quote">It is unwise to search for solutions before understanding the problem. Clarity must come before correction, otherwise effort becomes misdirected.</p>
+          <div class="meta"><span class="pill">Education and Learning</span><span>Owan Valentine</span></div>
+        </article>
+
+        <article class="card" data-cat="success">
+          <p class="quote">Those who move through their careers without experiencing failure may achieve less than they could have. Setbacks often refine judgement, strengthen resilience, and redirect ambition.</p>
+          <div class="meta"><span class="pill">Failure Success and Growth</span><span>Owan Valentine</span></div>
+        </article>
+
+        <article class="card" data-cat="success">
+          <p class="quote">New paths to success are rarely discovered through comfort. Repeated failure, when properly examined, often reveals better strategies and wiser decisions.</p>
+          <div class="meta"><span class="pill">Failure Success and Growth</span><span>Owan Valentine</span></div>
+        </article>
+
+        <article class="card" data-cat="success">
+          <p class="quote">Creativity demands courage. The fear of failure suppresses originality, while the willingness to risk error opens the door to innovation.</p>
+          <div class="meta"><span class="pill">Failure Success and Growth</span><span>Owan Valentine</span></div>
+        </article>
+
+        <article class="card" data-cat="success">
+          <p class="quote">Success is not the absence of failure, but the ability to rise after falling, to learn from mistakes, and to continue moving forward with renewed determination.</p>
+          <div class="meta"><span class="pill">Failure Success and Growth</span><span>Owan Valentine</span></div>
+        </article>
+
+        <article class="card" data-cat="success">
+          <p class="quote">Success should never mark the end of effort. Achievement is best treated as a foundation upon which greater discipline and higher standards are built.</p>
+          <div class="meta"><span class="pill">Failure Success and Growth</span><span>Owan Valentine</span></div>
+        </article>
+
+        <article class="card" data-cat="success">
+          <p class="quote">Success is not defined by how much we do or how long we persist, but by how well we perform and how willingly we improve when confronted with our errors.</p>
+          <div class="meta"><span class="pill">Failure Success and Growth</span><span>Owan Valentine</span></div>
+        </article>
+
+        <article class="card" data-cat="success">
+          <p class="quote">Failure is not a contradiction of success; it is its companion. Through failure, weaknesses are exposed, strategies are revised, and growth becomes possible.</p>
+          <div class="meta"><span class="pill">Failure Success and Growth</span><span>Owan Valentine</span></div>
+        </article>
+
+        <article class="card" data-cat="character">
+          <p class="quote">Do not treat people according to their worst behaviour. Treat them according to your highest character, for conduct reveals more about the giver than the receiver.</p>
+          <div class="meta"><span class="pill">Character Conduct and Mindset</span><span>Owan Valentine</span></div>
+        </article>
+
+        <article class="card" data-cat="character">
+          <p class="quote">Human potential is not meant to remain dormant. It is meant to be developed through effort, discipline, and the courage to attempt difficult things.</p>
+          <div class="meta"><span class="pill">Character Conduct and Mindset</span><span>Owan Valentine</span></div>
+        </article>
+
+        <article class="card" data-cat="character">
+          <p class="quote">Life unfolds through daily lessons. These lessons are not fully understood through observation alone, but through experience, reflection, and growth.</p>
+          <div class="meta"><span class="pill">Character Conduct and Mindset</span><span>Owan Valentine</span></div>
+        </article>
+
+        <article class="card" data-cat="character">
+          <p class="quote">Change begins in one place: within the individual. Lasting transformation is rarely imposed from outside; it is initiated from within.</p>
+          <div class="meta"><span class="pill">Character Conduct and Mindset</span><span>Owan Valentine</span></div>
+        </article>
+
+        <article class="card" data-cat="character">
+          <p class="quote">To ignore the future is to remain trapped in the past. Progress requires vision, intention, and deliberate preparation.</p>
+          <div class="meta"><span class="pill">Character Conduct and Mindset</span><span>Owan Valentine</span></div>
+        </article>
+
+        <article class="card" data-cat="character">
+          <p class="quote">What we do today quietly shapes tomorrow. Actions, habits, and decisions accumulate into consequences that time eventually reveals.</p>
+          <div class="meta"><span class="pill">Character Conduct and Mindset</span><span>Owan Valentine</span></div>
+        </article>
+
+        <article class="card" data-cat="character">
+          <p class="quote">To shine brighter, resist becoming a copy of others. Individuality, when guided by wisdom, becomes the source of distinction.</p>
+          <div class="meta"><span class="pill">Character Conduct and Mindset</span><span>Owan Valentine</span></div>
+        </article>
+
+        <article class="card" data-cat="character">
+          <p class="quote">I worry when people struggle endlessly to control every detail of life, forgetting that uncertainty is part of the human condition and humility is part of wisdom.</p>
+          <div class="meta"><span class="pill">Character Conduct and Mindset</span><span>Owan Valentine</span></div>
+        </article>
+
+        <article class="card" data-cat="literary">
+          <p class="quote">Failure does not weaken ambition; it refines it. Each setback, properly understood, becomes a silent architect of future success.</p>
+          <div class="meta"><span class="pill">More Literary Tone</span><span>Owan Valentine</span></div>
+        </article>
+
+        <article class="card" data-cat="literary">
+          <p class="quote">Education does more than inform the mind; it reshapes perception, strengthens judgement, and expands the boundaries of possibility.</p>
+          <div class="meta"><span class="pill">More Literary Tone</span><span>Owan Valentine</span></div>
+        </article>
+
+        <article class="card" data-cat="literary">
+          <p class="quote">Success is fragile when celebrated prematurely, but enduring when supported by discipline, reflection, and continued effort.</p>
+          <div class="meta"><span class="pill">More Literary Tone</span><span>Owan Valentine</span></div>
+        </article>
+      </section>
+
+      <footer class="page-footer">
+        © <span id="yr"></span> Valentine Joseph Owan. All rights reserved.
+      </footer>
+    </div>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    (function(){
+      const chips = Array.from(document.querySelectorAll(".chip"));
+      const cards = Array.from(document.querySelectorAll(".card"));
+      const q = document.getElementById("q");
+      const yr = document.getElementById("yr");
+      yr.textContent = new Date().getFullYear();
+
+      let activeCat = "all";
+
+      function apply(){
+        const term = (q.value || "").trim().toLowerCase();
+        cards.forEach(card => {
+          const catOk = activeCat === "all" || card.dataset.cat === activeCat;
+          const textOk = !term || card.innerText.toLowerCase().includes(term);
+          card.style.display = (catOk && textOk) ? "" : "none";
+        });
+      }
+
+      chips.forEach(btn => {
+        btn.addEventListener("click", () => {
+          chips.forEach(b => { b.classList.remove("active"); b.setAttribute("aria-selected","false"); });
+          btn.classList.add("active");
+          btn.setAttribute("aria-selected","true");
+          activeCat = btn.dataset.filter;
+          apply();
+        });
+      });
+
+      q.addEventListener("input", apply);
+      apply();
+    })();
+  </script>
+</body>
+</html>
