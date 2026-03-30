@@ -1,412 +1,398 @@
+import os
+import re
 import html
-from pathlib import Path
+import pandas as pd
 
-from openpyxl import load_workbook
+BASE_DIR = r"D:\Documents\E-library\Vowan_Database\Valentine_Site_Clean"
+DATA_FILE = os.path.join(BASE_DIR, "data", "publications.xlsx")
+PUBLICATIONS_FILE = os.path.join(BASE_DIR, "publications.html")
 
-ROOT = Path(__file__).resolve().parents[1]
-DATA_FILE = ROOT / "data" / "publications.xlsx"
-OUTPUT_DIR = ROOT / "publications"
+START_MARKER = "<!-- ARCHIVE:START -->"
+END_MARKER = "<!-- ARCHIVE:END -->"
 
-OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+YEARJUMP_START = "<!-- YEARJUMP:START -->"
+YEARJUMP_END = "<!-- YEARJUMP:END -->"
 
-wb = load_workbook(DATA_FILE, data_only=True)
-ws = wb.active
+RECENT_START = "<!-- RECENT:START -->"
+RECENT_END = "<!-- RECENT:END -->"
 
-headers = {ws.cell(1, c).value: c for c in range(1, ws.max_column + 1)}
+RECENT_LIMIT = 4
 
 
-def val(row, name):
-    col = headers.get(name)
-    if not col:
+def safe_text(value):
+    if pd.isna(value):
         return ""
-    v = ws.cell(row, col).value
-    return "" if v is None else str(v).strip()
+    return html.escape(str(value).strip())
 
 
-def esc(text):
-    return html.escape(text or "")
-
-
-def citation_js(text):
-    if not text:
+def safe_attr(value):
+    if pd.isna(value):
         return ""
-    return text.replace("\\", "\\\\").replace("`", "\\`")
+    return html.escape(str(value).strip(), quote=True)
 
 
-def split_authors_for_meta(authors_text):
-    if not authors_text:
-        return []
-    parts = [a.strip() for a in authors_text.split(";") if a.strip()]
-    return parts
+def safe_int(value, default=0):
+    try:
+        if pd.isna(value) or str(value).strip() == "":
+            return default
+        return int(float(value))
+    except Exception:
+        return default
 
 
-def build_meta_tags(title, authors, year, journal, source_title, doi, pdf_path, slug):
-    meta = []
+def clean_text(value):
+    if pd.isna(value):
+        return ""
+    return str(value).strip()
 
-    if title:
-        meta.append(f'<meta name="citation_title" content="{esc(title)}" />')
 
-    for author in split_authors_for_meta(authors):
-        meta.append(f'<meta name="citation_author" content="{esc(author)}" />')
+def normalise_access(value):
+    value = clean_text(value).strip().lower()
+    return value if value else "request"
 
-    if year:
-        meta.append(f'<meta name="citation_publication_date" content="{esc(year)}" />')
 
-    journal_title = journal or source_title
-    if journal_title:
-        meta.append(f'<meta name="citation_journal_title" content="{esc(journal_title)}" />')
+def map_entry_type(value):
+    value = clean_text(value).lower()
+
+    mapping = {
+        "article": "article",
+        "journal article": "article",
+        "incollection": "chapter",
+        "book chapter": "chapter",
+        "inproceedings": "proceeding",
+        "conference proceeding": "proceeding",
+        "conference proceedings": "proceeding",
+        "book": "chapter",
+        "phdthesis": "thesis",
+        "mastersthesis": "thesis",
+	"nceproject": "thesis",
+        "project": "thesis",
+    }
+
+    return mapping.get(value, "article")
+
+
+def build_main_link(row):
+    doi = clean_text(row.get("doi", ""))
+    pdf_path = clean_text(row.get("pdf_path", ""))
 
     if doi:
-        meta.append(f'<meta name="citation_doi" content="{esc(doi)}" />')
-
+        return f"https://doi.org/{doi}"
     if pdf_path:
-        meta.append(f'<meta name="citation_pdf_url" content="../{esc(pdf_path)}" />')
-
-    meta.append(
-        f'<link rel="canonical" href="https://www.valentineowan.com/publications/{esc(slug)}.html" />'
-    )
-
-    return "\n  ".join(meta)
+        return pdf_path.replace("\\", "/")
+    return "#"
 
 
-def render_page(row):
-    slug = val(row, "slug")
-    if not slug:
-        return None, None
+def build_venue(row):
+    journal = clean_text(row.get("journal", ""))
+    source_title = clean_text(row.get("source_title", ""))
+    booktitle = clean_text(row.get("booktitle", ""))
 
-    title = val(row, "title")
-    authors = val(row, "authors")
-    year = val(row, "year")
-    source_title = val(row, "source_title")
-    journal = val(row, "journal")
-    booktitle = val(row, "booktitle")
-    publisher = val(row, "publisher")
-    school = val(row, "school")
-    volume = val(row, "volume")
-    issue = val(row, "issue")
-    pages = val(row, "pages")
-    doi = val(row, "doi")
-    abstract = val(row, "abstract")
-    keywords = val(row, "keywords")
-    pdf_path = val(row, "pdf_path")
-    access = val(row, "access").lower()
-    entry_type = val(row, "entry_type")
-
-    apa = val(row, "apa_citation")
-    mla = val(row, "mla_citation")
-    harvard = val(row, "harvard_citation")
-    vancouver = val(row, "vancouver_citation")
-    bibtex = val(row, "bibtex")
-
-    openalex_citations = val(row, "openalex_citations")
-    openalex_id = val(row, "openalex_id")
-    openalex_url = val(row, "openalex_url")
-    openalex_last_checked = val(row, "openalex_last_checked")
-
-    source_parts = []
     if journal:
-        source_parts.append(f"<p><strong>Journal:</strong> {esc(journal)}</p>")
+        return journal
+    if source_title:
+        return source_title
     if booktitle:
-        source_parts.append(f"<p><strong>Book title:</strong> {esc(booktitle)}</p>")
-    if publisher:
-        source_parts.append(f"<p><strong>Publisher:</strong> {esc(publisher)}</p>")
-    if school:
-        source_parts.append(f"<p><strong>Institution:</strong> {esc(school)}</p>")
-    if year:
-        source_parts.append(f"<p><strong>Year:</strong> {esc(year)}</p>")
-    if volume:
-        source_parts.append(f"<p><strong>Volume:</strong> {esc(volume)}</p>")
-    if issue:
-        source_parts.append(f"<p><strong>Issue:</strong> {esc(issue)}</p>")
-    if pages:
-        source_parts.append(f"<p><strong>Pages / article number:</strong> {esc(pages)}</p>")
-    if entry_type:
-        source_parts.append(f"<p><strong>Type:</strong> {esc(entry_type)}</p>")
-    if doi:
-        source_parts.append(
-            f'<p><strong>DOI:</strong> <a href="https://doi.org/{esc(doi)}" target="_blank" rel="noopener">{esc(doi)}</a></p>'
+        return booktitle
+    return ""
+
+
+def clean_number(value):
+    try:
+        if pd.isna(value) or str(value).strip() == "":
+            return ""
+        num = float(value)
+        if num.is_integer():
+            return str(int(num))
+        return str(num)
+    except Exception:
+        return str(value).strip()
+
+
+def build_citation_text(row):
+    authors = safe_text(row.get("authors", ""))
+    year = clean_text(row.get("year", ""))
+    title = safe_text(row.get("title", ""))
+    venue = safe_text(build_venue(row))
+
+    volume = clean_number(row.get("volume", ""))
+    issue = clean_number(row.get("issue", ""))
+    pages = safe_text(row.get("pages", ""))
+
+    year_text = year if year else "n.d."
+
+    citation = f"{authors} ({year_text}). {title}."
+
+    if venue:
+        citation += f" <em>{venue}</em>"
+
+        if volume and issue:
+            citation += f", {volume}({issue})"
+        elif volume:
+            citation += f", {volume}"
+        elif issue:
+            citation += f", ({issue})"
+
+        if pages:
+            citation += f", {pages}"
+
+        citation += "."
+
+    return citation
+
+
+def build_links_block(row):
+    slug = clean_text(row.get("slug", ""))
+    pdf_path = clean_text(row.get("pdf_path", "")).replace("\\", "/")
+    access = normalise_access(row.get("access", ""))
+    citations = safe_int(row.get("openalex_citations", 0), 0)
+
+    parts = []
+    parts.append(f'<span class="tag">OpenAlex citations: {citations}</span>')
+
+    if slug:
+        parts.append(
+            f'<a class="btn btn-ghost" href="publications/{safe_attr(slug)}.html">View details</a>'
         )
 
-    actions = []
-    if pdf_path and access == "open":
-        actions.append(
-            f'<a class="btn" href="../{esc(pdf_path)}" target="_blank" rel="noopener">Read PDF</a>'
-        )
-    if doi:
-        actions.append(
-            f'<a class="btn btn-ghost" href="https://doi.org/{esc(doi)}" target="_blank" rel="noopener">View DOI</a>'
-        )
-    if access == "request":
-        actions.append(
-            '<a class="btn btn-ghost" href="../contact.html">Request a copy</a>'
-        )
-    actions.append(
-        '<a class="btn btn-ghost" href="../publications.html">Back to publications</a>'
+    if access == "open":
+        if pdf_path:
+            parts.append(
+                f'<a class="btn btn-ghost" href="{safe_attr(pdf_path)}" target="_blank" rel="noopener">Read PDF</a>'
+            )
+        else:
+            parts.append('<span class="pub-access-note">Open access</span>')
+    else:
+        parts.append('<span class="pub-access-note">Closed access · Available upon request</span>')
+        parts.append('<a class="btn btn-ghost" href="contact.html">Request a copy</a>')
+
+    return '<div class="pub-links">\n                  ' + "\n                  ".join(parts) + "\n                </div>"
+
+
+def build_entry_html(row):
+    year = clean_text(row.get("year", ""))
+    data_year = safe_attr(year)
+    data_type = safe_attr(map_entry_type(row.get("entry_type", "")))
+    href = safe_attr(build_main_link(row))
+
+    citation_html = build_citation_text(row)
+    links_html = build_links_block(row)
+
+    target_attr = ' target="_blank" rel="noopener"' if href.startswith("http") else ""
+
+    if href == "#":
+        return f"""      <li class="pub-entry" data-type="{data_type}" data-year="{data_year}">
+        <span class="pub-cite">
+          {citation_html}
+        </span>
+        {links_html}
+      </li>"""
+    else:
+        return f"""      <li class="pub-entry" data-type="{data_type}" data-year="{data_year}">
+        <a class="pub-cite" href="{href}"{target_attr}>
+          {citation_html}
+        </a>
+        {links_html}
+      </li>"""
+
+
+def build_recent_entry_html(row):
+    year = clean_text(row.get("year", ""))
+    href = safe_attr(build_main_link(row))
+    citation_html = build_citation_text(row)
+
+    target_attr = ' target="_blank" rel="noopener"' if href.startswith("http") else ""
+
+    if href == "#":
+        return f"""  <li class="pub-entry" data-type="selected" data-year="{safe_attr(year)}">
+    <span class="pub-cite">
+      {citation_html}
+    </span>
+  </li>"""
+    else:
+        return f"""  <li class="pub-entry" data-type="selected" data-year="{safe_attr(year)}">
+    <a class="pub-cite" href="{href}"{target_attr}>
+      {citation_html}
+    </a>
+  </li>"""
+
+
+def build_year_block(year, rows, open_years=None):
+    open_attr = " open" if year in open_years else ""
+    items = "\n\n".join(build_entry_html(row) for _, row in rows.iterrows())
+
+    return f"""  <details class="pub-year" id="year-{year}"{open_attr}>
+    <summary>{year}</summary>
+    <ol class="pub-list">
+{items}
+    </ol>
+  </details>"""
+
+
+def build_section(section_id, heading, label_id, section_df, open_years):
+    if section_df.empty:
+        return ""
+
+    grouped = section_df.groupby("year_num", sort=False)
+    year_blocks = [build_year_block(y, g, open_years) for y, g in grouped]
+
+    section_id_attr = f' id="{section_id}"' if section_id else ""
+
+    return f"""        <section class="pub-section"{section_id_attr}>
+          <div class="pub-section-head">
+            <h3>{heading}</h3>
+            <span class="tag" id="{label_id}">0</span>
+          </div>
+
+{chr(10).join(year_blocks)}
+        </section>"""
+
+
+def replace_count_by_id(html_text, element_id, value):
+    pattern = rf'(id="{element_id}">\s*)\d+(\s*<)'
+    return re.sub(pattern, rf'\g<1>{value}\g<2>', html_text)
+
+
+def build_yearjump_html(years):
+    links = "\n".join([f'            <a href="#year-{year}">{year}</a>' for year in years])
+    return f"""{YEARJUMP_START}
+          <div class="year-jump" aria-label="Jump to year">
+{links}
+          </div>
+{YEARJUMP_END}"""
+
+
+def replace_year_filter_options(html_text, years):
+    options = ['              <option value="">All years</option>']
+    options.extend([f'              <option value="{year}">{year}</option>' for year in years])
+    options_html = "\n".join(options)
+
+    pattern = re.compile(
+        r'(<select id="yearFilter"[^>]*>\s*)(.*?)(\s*</select>)',
+        flags=re.DOTALL
     )
 
-    keyword_block = ""
-    if keywords:
-        keyword_block = f"""
-        <section class="card article-block">
-          <h2>Keywords</h2>
-          <p>{esc(keywords)}</p>
-        </section>
-        """
+    if not pattern.search(html_text):
+        return html_text
 
-    abstract_block = ""
-    if abstract:
-        abstract_block = f"""
-        <section class="card article-block">
-          <h2>Abstract</h2>
-          <p>{esc(abstract)}</p>
-        </section>
-        """
+    return pattern.sub(rf'\1{options_html}\3', html_text, count=1)
 
-    citation_count_block = ""
-    if openalex_citations and openalex_citations not in {"None", ""}:
-        openalex_link = ""
-        if openalex_url:
-            openalex_link = f' <a href="{esc(openalex_url)}" target="_blank" rel="noopener">(view record)</a>'
 
-        checked_line = ""
-        if openalex_last_checked:
-            checked_line = f'<p><small>Last checked: {esc(openalex_last_checked)}</small></p>'
+def build_recent_html(df):
+    recent_df = df.sort_values(
+        by=["year_num", "sort_citations", "sort_title"],
+        ascending=[False, False, True]
+    ).head(RECENT_LIMIT)
 
-        citation_count_block = f"""
-        <section class="card article-block">
-          <h2>Citation metrics</h2>
-          <p><strong>Citations:</strong> {esc(openalex_citations)}{openalex_link}</p>
-          <p><small>Source: OpenAlex</small></p>
-          {checked_line}
-        </section>
-        """
+    items = "\n".join(build_recent_entry_html(row) for _, row in recent_df.iterrows())
 
-    source_block = "\n".join(source_parts)
-    actions_block = "\n".join(actions)
-    meta_tags = build_meta_tags(
-        title=title,
-        authors=authors,
-        year=year,
-        journal=journal,
-        source_title=source_title,
-        doi=doi,
-        pdf_path=pdf_path,
-        slug=slug,
+    return f"""{RECENT_START}
+<ol class="pub-list">
+{items}
+</ol>
+{RECENT_END}"""
+
+
+def main():
+    if not os.path.exists(DATA_FILE):
+        raise FileNotFoundError(f"Excel file not found: {DATA_FILE}")
+
+    if not os.path.exists(PUBLICATIONS_FILE):
+        raise FileNotFoundError(f"publications.html not found: {PUBLICATIONS_FILE}")
+
+    df = pd.read_excel(DATA_FILE)
+    df.columns = df.columns.str.strip().str.lower()
+    df = df.fillna("")
+
+    required_columns = [
+        "slug", "year", "title", "authors", "journal", "source_title", "booktitle",
+        "volume", "issue", "pages", "doi", "pdf_path", "access", "entry_type",
+        "openalex_citations"
+    ]
+    for col in required_columns:
+        if col not in df.columns:
+            df[col] = ""
+
+    df["year_num"] = pd.to_numeric(df["year"], errors="coerce")
+    df = df[df["year_num"].notna()].copy()
+    df["year_num"] = df["year_num"].astype(int)
+
+    df["site_type"] = df["entry_type"].apply(map_entry_type)
+    df = df[df["site_type"] != "thesis"].copy()
+
+    df["sort_citations"] = df["openalex_citations"].apply(lambda x: safe_int(x, 0))
+    df["sort_title"] = df["title"].astype(str).str.lower()
+
+    df = df.sort_values(
+        by=["year_num", "sort_citations", "sort_title"],
+        ascending=[False, False, True]
     )
 
-    page = f"""<!doctype html>
-<html lang="en-GB">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{esc(title)} | Valentine Joseph Owan</title>
-  <meta name="description" content="{esc(title)}" />
-  {meta_tags}
-  <link rel="stylesheet" href="../assets/css/style.css" />
-  <style>
-    .article-wrap {{
-      display:grid;
-      gap:16px;
-    }}
-    .article-top h1 {{
-      margin-bottom:10px;
-    }}
-    .article-authors {{
-      color:var(--muted);
-      font-size:1rem;
-    }}
-    .article-actions {{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:14px;
-    }}
-    .article-meta p {{
-      margin:0 0 8px;
-      color:var(--muted);
-    }}
-    .article-block h2 {{
-      margin-top:0;
-    }}
-    .citation-tabs {{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin:10px 0 12px;
-    }}
-    .citation-tabs button {{
-      padding:8px 12px;
-      border-radius:10px;
-      border:1px solid var(--line);
-      background:var(--panel);
-      cursor:pointer;
-      color:var(--text);
-    }}
-    .citation-tabs button:hover {{
-      background:rgba(17,24,39,.05);
-    }}
-    .citation-box {{
-      white-space:pre-wrap;
-      overflow-wrap:anywhere;
-      color:var(--text);
-    }}
-    .crumbs {{
-      font-size:14px;
-      color:var(--muted);
-      margin-bottom:12px;
-    }}
-    .crumbs a {{
-      text-decoration:none;
-    }}
-  </style>
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
+    years = sorted(df["year_num"].unique(), reverse=True)
+    open_years = set(years[:2])
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <a href="../index.html" class="brand-name">Valentine Joseph Owan</a>
-        <div class="brand-tag">Researcher | Psychometrician | Statistician</div>
-      </div>
+    articles_df = df[df["site_type"] == "article"]
+    chapters_df = df[df["site_type"] == "chapter"]
+    proceedings_df = df[df["site_type"] == "proceeding"]
 
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        Menu
-      </button>
+    total_count = len(df)
+    articles_count = len(articles_df)
+    chapters_count = len(chapters_df)
+    proceedings_count = len(proceedings_df)
 
-      <nav id="site-nav" class="site-nav" aria-label="Primary">
-        <a class="nav-link" href="../index.html">Home</a>
-        <a class="nav-link" href="../about.html">About</a>
-        <a class="nav-link active" href="../publications.html">Publications</a>
-        <a class="nav-link" href="../teaching.html">Teaching</a>
-        <a class="nav-link" href="../cv.html">CV</a>
-        <a class="nav-link" href="../updates.html">Updates</a>
-        <a class="nav-link" href="../contact.html">Contact</a>
-        <a class="nav-link" href="../quotes.html">Quotes</a>
-      </nav>
-    </div>
-  </header>
+    archive_html = "\n\n".join([
+        build_section("", "Journal articles", "labelArticles", articles_df, open_years),
+        build_section("book-chapters", "Book chapters", "labelChapters", chapters_df, open_years),
+        build_section("conference-proceedings", "Conference proceedings", "labelProceedings", proceedings_df, open_years)
+    ])
 
-  <main id="main" class="section">
-    <div class="container narrow">
-      <div class="crumbs">
-        <a href="../index.html">Home</a> / <a href="../publications.html">Publications</a> / Record
-      </div>
+    recent_html = build_recent_html(df)
 
-      <div class="article-wrap">
-        <section class="card article-top">
-          <p class="kicker">Publication record</p>
-          <h1>{esc(title)}</h1>
-          <p class="article-authors">{esc(authors)}</p>
-          <div class="article-actions">
-            {actions_block}
-          </div>
-        </section>
+    with open(PUBLICATIONS_FILE, "r", encoding="utf-8") as f:
+        html_text = f.read()
 
-        <section class="card article-meta">
-          <h2>Publication details</h2>
-          {source_block}
-        </section>
+    html_text = re.sub(
+        rf"{re.escape(START_MARKER)}.*?{re.escape(END_MARKER)}",
+        f"{START_MARKER}\n{archive_html}\n{END_MARKER}",
+        html_text,
+        flags=re.DOTALL
+    )
 
-        {citation_count_block}
+    html_text = re.sub(
+        rf"{re.escape(RECENT_START)}.*?{re.escape(RECENT_END)}",
+        recent_html,
+        html_text,
+        flags=re.DOTALL
+    )
 
-        {abstract_block}
+    html_text = replace_count_by_id(html_text, "countAll", total_count)
+    html_text = replace_count_by_id(html_text, "countArticles", articles_count)
+    html_text = replace_count_by_id(html_text, "countChapters", chapters_count)
+    html_text = replace_count_by_id(html_text, "countProceedings", proceedings_count)
 
-        {keyword_block}
+    html_text = replace_count_by_id(html_text, "labelArticles", articles_count)
+    html_text = replace_count_by_id(html_text, "labelChapters", chapters_count)
+    html_text = replace_count_by_id(html_text, "labelProceedings", proceedings_count)
 
-        <section class="card article-block">
-          <h2>Citation</h2>
+    html_text = replace_year_filter_options(html_text, years)
 
-          <div class="citation-tabs">
-            <button onclick="showCitation('apa')">APA</button>
-            <button onclick="showCitation('mla')">MLA</button>
-            <button onclick="showCitation('harvard')">Harvard</button>
-            <button onclick="showCitation('vancouver')">Vancouver</button>
-            <button onclick="showCitation('bibtex')">BibTeX</button>
-          </div>
+    yearjump_pattern = re.compile(
+        rf"{re.escape(YEARJUMP_START)}.*?{re.escape(YEARJUMP_END)}",
+        flags=re.DOTALL
+    )
+    yearjump_html = build_yearjump_html(years)
 
-          <div id="citationText" class="citation-box"></div>
+    if yearjump_pattern.search(html_text):
+        html_text = yearjump_pattern.sub(yearjump_html, html_text)
+    else:
+        print("Warning: YEARJUMP markers not found. Year jump links were not updated.")
 
-          <div class="card-actions">
-            <button class="btn btn-ghost" onclick="copyCitation()">Copy citation</button>
-          </div>
-        </section>
-      </div>
-    </div>
-  </main>
+    with open(PUBLICATIONS_FILE, "w", encoding="utf-8") as f:
+        f.write(html_text)
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-copy">
-          © <span id="year"></span> Valentine Joseph Owan
-          <span class="footer-sep">•</span>
-          University of Calabar
-        </div>
-
-        <nav class="footer-links" aria-label="Footer">
-          <a href="../index.html">Home</a>
-          <a href="../about.html">About</a>
-          <a href="../publications.html">Publications</a>
-          <a href="../teaching.html">Teaching</a>
-          <a href="../cv.html">CV</a>
-          <a href="../updates.html">Updates</a>
-          <a href="../quotes.html">Quotes</a>
-          <a href="../contact.html">Contact</a>
-        </nav>
-      </div>
-
-      <div class="footer-note">
-        Academic website for research, teaching, and scholarly work.
-      </div>
-    </div>
-  </footer>
-
-  <script src="../assets/js/main.js"></script>
-  <script>
-    const citations = {{
-      apa: `{citation_js(apa)}`,
-      mla: `{citation_js(mla)}`,
-      harvard: `{citation_js(harvard)}`,
-      vancouver: `{citation_js(vancouver)}`,
-      bibtex: `{citation_js(bibtex)}`
-    }};
-
-    function showCitation(type) {{
-      const box = document.getElementById("citationText");
-      if (!box) return;
-      box.innerHTML = citations[type] || "";
-    }}
-
-    function copyCitation() {{
-      const box = document.getElementById("citationText");
-      if (!box) return;
-      const text = box.innerText;
-      navigator.clipboard.writeText(text).then(() => {{
-        alert("Citation copied");
-      }});
-    }}
-
-    (function () {{
-      var y = document.getElementById("year");
-      if (y) y.textContent = new Date().getFullYear();
-      showCitation("apa");
-    }})();
-  </script>
-</body>
-</html>
-"""
-    return slug, page
+    print("Done: recent publications, archive, counters, and year controls updated.")
+    print(f"Total: {total_count} | Articles: {articles_count} | Chapters: {chapters_count} | Proceedings: {proceedings_count}")
 
 
-generated = 0
-
-for row in range(2, ws.max_row + 1):
-    slug, page = render_page(row)
-    if not slug or not page:
-        continue
-    out_file = OUTPUT_DIR / f"{slug}.html"
-    out_file.write_text(page, encoding="utf-8")
-    generated += 1
-
-print(f"Generated {generated} publication pages in {OUTPUT_DIR}")
+if __name__ == "__main__":
+    main()
