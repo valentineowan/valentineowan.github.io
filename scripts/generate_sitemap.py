@@ -1,10 +1,10 @@
-import os
+from pathlib import Path
 from datetime import datetime
 import pandas as pd
 
-BASE_DIR = r"D:\Documents\E-library\Vowan_Database\Valentine_Site"
-DATA_FILE = os.path.join(BASE_DIR, "data", "publications.xlsx")
-OUTPUT_FILE = os.path.join(BASE_DIR, "sitemap.xml")
+ROOT = Path(__file__).resolve().parents[1]
+DATA_FILE = ROOT / "data" / "publications.xlsx"
+OUTPUT_FILE = ROOT / "sitemap.xml"
 
 SITE_URL = "https://www.valentineowan.com"
 
@@ -20,16 +20,18 @@ def iso_date_from_value(value):
     Convert a date-like value to YYYY-MM-DD.
     Falls back to today's date if conversion fails.
     """
+    today = datetime.today().strftime("%Y-%m-%d")
+
     if pd.isna(value) or str(value).strip() == "":
-        return datetime.today().strftime("%Y-%m-%d")
+        return today
 
     try:
         dt = pd.to_datetime(value, errors="coerce")
         if pd.isna(dt):
-            return datetime.today().strftime("%Y-%m-%d")
+            return today
         return dt.strftime("%Y-%m-%d")
     except Exception:
-        return datetime.today().strftime("%Y-%m-%d")
+        return today
 
 
 def add_url(urls, loc, lastmod=None, changefreq=None, priority=None):
@@ -55,6 +57,18 @@ def main():
         ("index.html", today, "weekly", "1.0"),
         ("about.html", today, "monthly", "0.9"),
         ("publications.html", today, "weekly", "0.95"),
+        ("south-south-rankings.html", today, "monthly", "0.9"),
+        ("tro.html", today, "monthly", "0.8"),
+        ("rps.html", today, "monthly", "0.8"),
+        ("rii.html", today, "monthly", "0.8"),
+        ("anps.html", today, "monthly", "0.8"),
+        ("rmf.html", today, "monthly", "0.8"),
+        ("ird.html", today, "monthly", "0.8"),
+        ("anoi.html", today, "monthly", "0.8"),
+        ("urpi.html", today, "monthly", "0.8"),
+        ("bos.html", today, "monthly", "0.8"),
+        ("moi.html", today, "monthly", "0.8"),
+        ("bl-rii.html", today, "monthly", "0.8"),
         ("teaching.html", today, "monthly", "0.8"),
         ("cv.html", today, "monthly", "0.8"),
         ("updates.html", today, "weekly", "0.7"),
@@ -70,7 +84,7 @@ def main():
         add_url(urls, loc, lastmod, changefreq, priority)
 
     # Publication pages from Excel
-    if not os.path.exists(DATA_FILE):
+    if not DATA_FILE.exists():
         raise FileNotFoundError(f"Excel file not found: {DATA_FILE}")
 
     df = pd.read_excel(DATA_FILE)
@@ -127,7 +141,7 @@ def main():
 
     lines.append("</urlset>")
 
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+    with OUTPUT_FILE.open("w", encoding="utf-8") as f:
         f.write("\n".join(lines))
 
     print(f"✅ Sitemap generated successfully: {OUTPUT_FILE}")

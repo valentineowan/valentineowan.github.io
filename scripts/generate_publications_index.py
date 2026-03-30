@@ -1,11 +1,11 @@
-import os
+from pathlib import Path
 import re
 import html
 import pandas as pd
 
-BASE_DIR = r"D:\Documents\E-library\Vowan_Database\Valentine_Site"
-DATA_FILE = os.path.join(BASE_DIR, "data", "publications.xlsx")
-PUBLICATIONS_FILE = os.path.join(BASE_DIR, "publications.html")
+ROOT = Path(__file__).resolve().parents[1]
+DATA_FILE = ROOT / "data" / "publications.xlsx"
+PUBLICATIONS_FILE = ROOT / "publications.html"
 
 START_MARKER = "<!-- ARCHIVE:START -->"
 END_MARKER = "<!-- ARCHIVE:END -->"
@@ -65,6 +65,9 @@ def map_entry_type(value):
         "book": "chapter",
         "phdthesis": "thesis",
         "mastersthesis": "thesis",
+        "bedproject": "thesis",
+        "nceproject": "thesis",
+        "project": "thesis",
     }
 
     return mapping.get(value, "article")
@@ -155,7 +158,7 @@ def build_links_block(row):
 
     if access == "open" and pdf_path:
         parts.append(
-            f'<a class="btn btn-ghost" href="{safe_attr(pdf_path)}" target="_blank">Read PDF</a>'
+            f'<a class="btn btn-ghost" href="{safe_attr(pdf_path)}" target="_blank" rel="noopener">Read PDF</a>'
         )
     else:
         parts.append('<span class="pub-access-note">Closed access · Available upon request</span>')
@@ -213,6 +216,9 @@ def build_recent_entry_html(row):
 
 
 def build_year_block(year, rows, open_years=None):
+    if open_years is None:
+        open_years = set()
+
     open_attr = " open" if year in open_years else ""
     items = "\n\n".join(build_entry_html(row) for _, row in rows.iterrows())
 
@@ -289,6 +295,12 @@ def build_recent_html(df):
 
 
 def main():
+    if not DATA_FILE.exists():
+        raise FileNotFoundError(f"Excel file not found: {DATA_FILE}")
+
+    if not PUBLICATIONS_FILE.exists():
+        raise FileNotFoundError(f"HTML file not found: {PUBLICATIONS_FILE}")
+
     df = pd.read_excel(DATA_FILE)
     df.columns = df.columns.str.strip().str.lower()
     df = df.fillna("")
@@ -328,7 +340,7 @@ def main():
 
     recent_html = build_recent_html(df)
 
-    with open(PUBLICATIONS_FILE, "r", encoding="utf-8") as f:
+    with PUBLICATIONS_FILE.open("r", encoding="utf-8") as f:
         html_text = f.read()
 
     html_text = re.sub(
@@ -367,11 +379,14 @@ def main():
     else:
         print("Warning: YEARJUMP markers not found. Year jump links were not updated.")
 
-    with open(PUBLICATIONS_FILE, "w", encoding="utf-8") as f:
+    with PUBLICATIONS_FILE.open("w", encoding="utf-8") as f:
         f.write(html_text)
 
     print("✅ Recent publications, archive, and year controls updated successfully")
-    print(f"Total: {total_count} | Articles: {articles_count} | Chapters: {chapters_count} | Proceedings: {proceedings_count}")
+    print(
+        f"Total: {total_count} | Articles: {articles_count} | "
+        f"Chapters: {chapters_count} | Proceedings: {proceedings_count}"
+    )
     print("Years:", ", ".join(map(str, years)))
 
 
