@@ -7,7 +7,7 @@
     "title_norm": "exploring the potential of artificial intelligence tools in educational measurement and assessment",
     "publication_year": 2023,
     "publication_date": "2023-06-21",
-    "cited_by_count": 336,
+    "cited_by_count": 346,
     "cited_by_api_url": null,
     "type_": "article",
     "source_title": "Eurasia Journal of Mathematics Science and Technology Education",
@@ -24,8 +24,8 @@
     "cited_by_count": 32,
     "cited_by_api_url": null,
     "type_": "article",
-    "source_title": "SSRN Electronic Journal",
-    "pdf_url": null
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": "https://philpapers.org/archive/ROBSPO-10.pdf"
   },
   {
     "openalex_id": "W3003807272",
@@ -63,25 +63,11 @@
     "title_norm": "students perceptions attitudes and utilisation of chatgpt for academic dishonesty multigroup analyses via pls sem",
     "publication_year": 2024,
     "publication_date": "2024-07-03",
-    "cited_by_count": 17,
+    "cited_by_count": 18,
     "cited_by_api_url": null,
     "type_": "article",
     "source_title": "Education and Information Technologies",
     "pdf_url": null
-  },
-  {
-    "openalex_id": "W4285089225",
-    "openalex_url": "https://openalex.org/W4285089225",
-    "doi": "10.1155/2022/6536826",
-    "title": "Protein Quality Evaluation of Some Commonly Consumed Bird Egg Varieties Using Amino Acid Scores",
-    "title_norm": "protein quality evaluation of some commonly consumed bird egg varieties using amino acid scores",
-    "publication_year": 2022,
-    "publication_date": "2022-07-12",
-    "cited_by_count": 13,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Biochemistry Research International",
-    "pdf_url": "https://downloads.hindawi.com/journals/bri/2022/6536826.pdf"
   },
   {
     "openalex_id": "W4390917834",
@@ -91,7 +77,7 @@
     "title_norm": "institutional attributes and parents contentment with the quality of teaching care and safety of pupils in public primary schools",
     "publication_year": 2024,
     "publication_date": "2024-01-15",
-    "cited_by_count": 4,
+    "cited_by_count": 5,
     "cited_by_api_url": null,
     "type_": "article",
     "source_title": "Cogent Education",
@@ -119,7 +105,7 @@
     "title_norm": "curriculum management and graduate programmes viability the mediation of institutional effectiveness using pls sem approach",
     "publication_year": 2022,
     "publication_date": "2022-07-14",
-    "cited_by_count": 26,
+    "cited_by_count": 27,
     "cited_by_api_url": null,
     "type_": "article",
     "source_title": "Journal of Curriculum and Teaching",
@@ -252,20 +238,6 @@
     "pdf_url": "https://www.edupij.com/index/makale_indir/251"
   },
   {
-    "openalex_id": "W4226258808",
-    "openalex_url": "https://openalex.org/W4226258808",
-    "doi": "10.18488/73.v10i2.2952",
-    "title": "Interactive Analysis of Demographic Variables and Occupational Stress on University Lecturers’ Job Performance",
-    "title_norm": "interactive analysis of demographic variables and occupational stress on university lecturers job performance",
-    "publication_year": 2022,
-    "publication_date": "2022-04-06",
-    "cited_by_count": 17,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Humanities and Social Sciences Letters",
-    "pdf_url": "https://archive.conscientiabeam.com/index.php/73/article/download/2952/6128"
-  },
-  {
     "openalex_id": "W4306168911",
     "openalex_url": "https://openalex.org/W4306168911",
     "doi": "10.1080/2331186x.2022.2133491",
@@ -306,6 +278,20 @@
     "type_": "article",
     "source_title": "Mediterranean Journal of Social Sciences",
     "pdf_url": "https://www.richtmann.org/journal/index.php/mjss/article/download/10757/10366"
+  },
+  {
+    "openalex_id": "W4284678263",
+    "openalex_url": "https://openalex.org/W4284678263",
+    "doi": "10.5430/jct.v11n5p64",
+    "title": "Occupational Stress and Academic Staff Job Performance in Two Nigerian Universities",
+    "title_norm": "occupational stress and academic staff job performance in two nigerian universities",
+    "publication_year": 2022,
+    "publication_date": "2022-07-06",
+    "cited_by_count": 16,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Journal of Curriculum and Teaching",
+    "pdf_url": "https://www.sciedupress.com/journal/index.php/jct/article/download/22202/13775"
   },
   {
     "openalex_id": "W4307701773",
@@ -350,20 +336,6 @@
     "pdf_url": null
   },
   {
-    "openalex_id": "W4284678263",
-    "openalex_url": "https://openalex.org/W4284678263",
-    "doi": "10.5430/jct.v11n5p64",
-    "title": "Occupational Stress and Academic Staff Job Performance in Two Nigerian Universities",
-    "title_norm": "occupational stress and academic staff job performance in two nigerian universities",
-    "publication_year": 2022,
-    "publication_date": "2022-07-06",
-    "cited_by_count": 15,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Journal of Curriculum and Teaching",
-    "pdf_url": "https://www.sciedupress.com/journal/index.php/jct/article/download/22202/13775"
-  },
-  {
     "openalex_id": "W2914580907",
     "openalex_url": "https://openalex.org/W2914580907",
     "doi": "10.18488/journal.73.2018.64.203.210",
@@ -390,6 +362,20 @@
     "type_": "article",
     "source_title": "American Journal of Education and Information Technology",
     "pdf_url": null
+  },
+  {
+    "openalex_id": "W4285089225",
+    "openalex_url": "https://openalex.org/W4285089225",
+    "doi": "10.1155/2022/6536826",
+    "title": "Protein Quality Evaluation of Some Commonly Consumed Bird Egg Varieties Using Amino Acid Scores",
+    "title_norm": "protein quality evaluation of some commonly consumed bird egg varieties using amino acid scores",
+    "publication_year": 2022,
+    "publication_date": "2022-07-12",
+    "cited_by_count": 13,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Biochemistry Research International",
+    "pdf_url": "https://downloads.hindawi.com/journals/bri/2022/6536826.pdf"
   },
   {
     "openalex_id": "W3134185071",
@@ -420,20 +406,6 @@
     "pdf_url": null
   },
   {
-    "openalex_id": "W4318618282",
-    "openalex_url": "https://openalex.org/W4318618282",
-    "doi": "10.33902/jpr.202319099",
-    "title": "Family and community inputs as predictors of students overall, cognitive, affective and psychomotor learning outcomes in secondary schools",
-    "title_norm": "family and community inputs as predictors of students overall cognitive affective and psychomotor learning outcomes in secondary schools",
-    "publication_year": 2023,
-    "publication_date": "2023-01-31",
-    "cited_by_count": 11,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Journal of Pedagogical Research",
-    "pdf_url": "https://www.ijopr.com/download/family-and-community-inputs-as-predictors-of-students-overall-cognitive-affective-and-psychomotor-12915.pdf"
-  },
-  {
     "openalex_id": "W3104153774",
     "openalex_url": "https://openalex.org/W3104153774",
     "doi": null,
@@ -455,7 +427,7 @@
     "title_norm": "predicting users behavior gender and age as interactive antecedents of students facebook use for research data collection",
     "publication_year": 2024,
     "publication_date": "2024-01-05",
-    "cited_by_count": 9,
+    "cited_by_count": 10,
     "cited_by_api_url": null,
     "type_": "article",
     "source_title": "Online Journal of Communication and Media Technologies",
@@ -472,22 +444,8 @@
     "cited_by_count": 8,
     "cited_by_api_url": null,
     "type_": "article",
-    "source_title": "SSRN Electronic Journal",
-    "pdf_url": null
-  },
-  {
-    "openalex_id": "W4310459518",
-    "openalex_url": "https://openalex.org/W4310459518",
-    "doi": "10.4103/jehp.jehp_417_22",
-    "title": "Interlinking alcohol intake, mental stress, psychotic experiences and job performance of higher institutions’ graduates",
-    "title_norm": "interlinking alcohol intake mental stress psychotic experiences and job performance of higher institutions graduates",
-    "publication_year": 2022,
-    "publication_date": "2022-01-01",
-    "cited_by_count": 7,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Journal of Education and Health Promotion",
-    "pdf_url": null
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": "https://philpapers.org/archive/AROPEA.pdf"
   },
   {
     "openalex_id": "W4413779695",
@@ -502,62 +460,6 @@
     "type_": "article",
     "source_title": "Discover Education",
     "pdf_url": "https://link.springer.com/content/pdf/10.1007/s44217-025-00770-6.pdf"
-  },
-  {
-    "openalex_id": "W4226191219",
-    "openalex_url": "https://openalex.org/W4226191219",
-    "doi": "10.12688/f1000research.54245.3",
-    "title": "Dataset of the adoption of digital tools for research sharing among academics in African Varsities during the COVID-19 pandemic in 2020",
-    "title_norm": "dataset of the adoption of digital tools for research sharing among academics in african varsities during the covid 19 pandemic in 2020",
-    "publication_year": 2022,
-    "publication_date": "2022-04-04",
-    "cited_by_count": 5,
-    "cited_by_api_url": null,
-    "type_": "preprint",
-    "source_title": "F1000Research",
-    "pdf_url": "https://f1000research.com/articles/11-82/v3/pdf"
-  },
-  {
-    "openalex_id": "W4283167266",
-    "openalex_url": "https://openalex.org/W4283167266",
-    "doi": "10.4018/978-1-6684-3364-5.ch009",
-    "title": "A Data Mining Algorithm for Accessing Research Literature in Electronic Databases",
-    "title_norm": "a data mining algorithm for accessing research literature in electronic databases",
-    "publication_year": 2022,
-    "publication_date": "2022-06-20",
-    "cited_by_count": 4,
-    "cited_by_api_url": null,
-    "type_": "book-chapter",
-    "source_title": "Advances in knowledge acquisition, transfer, and management book series/Advances in knowledge acquisition, transfer and management book series",
-    "pdf_url": null
-  },
-  {
-    "openalex_id": "W4388924217",
-    "openalex_url": "https://openalex.org/W4388924217",
-    "doi": "10.37074/jalt.2023.6.2.37",
-    "title": "Construction and standardisation of an instrument measuring lecturers’ persistence to publish in Scopus-indexed journals",
-    "title_norm": "construction and standardisation of an instrument measuring lecturers persistence to publish in scopus indexed journals",
-    "publication_year": 2023,
-    "publication_date": "2023-11-22",
-    "cited_by_count": 4,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Journal of Applied Learning & Teaching",
-    "pdf_url": "https://journals.sfu.ca/jalt/index.php/jalt/article/download/1315/683"
-  },
-  {
-    "openalex_id": "W4392343738",
-    "openalex_url": "https://openalex.org/W4392343738",
-    "doi": "10.37074/jalt.2024.7.1.19",
-    "title": "Metrics in research impact assessment and grant funding: Insights from researchers in the “Reviewer 2 Must Be Stopped!” Facebook group",
-    "title_norm": "metrics in research impact assessment and grant funding insights from researchers in the reviewer 2 must be stopped facebook group",
-    "publication_year": 2024,
-    "publication_date": "2024-03-03",
-    "cited_by_count": 4,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Journal of Applied Learning & Teaching",
-    "pdf_url": "https://journals.sfu.ca/jalt/index.php/jalt/article/download/1593/749"
   },
   {
     "openalex_id": "W4399989844",
@@ -588,34 +490,6 @@
     "pdf_url": "https://www.richtmann.org/journal/index.php/jesr/article/download/13524/13084"
   },
   {
-    "openalex_id": "W4413409749",
-    "openalex_url": "https://openalex.org/W4413409749",
-    "doi": "10.29333/pr/16808",
-    "title": "An evaluation of the input, processes, and outcomes of the national youth service corps program in Nigeria",
-    "title_norm": "an evaluation of the input processes and outcomes of the national youth service corps program in nigeria",
-    "publication_year": 2025,
-    "publication_date": "2025-08-22",
-    "cited_by_count": 2,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Pedagogical Research",
-    "pdf_url": "https://www.pedagogicalresearch.com/download/an-evaluation-of-the-input-processes-and-outcomes-of-the-national-youth-service-corps-program-in-16808.pdf"
-  },
-  {
-    "openalex_id": "W4414957440",
-    "openalex_url": "https://openalex.org/W4414957440",
-    "doi": "10.30935/cedtech/17243",
-    "title": "Higher education students’ ChatGPT use behavior: Structural equation modelling of contributing factors through a modified UTAUT model",
-    "title_norm": "higher education students chatgpt use behavior structural equation modelling of contributing factors through a modified utaut model",
-    "publication_year": 2025,
-    "publication_date": "2025-10-08",
-    "cited_by_count": 2,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Contemporary Educational Technology",
-    "pdf_url": "https://www.cedtech.net/download/higher-education-students-chatgpt-use-behavior-structural-equation-modelling-of-contributing-factors-17243.pdf"
-  },
-  {
     "openalex_id": "W4390281097",
     "openalex_url": "https://openalex.org/W4390281097",
     "doi": "10.33422/7th.icreconf.2023.09.100",
@@ -630,18 +504,18 @@
     "pdf_url": "https://www.dpublication.com/wp-content/uploads/2023/09/57-5911-IC.pdf"
   },
   {
-    "openalex_id": "W4402005734",
-    "openalex_url": "https://openalex.org/W4402005734",
-    "doi": "10.4314/gjedr.v23i3.2",
-    "title": "Process Errors Committed By Senior Secondary School Students In Solving Problems In Geometry In Cross River State, Nigeria",
-    "title_norm": "process errors committed by senior secondary school students in solving problems in geometry in cross river state nigeria",
-    "publication_year": 2024,
-    "publication_date": "2024-08-20",
-    "cited_by_count": 1,
+    "openalex_id": "W3016015362",
+    "openalex_url": "https://openalex.org/W3016015362",
+    "doi": "10.29333/pr/7940",
+    "title": "Undergraduates’ Utilization of Social Networking Media and Sexual Behaviours in Higher Education: A Case Study",
+    "title_norm": "undergraduates utilization of social networking media and sexual behaviours in higher education a case study",
+    "publication_year": 2020,
+    "publication_date": "2020-04-07",
+    "cited_by_count": 17,
     "cited_by_api_url": null,
     "type_": "article",
-    "source_title": "Global Journal of Educational Research",
-    "pdf_url": "https://www.ajol.info/index.php/gjedr/article/download/276551/260964"
+    "source_title": "Pedagogical Research",
+    "pdf_url": "https://www.pedagogicalresearch.com/download/undergraduates-utilization-of-social-networking-media-and-sexual-behaviours-in-higher-education-a-7940.pdf"
   },
   {
     "openalex_id": "W3111110982",
@@ -658,18 +532,18 @@
     "pdf_url": null
   },
   {
-    "openalex_id": "W3016015362",
-    "openalex_url": "https://openalex.org/W3016015362",
-    "doi": "10.29333/pr/7940",
-    "title": "Undergraduates’ Utilization of Social Networking Media and Sexual Behaviours in Higher Education: A Case Study",
-    "title_norm": "undergraduates utilization of social networking media and sexual behaviours in higher education a case study",
-    "publication_year": 2020,
-    "publication_date": "2020-04-07",
-    "cited_by_count": 16,
+    "openalex_id": "W4226258808",
+    "openalex_url": "https://openalex.org/W4226258808",
+    "doi": "10.18488/73.v10i2.2952",
+    "title": "Interactive Analysis of Demographic Variables and Occupational Stress on University Lecturers’ Job Performance",
+    "title_norm": "interactive analysis of demographic variables and occupational stress on university lecturers job performance",
+    "publication_year": 2022,
+    "publication_date": "2022-04-06",
+    "cited_by_count": 17,
     "cited_by_api_url": null,
     "type_": "article",
-    "source_title": "Pedagogical Research",
-    "pdf_url": "https://www.pedagogicalresearch.com/download/undergraduates-utilization-of-social-networking-media-and-sexual-behaviours-in-higher-education-a-7940.pdf"
+    "source_title": "Humanities and Social Sciences Letters",
+    "pdf_url": "https://archive.conscientiabeam.com/index.php/73/article/download/2952/6128"
   },
   {
     "openalex_id": "W3025439386",
@@ -742,6 +616,20 @@
     "pdf_url": "https://www.pedagogicalresearch.com/download/assessment-of-socio-demographic-factors-and-students-satisfaction-with-the-study-of-ict-in-secondary-11087.pdf"
   },
   {
+    "openalex_id": "W4318618282",
+    "openalex_url": "https://openalex.org/W4318618282",
+    "doi": "10.33902/jpr.202319099",
+    "title": "Family and community inputs as predictors of students overall, cognitive, affective and psychomotor learning outcomes in secondary schools",
+    "title_norm": "family and community inputs as predictors of students overall cognitive affective and psychomotor learning outcomes in secondary schools",
+    "publication_year": 2023,
+    "publication_date": "2023-01-31",
+    "cited_by_count": 11,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Journal of Pedagogical Research",
+    "pdf_url": "https://www.ijopr.com/download/family-and-community-inputs-as-predictors-of-students-overall-cognitive-affective-and-psychomotor-12915.pdf"
+  },
+  {
     "openalex_id": "W3171779140",
     "openalex_url": "https://openalex.org/W3171779140",
     "doi": "10.31235/osf.io/q5gfk",
@@ -812,6 +700,48 @@
     "pdf_url": "https://www.richtmann.org/journal/index.php/jicd/article/download/12715/12314"
   },
   {
+    "openalex_id": "W4293213751",
+    "openalex_url": "https://openalex.org/W4293213751",
+    "doi": "10.18848/1835-9795/cgp/v15i02/87-104",
+    "title": "Usage of Electronic Infrastructures and Students’ Learning Effectiveness in Nigerian Universities: A Polytomous Logistic Prediction",
+    "title_norm": "usage of electronic infrastructures and students learning effectiveness in nigerian universities a polytomous logistic prediction",
+    "publication_year": 2022,
+    "publication_date": "2022-01-01",
+    "cited_by_count": 7,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Ubiquitous Learning An International Journal",
+    "pdf_url": null
+  },
+  {
+    "openalex_id": "W4310459518",
+    "openalex_url": "https://openalex.org/W4310459518",
+    "doi": "10.4103/jehp.jehp_417_22",
+    "title": "Interlinking alcohol intake, mental stress, psychotic experiences and job performance of higher institutions’ graduates",
+    "title_norm": "interlinking alcohol intake mental stress psychotic experiences and job performance of higher institutions graduates",
+    "publication_year": 2022,
+    "publication_date": "2022-01-01",
+    "cited_by_count": 7,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Journal of Education and Health Promotion",
+    "pdf_url": null
+  },
+  {
+    "openalex_id": "W4307368972",
+    "openalex_url": "https://openalex.org/W4307368972",
+    "doi": "10.37074/jalt.2022.5.2.13",
+    "title": "Discharge of pedagogic duties: a bootstrapped structural equation modelling of teachers’ use of research materials in school libraries",
+    "title_norm": "discharge of pedagogic duties a bootstrapped structural equation modelling of teachers use of research materials in school libraries",
+    "publication_year": 2022,
+    "publication_date": "2022-10-25",
+    "cited_by_count": 6,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Journal of Applied Learning & Teaching",
+    "pdf_url": "https://journals.sfu.ca/jalt/index.php/jalt/article/download/617/503"
+  },
+  {
     "openalex_id": "W4388669050",
     "openalex_url": "https://openalex.org/W4388669050",
     "doi": "10.17718/tojde.1138050",
@@ -824,6 +754,104 @@
     "type_": "article",
     "source_title": "Turkish Online Journal of Distance Education",
     "pdf_url": "https://dergipark.org.tr/en/download/article-file/2516030"
+  },
+  {
+    "openalex_id": "W4226191219",
+    "openalex_url": "https://openalex.org/W4226191219",
+    "doi": "10.12688/f1000research.54245.3",
+    "title": "Dataset of the adoption of digital tools for research sharing among academics in African Varsities during the COVID-19 pandemic in 2020",
+    "title_norm": "dataset of the adoption of digital tools for research sharing among academics in african varsities during the covid 19 pandemic in 2020",
+    "publication_year": 2022,
+    "publication_date": "2022-04-04",
+    "cited_by_count": 5,
+    "cited_by_api_url": null,
+    "type_": "preprint",
+    "source_title": "F1000Research",
+    "pdf_url": "https://f1000research.com/articles/11-82/v3/pdf"
+  },
+  {
+    "openalex_id": "W4283167266",
+    "openalex_url": "https://openalex.org/W4283167266",
+    "doi": "10.4018/978-1-6684-3364-5.ch009",
+    "title": "A Data Mining Algorithm for Accessing Research Literature in Electronic Databases",
+    "title_norm": "a data mining algorithm for accessing research literature in electronic databases",
+    "publication_year": 2022,
+    "publication_date": "2022-06-20",
+    "cited_by_count": 4,
+    "cited_by_api_url": null,
+    "type_": "book-chapter",
+    "source_title": "Advances in knowledge acquisition, transfer, and management book series/Advances in knowledge acquisition, transfer and management book series",
+    "pdf_url": null
+  },
+  {
+    "openalex_id": "W4388924217",
+    "openalex_url": "https://openalex.org/W4388924217",
+    "doi": "10.37074/jalt.2023.6.2.37",
+    "title": "Construction and standardisation of an instrument measuring lecturers’ persistence to publish in Scopus-indexed journals",
+    "title_norm": "construction and standardisation of an instrument measuring lecturers persistence to publish in scopus indexed journals",
+    "publication_year": 2023,
+    "publication_date": "2023-11-22",
+    "cited_by_count": 4,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Journal of Applied Learning & Teaching",
+    "pdf_url": "https://journals.sfu.ca/jalt/index.php/jalt/article/download/1315/683"
+  },
+  {
+    "openalex_id": "W4392343738",
+    "openalex_url": "https://openalex.org/W4392343738",
+    "doi": "10.37074/jalt.2024.7.1.19",
+    "title": "Metrics in research impact assessment and grant funding: Insights from researchers in the “Reviewer 2 Must Be Stopped!” Facebook group",
+    "title_norm": "metrics in research impact assessment and grant funding insights from researchers in the reviewer 2 must be stopped facebook group",
+    "publication_year": 2024,
+    "publication_date": "2024-03-03",
+    "cited_by_count": 4,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Journal of Applied Learning & Teaching",
+    "pdf_url": "https://journals.sfu.ca/jalt/index.php/jalt/article/download/1593/749"
+  },
+  {
+    "openalex_id": "W4413409749",
+    "openalex_url": "https://openalex.org/W4413409749",
+    "doi": "10.29333/pr/16808",
+    "title": "An evaluation of the input, processes, and outcomes of the national youth service corps program in Nigeria",
+    "title_norm": "an evaluation of the input processes and outcomes of the national youth service corps program in nigeria",
+    "publication_year": 2025,
+    "publication_date": "2025-08-22",
+    "cited_by_count": 2,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Pedagogical Research",
+    "pdf_url": "https://www.pedagogicalresearch.com/download/an-evaluation-of-the-input-processes-and-outcomes-of-the-national-youth-service-corps-program-in-16808.pdf"
+  },
+  {
+    "openalex_id": "W4414957440",
+    "openalex_url": "https://openalex.org/W4414957440",
+    "doi": "10.30935/cedtech/17243",
+    "title": "Higher education students’ ChatGPT use behavior: Structural equation modelling of contributing factors through a modified UTAUT model",
+    "title_norm": "higher education students chatgpt use behavior structural equation modelling of contributing factors through a modified utaut model",
+    "publication_year": 2025,
+    "publication_date": "2025-10-08",
+    "cited_by_count": 2,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Contemporary Educational Technology",
+    "pdf_url": "https://www.cedtech.net/download/higher-education-students-chatgpt-use-behavior-structural-equation-modelling-of-contributing-factors-17243.pdf"
+  },
+  {
+    "openalex_id": "W4402005734",
+    "openalex_url": "https://openalex.org/W4402005734",
+    "doi": "10.4314/gjedr.v23i3.2",
+    "title": "Process Errors Committed By Senior Secondary School Students In Solving Problems In Geometry In Cross River State, Nigeria",
+    "title_norm": "process errors committed by senior secondary school students in solving problems in geometry in cross river state nigeria",
+    "publication_year": 2024,
+    "publication_date": "2024-08-20",
+    "cited_by_count": 1,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Global Journal of Educational Research",
+    "pdf_url": "https://www.ajol.info/index.php/gjedr/article/download/276551/260964"
   },
   {
     "openalex_id": "W3123222233",
@@ -938,20 +966,6 @@
     "pdf_url": "https://philpapers.org/archive/AROECM.pdf"
   },
   {
-    "openalex_id": "W4293213751",
-    "openalex_url": "https://openalex.org/W4293213751",
-    "doi": "10.18848/1835-9795/cgp/v15i02/87-104",
-    "title": "Usage of Electronic Infrastructures and Students’ Learning Effectiveness in Nigerian Universities: A Polytomous Logistic Prediction",
-    "title_norm": "usage of electronic infrastructures and students learning effectiveness in nigerian universities a polytomous logistic prediction",
-    "publication_year": 2022,
-    "publication_date": "2022-01-01",
-    "cited_by_count": 7,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Ubiquitous Learning An International Journal",
-    "pdf_url": null
-  },
-  {
     "openalex_id": "W3200727152",
     "openalex_url": "https://openalex.org/W3200727152",
     "doi": "10.5281/zenodo.4458670",
@@ -966,20 +980,6 @@
     "pdf_url": null
   },
   {
-    "openalex_id": "W4307368972",
-    "openalex_url": "https://openalex.org/W4307368972",
-    "doi": "10.37074/jalt.2022.5.2.13",
-    "title": "Discharge of pedagogic duties: a bootstrapped structural equation modelling of teachers’ use of research materials in school libraries",
-    "title_norm": "discharge of pedagogic duties a bootstrapped structural equation modelling of teachers use of research materials in school libraries",
-    "publication_year": 2022,
-    "publication_date": "2022-10-25",
-    "cited_by_count": 6,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Journal of Applied Learning & Teaching",
-    "pdf_url": "https://journals.sfu.ca/jalt/index.php/jalt/article/download/617/503"
-  },
-  {
     "openalex_id": "W3033835510",
     "openalex_url": "https://openalex.org/W3033835510",
     "doi": "10.5281/zenodo.4320553",
@@ -990,8 +990,8 @@
     "cited_by_count": 5,
     "cited_by_api_url": null,
     "type_": "article",
-    "source_title": "Zenodo (CERN European Organization for Nuclear Research)",
-    "pdf_url": "https://zenodo.org/record/4320554"
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": "https://philpapers.org/archive/AROSHM.pdf"
   },
   {
     "openalex_id": "W3042353751",
@@ -1019,7 +1019,7 @@
     "cited_by_api_url": null,
     "type_": "article",
     "source_title": "PhilPapers (PhilPapers Foundation)",
-    "pdf_url": null
+    "pdf_url": "https://philpapers.org/archive/BASHTI.pdf"
   },
   {
     "openalex_id": "W4308566745",
@@ -1214,8 +1214,8 @@
     "cited_by_count": 5,
     "cited_by_api_url": null,
     "type_": "article",
-    "source_title": "Zenodo (CERN European Organization for Nuclear Research)",
-    "pdf_url": "https://zenodo.org/record/4320499"
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": "https://philpapers.org/archive/OWACSO.pdf"
   },
   {
     "openalex_id": "W3101951373",
@@ -1228,8 +1228,8 @@
     "cited_by_count": 5,
     "cited_by_api_url": null,
     "type_": "article",
-    "source_title": "SSRN Electronic Journal",
-    "pdf_url": null
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": "https://philpapers.org/archive/AROSQI.pdf"
   },
   {
     "openalex_id": "W3003234242",
@@ -1662,8 +1662,8 @@
     "cited_by_count": 5,
     "cited_by_api_url": null,
     "type_": "article",
-    "source_title": "Zenodo (CERN European Organization for Nuclear Research)",
-    "pdf_url": "https://zenodo.org/record/4458688"
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": "https://philpapers.org/archive/MBOAOT.pdf"
   },
   {
     "openalex_id": "W3103391280",
@@ -1691,7 +1691,7 @@
     "cited_by_api_url": null,
     "type_": "article",
     "source_title": "PhilPapers (PhilPapers Foundation)",
-    "pdf_url": null
+    "pdf_url": "https://philpapers.org/archive/AROTSS-2.pdf"
   },
   {
     "openalex_id": "W3104354946",
@@ -1704,8 +1704,8 @@
     "cited_by_count": 3,
     "cited_by_api_url": null,
     "type_": "article",
-    "source_title": "SSRN Electronic Journal",
-    "pdf_url": null
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": "https://philpapers.org/archive/OWAVTD.pdf"
   },
   {
     "openalex_id": "W3122896011",
@@ -1718,8 +1718,8 @@
     "cited_by_count": 3,
     "cited_by_api_url": null,
     "type_": "article",
-    "source_title": "SSRN Electronic Journal",
-    "pdf_url": null
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": "https://philpapers.org/archive/OWAAOT.pdf"
   },
   {
     "openalex_id": "W3014681614",
@@ -1761,7 +1761,7 @@
     "cited_by_api_url": null,
     "type_": "article",
     "source_title": "PhilPapers (PhilPapers Foundation)",
-    "pdf_url": null
+    "pdf_url": "https://philpapers.org/archive/OWAAPM.pdf"
   },
   {
     "openalex_id": "W3166174111",
@@ -2222,8 +2222,8 @@
     "cited_by_count": 0,
     "cited_by_api_url": null,
     "type_": "article",
-    "source_title": "SSRN Electronic Journal",
-    "pdf_url": null
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": "https://philpapers.org/archive/OWAIEO.pdf"
   },
   {
     "openalex_id": "W3161550368",
@@ -2348,8 +2348,8 @@
     "cited_by_count": 0,
     "cited_by_api_url": null,
     "type_": "article",
-    "source_title": "SSRN Electronic Journal",
-    "pdf_url": null
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": "https://philpapers.org/archive/OWAAOS.pdf"
   },
   {
     "openalex_id": "W3186335555",
@@ -2770,5 +2770,19 @@
     "type_": "article",
     "source_title": "Discover Public Health",
     "pdf_url": "https://link.springer.com/content/pdf/10.1186/s12982-026-01447-7.pdf"
+  },
+  {
+    "openalex_id": "W7128953157",
+    "openalex_url": "https://openalex.org/W7128953157",
+    "doi": "10.29333/pr/17918",
+    "title": "Institutional climate, size, and culture in relation to academic staff teaching, community service, and research performance in Nigerian universities",
+    "title_norm": "institutional climate size and culture in relation to academic staff teaching community service and research performance in nigerian universities",
+    "publication_year": 2026,
+    "publication_date": "2026-02-15",
+    "cited_by_count": 0,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Pedagogical Research",
+    "pdf_url": "https://www.pedagogicalresearch.com/download/institutional-climate-size-and-culture-in-relation-to-academic-staff-teaching-community-service-and-17918.pdf"
   }
 ]
