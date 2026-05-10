@@ -1,3 +1,4 @@
+```css
 /* ===== Footer upgrade: sitemap + logos + note ===== */
 
 .site-footer{
@@ -74,3 +75,11 @@
   .footer-links{ gap:10px; }
   .footer-logo{ height:26px; }
 }
+
+/* ===== Global navigation support for Reflections ===== */
+
+.site-nav a[href*="quotes"],
+.footer-links a[href*="quotes"]{
+  position:relative;
+}
+```
