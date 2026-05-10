@@ -1,85 +1,60 @@
-```css
-/* ===== Footer upgrade: sitemap + logos + note ===== */
+/* ===== Mobile navigation toggle ===== */
 
-.site-footer{
-  background: rgba(17,24,39,.02);
-}
+document.addEventListener("DOMContentLoaded", () => {
 
-.footer-top{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:14px;
-  flex-wrap:wrap;
-  padding-top: 10px;
-}
+  const navToggle = document.querySelector(".nav-toggle");
+  const siteNav = document.querySelector("#site-nav");
 
-.footer-copy{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  flex-wrap:wrap;
-  font-size:13px;
-  color:var(--muted);
-}
+  if(navToggle && siteNav){
 
-.footer-sep{
-  opacity:.7;
-}
+    navToggle.addEventListener("click", () => {
 
-.footer-affil-text{
-  color:var(--muted);
-}
+      const expanded =
+        navToggle.getAttribute("aria-expanded") === "true";
 
-.footer-note{
-  margin-top:10px;
-  color:var(--muted);
-  font-size:13px;
-}
+      navToggle.setAttribute(
+        "aria-expanded",
+        !expanded
+      );
 
-.footer-logos{
-  margin-top:14px;
-  display:flex;
-  align-items:center;
-  gap:14px;
-  flex-wrap:wrap;
-  padding-bottom: 4px;
-}
+      siteNav.classList.toggle("open");
 
-.logo-link{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:8px 10px;
-  border-radius:12px;
-  border:1px solid var(--line);
-  background: rgba(255,255,255,.7);
-  text-decoration:none;
-}
+    });
 
-.logo-link:hover{
-  background: rgba(17,24,39,.03);
-  border-color: rgba(47,111,237,.25);
-}
+  }
 
-.footer-logo{
-  height:28px;
-  width:auto;
-  display:block;
-  filter: saturate(1.05) contrast(1.03);
-}
+});
 
-/* Responsive footer polish */
-@media (max-width:720px){
-  .footer-top{ gap:10px; }
-  .footer-links{ gap:10px; }
-  .footer-logo{ height:26px; }
-}
 
-/* ===== Global navigation support for Reflections ===== */
+/* ===== Auto-update footer year ===== */
 
-.site-nav a[href*="quotes"],
-.footer-links a[href*="quotes"]{
-  position:relative;
-}
-```
+document.addEventListener("DOMContentLoaded", () => {
+
+  const yearElement =
+    document.getElementById("year");
+
+  if(yearElement){
+
+    yearElement.textContent =
+      new Date().getFullYear();
+
+  }
+
+});
+
+
+/* ===== Rename Quotes navigation globally ===== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  document.querySelectorAll("a").forEach(link => {
+
+    if(link.textContent.trim() === "Quotes"){
+
+      link.textContent = "Reflections";
+
+    }
+
+  });
+
+});

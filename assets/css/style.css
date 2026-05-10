@@ -562,3 +562,12 @@ body:has(.site-nav .nav-link.active[href="about.html"]) .profile-card .avatar-im
     max-width:110px;
   }
 }
+/* =========================================================
+   Reflections Navigation Support
+   Keeps quotes.html filename while JS changes visible text
+   ========================================================= */
+
+.site-nav a[href*="quotes"],
+.footer-links a[href*="quotes"]{
+  position:relative;
+}
