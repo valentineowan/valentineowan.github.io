@@ -94,6 +94,7 @@
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
   gap:24px;
+  align-items:stretch;
 }
 
 .quote-card{
@@ -103,6 +104,11 @@
   border:1px solid rgba(0,0,0,.06);
   box-shadow:0 8px 30px rgba(0,0,0,.04);
   transition:.25s ease;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  height:100%;
 }
 
 .quote-card:hover{
@@ -113,12 +119,14 @@
   font-size:18px;
   line-height:1.8;
   margin-bottom:20px;
+  flex-grow:1;
 }
 
 .quote-author{
   font-size:14px;
   color:var(--muted);
   font-weight:600;
+  margin-top:auto;
 }
 
 .quote-category{
@@ -135,7 +143,19 @@
 }
 
 .hidden{
-  display:none;
+  display:none !important;
+}
+
+@media (max-width:768px){
+
+.quote-hero h1{
+  font-size:38px;
+}
+
+.quote-grid{
+  grid-template-columns:1fr;
+}
+
 }
 
 </style>
@@ -235,651 +255,222 @@ Motivational Quotes
 
 <!-- PUBLICATION PERSISTENCE -->
 
-<article class="quote-card"
-         data-category="publication">
-
-<div class="quote-category">
-Publication Persistence
-</div>
-
+<article class="quote-card" data-category="publication">
+<div class="quote-category">Publication Persistence</div>
 <div class="quote-text">
-“Many good scholars do not stop publishing because they lack intelligence. They stop because translating scholarly ability into visible publication is far more fragile than academic culture admits.”
+“Many good scholars do not stop publishing because they lack intelligence, but because translating scholarly ability into visible publication is far more fragile than academic culture admits.”
 </div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
+<div class="quote-author">— Valentine Joseph Owan</div>
 </article>
 
-<article class="quote-card"
-         data-category="publication">
-
-<div class="quote-category">
-Publication Persistence
-</div>
-
+<article class="quote-card" data-category="publication">
+<div class="quote-category">Publication Persistence</div>
 <div class="quote-text">
-“Publication is not merely writing. It is the successful movement of scholarly work through a complex evaluative system.”
+“Rejection is not, and has never been, a death sentence for scholars; you either persist or desist, and if it is the latter, you exist in intellectual obscurity while others revise, resubmit, and rise.”
 </div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
+<div class="quote-author">— Valentine Joseph Owan</div>
 </article>
 
-<article class="quote-card"
-         data-category="publication">
-
-<div class="quote-category">
-Publication Persistence
-</div>
-
+<article class="quote-card" data-category="publication">
+<div class="quote-category">Publication Persistence</div>
 <div class="quote-text">
-“Persistence in publishing is not emotional invulnerability; it is the disciplined return to unfinished scholarly work.”
+“A rejected manuscript is not a buried idea; it is often a study still searching for its proper scholarly home.”
 </div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
+<div class="quote-author">— Valentine Joseph Owan</div>
 </article>
 
-<article class="quote-card"
-         data-category="publication">
-
-<div class="quote-category">
-Publication Persistence
-</div>
-
+<article class="quote-card" data-category="publication">
+<div class="quote-category">Publication Persistence</div>
 <div class="quote-text">
-“A well-written paper is not automatically a publishable paper.”
+“Many scholars abandon publication not because they lack ability, but because they underestimate the emotional endurance academic writing demands.”
 </div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
+<div class="quote-author">— Valentine Joseph Owan</div>
 </article>
 
-<article class="quote-card"
-         data-category="publication">
-
-<div class="quote-category">
-Publication Persistence
-</div>
-
+<article class="quote-card" data-category="publication">
+<div class="quote-category">Publication Persistence</div>
 <div class="quote-text">
-“Publication success depends not only on scholarly ability, but also on the capacity to continue after criticism, delay, revision, and rejection.”
+“Research begins with curiosity, but publication survives on continuity.”
 </div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
+<div class="quote-author">— Valentine Joseph Owan</div>
 </article>
 
-<article class="quote-card"
-         data-category="publication">
-
-<div class="quote-category">
-Publication Persistence
-</div>
-
+<article class="quote-card" data-category="publication">
+<div class="quote-category">Publication Persistence</div>
 <div class="quote-text">
-“Many scholars possess strong research ability but weaker publication ability.”
+“A well-written paper is not automatically a publishable paper. The distance between a working paper and a published paper is often persistence.”
 </div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
+<div class="quote-author">— Valentine Joseph Owan</div>
 </article>
 
-<article class="quote-card"
-         data-category="publication">
-
-<div class="quote-category">
-Publication Persistence
-</div>
-
+<article class="quote-card" data-category="publication">
+<div class="quote-category">Publication Persistence</div>
 <div class="quote-text">
-“Publication records partly measure who has learned how to convert scholarly potential into visible academic output.”
+“In scholarly publishing, interruption is common; return is uncommon.”
 </div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
+<div class="quote-author">— Valentine Joseph Owan</div>
 </article>
 
-<article class="quote-card"
-         data-category="publication">
-
-<div class="quote-category">
-Publication Persistence
-</div>
-
+<article class="quote-card" data-category="publication">
+<div class="quote-category">Publication Persistence</div>
 <div class="quote-text">
-“Publishing is not simply a test of intelligence. It is also a test of continuity.”
+“Many can write; few can rewrite. Yet scholarship advances more through rewriting than writing.”
 </div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
+<div class="quote-author">— Valentine Joseph Owan</div>
 </article>
 
-<article class="quote-card"
-         data-category="publication">
-
-<div class="quote-category">
-Publication Persistence
-</div>
-
+<article class="quote-card" data-category="publication">
+<div class="quote-category">Publication Persistence</div>
 <div class="quote-text">
-“Rejection is not necessarily evidence of weak research. Often, it is evidence of participating in a competitive publication system.”
+“A manuscript rarely fails only once; publication belongs to those who continue after repeated revision.”
 </div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
+<div class="quote-author">— Valentine Joseph Owan</div>
 </article>
 
-<article class="quote-card"
-         data-category="publication">
-
-<div class="quote-category">
-Publication Persistence
-</div>
-
+<article class="quote-card" data-category="publication">
+<div class="quote-category">Publication Persistence</div>
 <div class="quote-text">
-“The problem for many scholars is not starting research, but sustaining engagement when publication becomes difficult.”
+“Publication is partly a test of intellect, but largely a test of scholarly endurance and continuity.”
 </div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
+<div class="quote-author">— Valentine Joseph Owan</div>
 </article>
 
-<article class="quote-card"
-         data-category="publication">
-
-<div class="quote-category">
-Publication Persistence
+<article class="quote-card" data-category="publication">
+<div class="quote-category">Publication Persistence</div>
+<div class="quote-text">
+“Some manuscripts benefit from peer review; others survive only because revision refused to let them fail.”
 </div>
+<div class="quote-author">— Valentine Joseph Owan</div>
+</article>
 
+<article class="quote-card" data-category="publication">
+<div class="quote-category">Publication Persistence</div>
+<div class="quote-text">
+“What inexperienced scholars read as condemnation, experienced scholars often read as diagnostic commentary.”
+</div>
+<div class="quote-author">— Valentine Joseph Owan</div>
+</article>
+
+<article class="quote-card" data-category="publication">
+<div class="quote-category">Publication Persistence</div>
 <div class="quote-text">
 “Publication persistence concerns behavioural return, not the absence of discouragement.”
 </div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
+<div class="quote-author">— Valentine Joseph Owan</div>
 </article>
 
-<article class="quote-card"
-         data-category="publication">
-
-<div class="quote-category">
-Publication Persistence
-</div>
-
+<article class="quote-card" data-category="publication">
+<div class="quote-category">Publication Persistence</div>
 <div class="quote-text">
 “Strong articles submitted to the wrong journal often fail for reasons unrelated to intrinsic quality.”
 </div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
+<div class="quote-author">— Valentine Joseph Owan</div>
 </article>
 
-<article class="quote-card"
-         data-category="publication">
-
-<div class="quote-category">
-Publication Persistence
-</div>
-
+<article class="quote-card" data-category="publication">
+<div class="quote-category">Publication Persistence</div>
 <div class="quote-text">
-“Publication is a staged process, not a single event.”
+“The publication process humbles nearly everyone before it recognizes anyone.”
 </div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
+<div class="quote-author">— Valentine Joseph Owan</div>
 </article>
 
-<article class="quote-card"
-         data-category="publication">
-
-<div class="quote-category">
-Publication Persistence
-</div>
-
+<article class="quote-card" data-category="publication">
+<div class="quote-category">Publication Persistence</div>
 <div class="quote-text">
-“Many under-published scholars possess substantial intellectual potential that never becomes visible output.”
+“Good researchers produce studies; persistent researchers produce records.”
 </div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
+<div class="quote-author">— Valentine Joseph Owan</div>
 </article>
 
-<article class="quote-card"
-         data-category="publication">
-
-<div class="quote-category">
-Publication Persistence
-</div>
-
+<article class="quote-card" data-category="publication">
+<div class="quote-category">Publication Persistence</div>
 <div class="quote-text">
-“Persistence becomes meaningful when scholars continue revising, repositioning, and resubmitting despite interruption.”
+“In publishing, silence is more dangerous than criticism.”
 </div>
+<div class="quote-author">— Valentine Joseph Owan</div>
+</article>
 
-<div class="quote-author">
-— Valentine Joseph Owan
+<article class="quote-card" data-category="publication">
+<div class="quote-category">Publication Persistence</div>
+<div class="quote-text">
+“Not every rigorous study is accepted quickly, and not every rejected paper was quickly dismissed for the right reasons.”
 </div>
+<div class="quote-author">— Valentine Joseph Owan</div>
+</article>
 
+<article class="quote-card" data-category="publication">
+<div class="quote-category">Publication Persistence</div>
+<div class="quote-text">
+“Some manuscripts mature through revision the way character matures through hardship.”
+</div>
+<div class="quote-author">— Valentine Joseph Owan</div>
 </article>
 
 <!-- MOTIVATIONAL QUOTES -->
 
-<article class="quote-card"
-         data-category="motivation">
-
-<div class="quote-category">
-Motivational Quotes
-</div>
-
+<article class="quote-card" data-category="motivation">
+<div class="quote-category">Motivational Quotes</div>
 <div class="quote-text">
 “For us to grow, we need a third eye. Education is that eye; it can see in darkness and bring light where there is none.”
 </div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
+<div class="quote-author">— Valentine Joseph Owan</div>
 </article>
 
-<article class="quote-card"
-         data-category="motivation">
-
-<div class="quote-category">
-Motivational Quotes
-</div>
-
+<article class="quote-card" data-category="motivation">
+<div class="quote-category">Motivational Quotes</div>
 <div class="quote-text">
 “Learning is not education. Learning is the process through which education is gained.”
 </div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
+<div class="quote-author">— Valentine Joseph Owan</div>
 </article>
 
-<article class="quote-card"
-         data-category="motivation">
-
-<div class="quote-category">
-Motivational Quotes
-</div>
-
+<article class="quote-card" data-category="motivation">
+<div class="quote-category">Motivational Quotes</div>
 <div class="quote-text">
 “New approaches to success are often discovered through repeated failure.”
 </div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
+<div class="quote-author">— Valentine Joseph Owan</div>
 </article>
 
-<article class="quote-card"
-         data-category="motivation">
-
-<div class="quote-category">
-Motivational Quotes
-</div>
-
+<article class="quote-card" data-category="motivation">
+<div class="quote-category">Motivational Quotes</div>
 <div class="quote-text">
 “Creativity requires courage, especially the courage to fail.”
 </div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
+<div class="quote-author">— Valentine Joseph Owan</div>
 </article>
 
-<article class="quote-card"
-         data-category="motivation">
-
-<div class="quote-category">
-Motivational Quotes
-</div>
-
+<article class="quote-card" data-category="motivation">
+<div class="quote-category">Motivational Quotes</div>
 <div class="quote-text">
 “It is unwise to search for solutions before first understanding the problem.”
 </div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
+<div class="quote-author">— Valentine Joseph Owan</div>
 </article>
 
-<article class="quote-card"
-         data-category="motivation">
-
-<div class="quote-category">
-Motivational Quotes
-</div>
-
+<article class="quote-card" data-category="motivation">
+<div class="quote-category">Motivational Quotes</div>
 <div class="quote-text">
 “Life is full of daily lessons. They must be lived before they can be understood.”
 </div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
+<div class="quote-author">— Valentine Joseph Owan</div>
 </article>
 
-<article class="quote-card"
-         data-category="motivation">
-
-<div class="quote-category">
-Motivational Quotes
-</div>
-
+<article class="quote-card" data-category="motivation">
+<div class="quote-category">Motivational Quotes</div>
 <div class="quote-text">
 “Do not treat people as bad as they are; treat them as good as you are.”
 </div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
+<div class="quote-author">— Valentine Joseph Owan</div>
 </article>
 
-<article class="quote-card"
-         data-category="motivation">
-
-<div class="quote-category">
-Motivational Quotes
-</div>
-
+<article class="quote-card" data-category="motivation">
+<div class="quote-category">Motivational Quotes</div>
 <div class="quote-text">
 “Doing the same thing repeatedly may bring mastery, but trying new things may bring distinction.”
 </div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
-</article>
-<article class="quote-card"
-         data-category="motivation">
-
-<div class="quote-category">
-Motivational Quotes
-</div>
-
-<div class="quote-text">
-“Education is not measured by certificates received, but by the positive change created through what one has learned.”
-</div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
-</article>
-
-<article class="quote-card"
-         data-category="motivation">
-
-<div class="quote-category">
-Motivational Quotes
-</div>
-
-<div class="quote-text">
-“Education is not only about reaching the top of the tree, but also about the methods used in climbing it.”
-</div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
-</article>
-
-<article class="quote-card"
-         data-category="motivation">
-
-<div class="quote-category">
-Motivational Quotes
-</div>
-
-<div class="quote-text">
-“The best problem solvers are those with common sense.”
-</div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
-</article>
-
-<article class="quote-card"
-         data-category="motivation">
-
-<div class="quote-category">
-Motivational Quotes
-</div>
-
-<div class="quote-text">
-“Those who succeed throughout their careers without failure may never discover how much more they could have achieved through it.”
-</div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
-</article>
-
-<article class="quote-card"
-         data-category="motivation">
-
-<div class="quote-category">
-Motivational Quotes
-</div>
-
-<div class="quote-text">
-“The best way to know that palm oil stains is to first pour it on white fabric.”
-</div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
-</article>
-
-<article class="quote-card"
-         data-category="motivation">
-
-<div class="quote-category">
-Motivational Quotes
-</div>
-
-<div class="quote-text">
-“I cannot ignore the mistakes of the past, because many of the lessons I use today came from them.”
-</div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
-</article>
-
-<article class="quote-card"
-         data-category="motivation">
-
-<div class="quote-category">
-Motivational Quotes
-</div>
-
-<div class="quote-text">
-“Success is the ability to rise and continue after failure.”
-</div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
-</article>
-
-<article class="quote-card"
-         data-category="motivation">
-
-<div class="quote-category">
-Motivational Quotes
-</div>
-
-<div class="quote-text">
-“Success should not only be celebrated; it should be sustained through further hard work.”
-</div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
-</article>
-
-<article class="quote-card"
-         data-category="motivation">
-
-<div class="quote-category">
-Motivational Quotes
-</div>
-
-<div class="quote-text">
-“We attain success not by how long we do something, but by how well we do it and how willing we are to learn from our errors.”
-</div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
-</article>
-
-<article class="quote-card"
-         data-category="motivation">
-
-<div class="quote-category">
-Motivational Quotes
-</div>
-
-<div class="quote-text">
-“For your light to shine brighter, avoid becoming a photocopy of others.”
-</div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
-</article>
-
-<article class="quote-card"
-         data-category="motivation">
-
-<div class="quote-category">
-Motivational Quotes
-</div>
-
-<div class="quote-text">
-“Think about the future, or you will remain trapped in the past.”
-</div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
-</article>
-
-<article class="quote-card"
-         data-category="motivation">
-
-<div class="quote-category">
-Motivational Quotes
-</div>
-
-<div class="quote-text">
-“Your actions today will speak for you tomorrow.”
-</div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
-</article>
-
-<article class="quote-card"
-         data-category="motivation">
-
-<div class="quote-category">
-Motivational Quotes
-</div>
-
-<div class="quote-text">
-“What others say about you matters less than your ability to discover who you are and the problems you can solve.”
-</div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
-</article>
-
-<article class="quote-card"
-         data-category="motivation">
-
-<div class="quote-category">
-Motivational Quotes
-</div>
-
-<div class="quote-text">
-“It is better to be renewed by trying new things than to be remembered only for repeating old ones.”
-</div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
-</article>
-
-<article class="quote-card"
-         data-category="motivation">
-
-<div class="quote-category">
-Motivational Quotes
-</div>
-
-<div class="quote-text">
-“Change can start from only one place in the world: you.”
-</div>
-
-<div class="quote-author">
-— Valentine Joseph Owan
-</div>
-
+<div class="quote-author">— Valentine Joseph Owan</div>
 </article>
 
 </div>
@@ -977,7 +568,7 @@ card.innerText.toLowerCase();
 
 card.style.display =
 text.includes(value)
-? "block"
+? ""
 : "none";
 
 });
