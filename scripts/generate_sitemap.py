@@ -57,6 +57,7 @@ def main():
         ("index.html", today, "weekly", "1.0"),
         ("about.html", today, "monthly", "0.9"),
         ("publications.html", today, "weekly", "0.95"),
+        ("books.html", today, "weekly", "0.9"),
         ("south-south-rankings.html", today, "monthly", "0.9"),
         ("tro.html", today, "monthly", "0.8"),
         ("rps.html", today, "monthly", "0.8"),

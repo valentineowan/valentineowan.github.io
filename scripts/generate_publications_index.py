@@ -305,6 +305,13 @@ def main():
     df.columns = df.columns.str.strip().str.lower()
     df = df.fillna("")
 
+    # Books, monographs and textbooks have their own catalogue and are not
+    # duplicated inside the journal-article archive.
+    if "publication_type" in df.columns:
+        book_types = {"monograph", "textbook", "book"}
+        book_mask = df["publication_type"].astype(str).str.strip().str.lower().isin(book_types)
+        df = df[~book_mask].copy()
+
     df["year_num"] = pd.to_numeric(df["year"], errors="coerce")
     df = df[df["year_num"].notna()].copy()
     df["year_num"] = df["year_num"].astype(int)
@@ -342,6 +349,13 @@ def main():
 
     with PUBLICATIONS_FILE.open("r", encoding="utf-8") as f:
         html_text = f.read()
+
+    if 'href="books.html"' not in html_text:
+        html_text = html_text.replace(
+            '<a class="nav-link" href="publications.html">Publications</a>',
+            '<a class="nav-link" href="publications.html">Publications</a>\n        <a class="nav-link" href="books.html">Books</a>',
+            1,
+        )
 
     html_text = re.sub(
         rf"{re.escape(START_MARKER)}.*?{re.escape(END_MARKER)}",

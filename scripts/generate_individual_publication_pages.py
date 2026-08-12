@@ -191,7 +191,7 @@ def thesis_citation_label(entry_type: str) -> str:
     return labels.get(entry_type.lower(), "publication")
 
 
-def build_detail_rows(row: pd.Series) -> list[str]:
+def _legacy_build_detail_rows(row: pd.Series) -> list[str]:
     """Build publication-detail paragraphs using the fields available in Excel."""
     entry_type = normalise_display_entry_type(row)
     rows: list[str] = []
@@ -269,7 +269,7 @@ def build_detail_rows(row: pd.Series) -> list[str]:
     return rows
 
 
-def build_actions(row: pd.Series) -> str:
+def _legacy_build_actions(row: pd.Series) -> str:
     pdf_path = normalise_path(row.get("pdf_path", ""))
     access = clean(row.get("access", "")).lower()
     doi = clean(row.get("doi", ""))
@@ -500,8 +500,8 @@ def build_page(row: pd.Series) -> str:
     if doi:
         doi_meta = f'   <meta name="citation_doi" content="{esc(doi)}" />\n'
 
-    actions = build_actions(row)
-    details = "\n".join(build_detail_rows(row))
+    actions = _legacy_build_actions(row)
+    details = "\n".join(_legacy_build_detail_rows(row))
     metrics = build_metrics(row)
     citation_entries, _ = build_citation_block(row)
 
@@ -828,6 +828,8 @@ def main() -> int:
     print(f"  with PDF:  {stats['open_with_pdf']}")
     print(f"  no PDF:    {stats['open_missing_pdf']}")
     print(f"Request:     {stats['request']}")
+    print(f"Paid:        {stats.get('paid', 0)}")
+    print(f"Book records:{stats.get('books', 0)}")
     print(f"PDF missing: {stats['pdf_missing_on_disk']}")
     print(f"Slug dupes:  {stats['duplicate_slugs']}")
     print(f"HTML dupes:  {stats['duplicate_html']}")
@@ -901,6 +903,140 @@ def main() -> int:
 
     print("\nGeneration completed successfully.")
     return 0
+
+
+
+_legacy_build_page = build_page
+_legacy_validate_rows = validate_rows
+
+
+def publication_type(row: pd.Series) -> str:
+    return clean(row.get("publication_type", "")).lower()
+
+
+def is_book_material(row: pd.Series) -> bool:
+    return publication_type(row) in {"monograph", "textbook", "book"}
+
+
+def book_status(row: pd.Series) -> str:
+    return clean(row.get("publication_status", "")).lower() or "published"
+
+
+def pdf_role(row: pd.Series) -> str:
+    return clean(row.get("pdf_role", "")).lower()
+
+
+def asset_href(asset_path: str) -> str:
+    return "../" + normalise_path(asset_path)
+
+
+def book_label(kind: str) -> str:
+    return {"monograph": "Monograph", "textbook": "Textbook", "book": "Book"}.get(kind, "Book")
+
+
+def build_detail_rows(row: pd.Series) -> list[str]:
+    if not is_book_material(row):
+        return _legacy_build_detail_rows(row)
+    kind = publication_type(row)
+    rows = []
+    publisher = clean(row.get("publisher", "")); year = safe_intish(row.get("year", ""))
+    isbn = clean(row.get("isbn", "")); edition = clean(row.get("edition", "")); pages = clean(row.get("pages", ""))
+    status = book_status(row); access = clean(row.get("access", "")).lower()
+    price = clean(row.get("price", "")); currency = clean(row.get("currency", "")); doi = clean(row.get("doi", ""))
+    if publisher: rows.append(f"<p><strong>Publisher:</strong> {esc(publisher)}</p>")
+    if year: rows.append(f"<p><strong>Year:</strong> {esc(year)}</p>")
+    if isbn: rows.append(f"<p><strong>ISBN:</strong> {esc(isbn)}</p>")
+    if edition: rows.append(f"<p><strong>Edition:</strong> {esc(edition)}</p>")
+    if pages: rows.append(f"<p><strong>Pages:</strong> {esc(pages)}</p>")
+    rows.append(f"<p><strong>Type:</strong> {esc(book_label(kind))}</p>")
+    rows.append(f"<p><strong>Status:</strong> {esc(status.title())}</p>")
+    if access:
+        label = {"open":"Open Access","request":"Available upon request","paid":"Paid"}.get(access, access.title())
+        rows.append(f"<p><strong>Access:</strong> {esc(label)}</p>")
+    if price: rows.append(f"<p><strong>Price:</strong> {esc((currency + ' ') if currency else '')}{esc(price)}</p>")
+    if doi:
+        doi_url = doi if doi.startswith("http") else f"https://doi.org/{doi}"
+        rows.append(f'<p><strong>DOI:</strong> <a href="{esc(doi_url)}" target="_blank" rel="noopener">{esc(doi)}</a></p>')
+    return rows
+
+
+def build_actions(row: pd.Series) -> str:
+    pdf_path = normalise_path(row.get("pdf_path", "")); access = clean(row.get("access", "")).lower(); role = pdf_role(row); doi = clean(row.get("doi", ""))
+    actions = []
+    if is_book_material(row):
+        if pdf_path and role == "full_text" and access == "open":
+            actions.append(f'<a class="btn" href="{esc(asset_href(pdf_path))}" target="_blank" rel="noopener">Read full book</a>')
+        elif pdf_path and role == "preview":
+            actions.append(f'<a class="btn btn-ghost" href="{esc(asset_href(pdf_path))}" target="_blank" rel="noopener">View book information</a>')
+        purchase_url = clean(row.get("purchase_url", "")); request_url = clean(row.get("request_url", ""))
+        if access == "paid" and purchase_url:
+            actions.append(f'<a class="btn" href="{esc(purchase_url)}" target="_blank" rel="noopener">Purchase / Order</a>')
+        elif access == "request":
+            href = request_url or "../contact.html"; target = ' target="_blank" rel="noopener"' if request_url.startswith("http") else ""
+            actions.append(f'<a class="btn btn-ghost" href="{esc(href)}"{target}>Request a copy</a>')
+        elif access == "paid":
+            href = request_url or "../contact.html"; target = ' target="_blank" rel="noopener"' if request_url.startswith("http") else ""
+            actions.append(f'<a class="btn btn-ghost" href="{esc(href)}"{target}>Enquire / Order</a>')
+    elif access == "open" and pdf_path:
+        actions.append(f'<a class="btn" href="{esc(asset_href(pdf_path))}" target="_blank" rel="noopener">Read PDF</a>')
+    if doi:
+        doi_url = doi if doi.startswith("http") else f"https://doi.org/{doi}"
+        actions.append(f'<a class="btn btn-ghost" href="{esc(doi_url)}" target="_blank" rel="noopener">View DOI</a>')
+    actions.append('<a class="btn btn-ghost" href="../books.html">Back to books</a>' if is_book_material(row) else '<a class="btn btn-ghost" href="../publications.html">Back to publications</a>')
+    return "\n".join(actions)
+
+
+def build_book_page(row: pd.Series) -> str:
+    title = clean(row.get("title", "Untitled book")); authors = clean(row.get("authors", "")); year = safe_intish(row.get("year", ""))
+    filename = html_filename(row); canonical = f"{SITE_URL}/publications/{filename}"; kind = publication_type(row); status = book_status(row)
+    description = clean(row.get("book_description", "")) or clean(row.get("abstract", "")); cover_path = normalise_path(row.get("cover_path", ""))
+    cover = f'<img class="book-cover" src="{esc(asset_href(cover_path))}" alt="Cover of {esc(title)}" />' if cover_path else '<div class="book-cover book-cover-placeholder">Cover image</div>'
+    actions = build_actions(row); details = "\n".join(build_detail_rows(row)); citation_entries, _ = build_citation_block(row)
+    preview_note = '<p class="book-note"><strong>Note:</strong> This PDF is a book information/preview document. It does not contain the full textbook.</p>' if pdf_role(row) == "preview" else ""
+    description_section = f'<section class="card article-block"><h2>About the book</h2><div class="book-description"><p>{esc(description)}</p></div></section>' if description else ""
+    return f'''<!doctype html>
+<html lang="en-GB"><head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{esc(title)} | Valentine Joseph Owan</title><meta name="description" content="{esc(description or title)}" />
+<meta name="citation_title" content="{esc(title)}" />
+{citation_author_meta(authors)}
+<meta name="citation_publication_date" content="{esc(year)}" />
+<link rel="canonical" href="{esc(canonical)}" /><link rel="stylesheet" href="../assets/css/style.css" />
+<style>
+.book-page-wrap{{display:grid;gap:16px}} .book-hero{{display:grid;grid-template-columns:minmax(180px,260px) 1fr;gap:24px;align-items:start}} .book-cover{{width:100%;max-width:260px;aspect-ratio:2/3;object-fit:cover;border-radius:12px;border:1px solid var(--line);box-shadow:0 8px 24px rgba(17,24,39,.10);background:var(--panel)}} .book-cover-placeholder{{display:grid;place-items:center;color:var(--muted);font-size:.95rem;padding:20px;text-align:center}} .book-type{{font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 8px}} .book-actions{{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}} .book-meta p{{margin:0 0 8px;color:var(--muted)}} .book-note{{margin-top:14px;padding:12px;border-left:3px solid var(--line);background:var(--panel);border-radius:8px}} .book-description{{line-height:1.75}} .crumbs{{font-size:14px;color:var(--muted);margin-bottom:12px}} .crumbs a{{text-decoration:none}} .citation-tabs{{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 12px}} .citation-tabs button{{padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:var(--panel);cursor:pointer;color:var(--text)}} .citation-box{{white-space:pre-wrap;overflow-wrap:anywhere;color:var(--text)}} @media(max-width:700px){{.book-hero{{grid-template-columns:1fr}}.book-cover{{max-width:220px}}}}
+</style></head>
+<body><a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container header-inner"><div class="brand"><a href="../index.html" class="brand-name">Valentine Joseph Owan</a><div class="brand-tag">Researcher | Psychometrician | Statistician</div></div><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" class="site-nav" aria-label="Primary"><a class="nav-link" href="../index.html">Home</a><a class="nav-link" href="../about.html">About</a><a class="nav-link" href="../publications.html">Publications</a><a class="nav-link active" href="../books.html">Books</a><a class="nav-link" href="../teaching.html">Teaching</a><a class="nav-link" href="../cv.html">CV</a><a class="nav-link" href="../updates.html">Updates</a><a class="nav-link" href="../contact.html">Contact</a><a class="nav-link" href="../quotes.html">Quotes</a></nav></div></header>
+<main id="main" class="section"><div class="container narrow"><div class="crumbs"><a href="../index.html">Home</a> / <a href="../books.html">Books</a> / {esc(status.title())}</div><div class="book-page-wrap"><section class="card book-hero"><div>{cover}</div><div><p class="book-type">{esc(book_label(kind))}</p><h1>{esc(title)}</h1><p class="article-authors">{esc(authors)}</p><span class="tag">{esc(status.title())}</span><div class="book-actions">{actions}</div>{preview_note}</div></section><section class="card book-meta"><h2>Book details</h2>{details}</section>{description_section}<section class="card article-block"><h2>Citation</h2><div class="citation-tabs"><button onclick="showCitation('apa')">APA</button><button onclick="showCitation('mla')">MLA</button><button onclick="showCitation('harvard')">Harvard</button><button onclick="showCitation('vancouver')">Vancouver</button><button onclick="showCitation('bibtex')">BibTeX</button></div><div id="citationText" class="citation-box"></div><div class="card-actions"><button class="btn btn-ghost" onclick="copyCitation()">Copy citation</button></div></section></div></div></main>
+<footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-copy">© <span id="year"></span> Valentine Joseph Owan <span class="footer-sep">•</span> University of Calabar</div><nav class="footer-links" aria-label="Footer"><a href="../index.html">Home</a><a href="../about.html">About</a><a href="../publications.html">Publications</a><a href="../books.html">Books</a><a href="../teaching.html">Teaching</a><a href="../cv.html">CV</a><a href="../updates.html">Updates</a><a href="../quotes.html">Quotes</a><a href="../contact.html">Contact</a></nav></div><div class="footer-note">Academic website for research, teaching, and scholarly work.</div></div></footer>
+<script src="../assets/js/main.js"></script><script>const citations = {{
+{citation_entries}
+}};function showCitation(type){{const box=document.getElementById("citationText");if(box)box.innerHTML=citations[type]||"";}}function copyCitation(){{const box=document.getElementById("citationText");if(!box)return;navigator.clipboard.writeText(box.innerText).then(()=>alert("Citation copied"));}}(function(){{var y=document.getElementById("year");if(y)y.textContent=new Date().getFullYear();showCitation("apa");}})();</script></body></html>
+'''
+
+
+def build_page(row: pd.Series) -> str:
+    if is_book_material(row):
+        return build_book_page(row)
+    return _legacy_build_page(row)
+
+
+def validate_rows(df: pd.DataFrame):
+    errors, warnings, stats = _legacy_validate_rows(df)
+    stats.setdefault("paid", 0); stats.setdefault("books", 0)
+    for _, row in df.iterrows():
+        if not is_book_material(row):
+            continue
+        stats["books"] += 1
+        access = clean(row.get("access", "")).lower()
+        if access == "paid": stats["paid"] += 1
+        elif access not in {"open","request","paid"}: warnings.append(f"Unrecognised book access value '{access}': {clean(row.get('title',''))}")
+        role = pdf_role(row)
+        if role not in {"", "full_text", "full book", "preview"}: warnings.append(f"Unrecognised pdf_role '{role}': {clean(row.get('title',''))}")
+        cover_path = normalise_path(row.get("cover_path", "")); pdf_path = normalise_path(row.get("pdf_path", ""))
+        if cover_path and not (ROOT / cover_path).is_file(): warnings.append(f"Book cover not found on disk: {cover_path} | {clean(row.get('title',''))}")
+        if pdf_path and not (ROOT / pdf_path).is_file(): warnings.append(f"Book PDF/preview not found on disk: {pdf_path} | {clean(row.get('title',''))}")
+    return errors, warnings, stats
 
 
 if __name__ == "__main__":
