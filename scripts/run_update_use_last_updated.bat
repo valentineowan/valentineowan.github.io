@@ -32,24 +32,30 @@ python scripts\generate_publications_index.py
 if errorlevel 1 goto :error
 
 echo.
-echo [5/8] Generating South-South rankings...
+echo [5/9] Updating homepage recent publications...
+echo --------------------------------------------------------
+python scripts\generate_homepage_recent_publications.py
+if errorlevel 1 goto :error
+
+echo.
+echo [6/9] Generating South-South rankings...
 echo --------------------------------------------------------
 python scripts\generate_south_south_rankings.py
 if errorlevel 1 goto :error
 
 echo.
-echo [6/8] Generating sitemap...
+echo [7/9] Generating sitemap...
 echo --------------------------------------------------------
 python scripts\generate_sitemap.py
 if errorlevel 1 goto :error
 
 echo.
-echo [7/8] Final site update check...
+echo [8/9] Final site update check...
 echo --------------------------------------------------------
 git status --short
 
 echo.
-echo [8/8] Update completed. No Git commit or push is performed automatically.
+echo [9/9] Update completed. No Git commit or push is performed automatically.
 echo --------------------------------------------------------
 echo Next steps:
 echo 1. Inspect the generated pages and books.html.
