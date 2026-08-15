@@ -2,39 +2,39 @@
 cd /d D:\Documents\E-library\Vowan_Database\Valentine_Site_Git
 
 echo ========================================================
-echo        VALENTINE OWAN WEBSITE UPDATE
+echo        VALENTINE OWAN WEBSITE MASTER UPDATE
 echo ========================================================
 echo Project: D:\Documents\E-library\Vowan_Database\Valentine_Site_Git
 echo ========================================================
 
 echo.
-echo [1/8] Updating OpenAlex citation data...
+echo [1/9] Updating OpenAlex citation data...
 echo --------------------------------------------------------
 python scripts\openalex_author_sync.py
 if errorlevel 1 goto :error
 
 echo.
-echo [2/8] Validating and generating individual publication pages...
+echo [2/9] Validating and generating individual publication pages...
 echo --------------------------------------------------------
 python scripts\generate_individual_publication_pages.py
 if errorlevel 1 goto :error
 
 echo.
-echo [3/8] Generating Books catalogue...
+echo [3/9] Generating Books catalogue...
 echo --------------------------------------------------------
 python scripts\generate_books_catalog.py
 if errorlevel 1 goto :error
 
 echo.
-echo [4/8] Generating publications index...
+echo [4/9] Generating publications index...
 echo --------------------------------------------------------
 python scripts\generate_publications_index.py
 if errorlevel 1 goto :error
 
 echo.
-echo [5/9] Updating homepage recent publications...
+echo [5/9] Updating recent publications on homepage and publications page...
 echo --------------------------------------------------------
-python scripts\generate_homepage_recent_publications.py
+python scripts\generate_five_recent_publications_lists.py
 if errorlevel 1 goto :error
 
 echo.
