@@ -3,6 +3,7 @@ import re
 import html
 import pandas as pd
 
+
 ROOT = Path(__file__).resolve().parents[1]
 DATA_FILE = ROOT / "data" / "publications.xlsx"
 PUBLICATIONS_FILE = ROOT / "publications.html"
@@ -46,6 +47,14 @@ def clean_text(value):
     return str(value).strip()
 
 
+def normalise_path(value):
+    """Return a clean relative web path without adding or removing extensions."""
+    path = clean_text(value).replace("\\", "/")
+    while "//" in path:
+        path = path.replace("//", "/")
+    return path.lstrip("/")
+
+
 def normalise_access(value):
     value = clean_text(value).lower()
     return value if value else "request"
@@ -75,13 +84,26 @@ def map_entry_type(value):
 
 def build_main_link(row):
     doi = clean_text(row.get("doi", ""))
-    pdf_path = clean_text(row.get("pdf_path", ""))
+    pdf_path = normalise_path(row.get("pdf_path", ""))
 
     if doi:
         return f"https://doi.org/{doi}"
     if pdf_path:
-        return pdf_path.replace("\\", "/")
+        return pdf_path
     return "#"
+
+
+def build_details_link(row):
+    """
+    html_path is the single source of truth for publication detail pages.
+
+    Expected Excel format:
+        publications/example-publication.html
+
+    The script deliberately does not append '.html' and does not rebuild the
+    path from slug. This prevents '.html.html' and slug/path mismatches.
+    """
+    return normalise_path(row.get("html_path", ""))
 
 
 def build_venue(row):
@@ -143,17 +165,17 @@ def build_citation_text(row):
 
 
 def build_links_block(row):
-    slug = clean_text(row.get("slug", ""))
-    pdf_path = clean_text(row.get("pdf_path", "")).replace("\\", "/")
+    details_link = build_details_link(row)
+    pdf_path = normalise_path(row.get("pdf_path", ""))
     access = normalise_access(row.get("access", ""))
     citations = safe_int(row.get("openalex_citations", 0), 0)
 
     parts = []
     parts.append(f'<span class="tag">OpenAlex citations: {citations}</span>')
 
-    if slug:
+    if details_link:
         parts.append(
-            f'<a class="btn btn-ghost" href="publications/{safe_attr(slug)}.html">View details</a>'
+            f'<a class="btn btn-ghost" href="{safe_attr(details_link)}">View details</a>'
         )
 
     if access == "open" and pdf_path:
@@ -305,6 +327,16 @@ def main():
     df.columns = df.columns.str.strip().str.lower()
     df = df.fillna("")
 
+    required_columns = {"year", "title", "entry_type", "openalex_citations"}
+    missing_columns = required_columns - set(df.columns)
+    if missing_columns:
+        raise ValueError(
+            "Missing required Excel columns: " + ", ".join(sorted(missing_columns))
+        )
+
+    if "html_path" not in df.columns:
+        print("Warning: 'html_path' column not found. View details links will not be generated.")
+
     # Books, monographs and textbooks have their own catalogue and are not
     # duplicated inside the journal-article archive.
     if "publication_type" in df.columns:
@@ -386,6 +418,7 @@ def main():
         rf"{re.escape(YEARJUMP_START)}.*?{re.escape(YEARJUMP_END)}",
         flags=re.DOTALL
     )
+
     yearjump_html = build_yearjump_html(years)
 
     if yearjump_pattern.search(html_text):
@@ -396,7 +429,7 @@ def main():
     with PUBLICATIONS_FILE.open("w", encoding="utf-8") as f:
         f.write(html_text)
 
-    print("✅ Recent publications, archive, and year controls updated successfully")
+    print("Recent publications, archive, and year controls updated successfully")
     print(
         f"Total: {total_count} | Articles: {articles_count} | "
         f"Chapters: {chapters_count} | Proceedings: {proceedings_count}"

@@ -81,15 +81,23 @@ def relative_href_from_publication(pdf_path: str) -> str:
 
 
 def html_filename(row: pd.Series) -> str:
-    """Return the existing HTML filename, or generate one from the slug."""
+    """Return the authoritative HTML filename from html_path.
+
+    Standard convention: html_path contains the repository-relative page path
+    and must end in .html. The slug is used only as a fallback when html_path
+    is empty. This function never appends a second .html extension.
+    """
     existing = normalise_path(row.get("html_path", ""))
     if existing:
-        return Path(existing).name
+        filename = Path(existing).name
+        if not filename.lower().endswith(".html"):
+            filename += ".html"
+        return filename
 
     slug = clean(row.get("slug", ""))
     if not slug:
         slug = make_slug(clean(row.get("title", "")), clean(row.get("year", "")))
-    return slug + ".html"
+    return slug if slug.lower().endswith(".html") else slug + ".html"
 
 
 def make_slug(title: str, year: str = "") -> str:
