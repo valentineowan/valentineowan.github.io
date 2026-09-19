@@ -7,7 +7,7 @@
     "title_norm": "exploring the potential of artificial intelligence tools in educational measurement and assessment",
     "publication_year": 2023,
     "publication_date": "2023-06-21",
-    "cited_by_count": 389,
+    "cited_by_count": 430,
     "cited_by_api_url": null,
     "type_": "article",
     "source_title": "Eurasia Journal of Mathematics Science and Technology Education",
@@ -37,7 +37,7 @@
     "publication_date": "2024-07-03",
     "cited_by_count": 24,
     "cited_by_api_url": null,
-    "type_": "article",
+    "type_": "book-chapter",
     "source_title": "Education and Information Technologies",
     "pdf_url": null
   },
@@ -56,6 +56,20 @@
     "pdf_url": "https://onlinesciencepublishing.com/index.php/ajce/article/download/347/519"
   },
   {
+    "openalex_id": "W4284678263",
+    "openalex_url": "https://openalex.org/W4284678263",
+    "doi": "10.5430/jct.v11n5p64",
+    "title": "Occupational Stress and Academic Staff Job Performance in Two Nigerian Universities",
+    "title_norm": "occupational stress and academic staff job performance in two nigerian universities",
+    "publication_year": 2022,
+    "publication_date": "2022-07-06",
+    "cited_by_count": 21,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Journal of Curriculum and Teaching",
+    "pdf_url": "https://www.sciedupress.com/journal/index.php/jct/article/download/22202/13775"
+  },
+  {
     "openalex_id": "W3003991987",
     "openalex_url": "https://openalex.org/W3003991987",
     "doi": "10.20448/815.31.10.20",
@@ -68,20 +82,6 @@
     "type_": "article",
     "source_title": "American Journal of Creative Education",
     "pdf_url": null
-  },
-  {
-    "openalex_id": "W4284678263",
-    "openalex_url": "https://openalex.org/W4284678263",
-    "doi": "10.5430/jct.v11n5p64",
-    "title": "Occupational Stress and Academic Staff Job Performance in Two Nigerian Universities",
-    "title_norm": "occupational stress and academic staff job performance in two nigerian universities",
-    "publication_year": 2022,
-    "publication_date": "2022-07-06",
-    "cited_by_count": 20,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Journal of Curriculum and Teaching",
-    "pdf_url": "https://www.sciedupress.com/journal/index.php/jct/article/download/22202/13775"
   },
   {
     "openalex_id": "W2920181908",
@@ -126,18 +126,32 @@
     "pdf_url": "https://www.richtmann.org/journal/index.php/jesr/article/download/11689/11296"
   },
   {
-    "openalex_id": "W3097224105",
-    "openalex_url": "https://openalex.org/W3097224105",
-    "doi": "10.33902/jpsp.2020364435",
-    "title": "A structural equation model of principals communication patterns, funds management and school-community relationship",
-    "title_norm": "a structural equation model of principals communication patterns funds management and school community relationship",
-    "publication_year": 2020,
-    "publication_date": "2020-11-05",
+    "openalex_id": "W4379010945",
+    "openalex_url": "https://openalex.org/W4379010945",
+    "doi": "10.1007/s10671-023-09354-3",
+    "title": "Collaboration and institutional culture as mediators linking mentorship and institutional support to academics’ research productivity",
+    "title_norm": "collaboration and institutional culture as mediators linking mentorship and institutional support to academics research productivity",
+    "publication_year": 2023,
+    "publication_date": "2023-06-01",
+    "cited_by_count": 23,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Educational Research for Policy and Practice",
+    "pdf_url": null
+  },
+  {
+    "openalex_id": "W3092675154",
+    "openalex_url": "https://openalex.org/W3092675154",
+    "doi": "10.5281/zenodo.4458640",
+    "title": "Quality assurance practices and students' performance evaluation in universities of South-South Nigeria: A structural equation modelling approach",
+    "title_norm": "quality assurance practices and students performance evaluation in universities of south south nigeria a structural equation modelling approach",
+    "publication_year": 2021,
+    "publication_date": "2021-01-22",
     "cited_by_count": 22,
     "cited_by_api_url": null,
     "type_": "article",
-    "source_title": "Journal of Pedagogical Sociology and Psychology",
-    "pdf_url": "https://www.j-psp.com/download/a-structural-equation-model-of-principals-communication-patterns-funds-management-and-9147.pdf"
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": "https://philpapers.org/archive/BASQAP.pdf"
   },
   {
     "openalex_id": "W4220917503",
@@ -168,20 +182,6 @@
     "pdf_url": "http://www.cell.com/article/S2405844022006223/pdf"
   },
   {
-    "openalex_id": "W4379010945",
-    "openalex_url": "https://openalex.org/W4379010945",
-    "doi": "10.1007/s10671-023-09354-3",
-    "title": "Collaboration and institutional culture as mediators linking mentorship and institutional support to academics’ research productivity",
-    "title_norm": "collaboration and institutional culture as mediators linking mentorship and institutional support to academics research productivity",
-    "publication_year": 2023,
-    "publication_date": "2023-06-01",
-    "cited_by_count": 21,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Educational Research for Policy and Practice",
-    "pdf_url": null
-  },
-  {
     "openalex_id": "W4226024134",
     "openalex_url": "https://openalex.org/W4226024134",
     "doi": "10.22521/edupij.2022.111.7",
@@ -189,7 +189,7 @@
     "title_norm": "mentorship practices and research productivity among early career educational psychologists in universities",
     "publication_year": 2022,
     "publication_date": "2022-01-01",
-    "cited_by_count": 20,
+    "cited_by_count": 21,
     "cited_by_api_url": null,
     "type_": "article",
     "source_title": "Educational Process International Journal",
@@ -336,20 +336,6 @@
     "pdf_url": null
   },
   {
-    "openalex_id": "W4285089225",
-    "openalex_url": "https://openalex.org/W4285089225",
-    "doi": "10.1155/2022/6536826",
-    "title": "Protein Quality Evaluation of Some Commonly Consumed Bird Egg Varieties Using Amino Acid Scores",
-    "title_norm": "protein quality evaluation of some commonly consumed bird egg varieties using amino acid scores",
-    "publication_year": 2022,
-    "publication_date": "2022-07-12",
-    "cited_by_count": 13,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Biochemistry Research International",
-    "pdf_url": "https://downloads.hindawi.com/journals/bri/2022/6536826.pdf"
-  },
-  {
     "openalex_id": "W3134185071",
     "openalex_url": "https://openalex.org/W3134185071",
     "doi": "10.5281/zenodo.4320490",
@@ -360,8 +346,8 @@
     "cited_by_count": 12,
     "cited_by_api_url": null,
     "type_": "article",
-    "source_title": "Zenodo (CERN European Organization for Nuclear Research)",
-    "pdf_url": "https://zenodo.org/record/4320490"
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": null
   },
   {
     "openalex_id": "W4390617466",
@@ -376,6 +362,20 @@
     "type_": "article",
     "source_title": "Online Journal of Communication and Media Technologies",
     "pdf_url": "https://www.ojcmt.net/download/predicting-users-behavior-gender-and-age-as-interactive-antecedents-of-students-facebook-use-for-14104.pdf"
+  },
+  {
+    "openalex_id": "W3193654849",
+    "openalex_url": "https://openalex.org/W3193654849",
+    "doi": null,
+    "title": "Teaching Personnel Management and Attitude to Work in Secondary Schools of Calabar Education Zone of Cross River State, Nigeria",
+    "title_norm": "teaching personnel management and attitude to work in secondary schools of calabar education zone of cross river state nigeria",
+    "publication_year": 2019,
+    "publication_date": "2019-06-30",
+    "cited_by_count": 11,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": "https://philpapers.org/archive/AROTPM.pdf"
   },
   {
     "openalex_id": "W3093710397",
@@ -413,7 +413,7 @@
     "title_norm": "higher education students chatgpt use behavior structural equation modelling of contributing factors through a modified utaut model",
     "publication_year": 2025,
     "publication_date": "2025-10-08",
-    "cited_by_count": 7,
+    "cited_by_count": 8,
     "cited_by_api_url": null,
     "type_": "article",
     "source_title": "Contemporary Educational Technology",
@@ -431,21 +431,21 @@
     "cited_by_api_url": null,
     "type_": "article",
     "source_title": "Cogent Education",
-    "pdf_url": "https://www.tandfonline.com/doi/pdf/10.1080/2331186X.2023.2295167?needAccess=true"
+    "pdf_url": null
   },
   {
-    "openalex_id": "W4399989844",
-    "openalex_url": "https://openalex.org/W4399989844",
-    "doi": "10.1016/j.ssaho.2024.100983",
-    "title": "Demographic variables and perceptions of corruption among undergraduates: Evidence from a nigerian federal university",
-    "title_norm": "demographic variables and perceptions of corruption among undergraduates evidence from a nigerian federal university",
-    "publication_year": 2024,
-    "publication_date": "2024-01-01",
-    "cited_by_count": 5,
+    "openalex_id": "W3097224105",
+    "openalex_url": "https://openalex.org/W3097224105",
+    "doi": "10.33902/jpsp.2020364435",
+    "title": "A structural equation model of principals communication patterns, funds management and school-community relationship",
+    "title_norm": "a structural equation model of principals communication patterns funds management and school community relationship",
+    "publication_year": 2020,
+    "publication_date": "2020-11-05",
+    "cited_by_count": 22,
     "cited_by_api_url": null,
     "type_": "article",
-    "source_title": "Social Sciences & Humanities Open",
-    "pdf_url": null
+    "source_title": "Journal of Pedagogical Sociology and Psychology",
+    "pdf_url": "https://www.j-psp.com/download/a-structural-equation-model-of-principals-communication-patterns-funds-management-and-9147.pdf"
   },
   {
     "openalex_id": "W3016015362",
@@ -483,11 +483,11 @@
     "title_norm": "ict deployment for teaching in the covid 19 era a quantitative assessment of resource availability and challenges in public universities",
     "publication_year": 2022,
     "publication_date": "2022-06-28",
-    "cited_by_count": 16,
+    "cited_by_count": 17,
     "cited_by_api_url": null,
     "type_": "article",
     "source_title": "Frontiers in Education",
-    "pdf_url": "https://www.frontiersin.org/articles/10.3389/feduc.2022.920932/pdf"
+    "pdf_url": null
   },
   {
     "openalex_id": "W3025439386",
@@ -518,6 +518,20 @@
     "pdf_url": null
   },
   {
+    "openalex_id": "W4285089225",
+    "openalex_url": "https://openalex.org/W4285089225",
+    "doi": "10.1155/2022/6536826",
+    "title": "Protein Quality Evaluation of Some Commonly Consumed Bird Egg Varieties Using Amino Acid Scores",
+    "title_norm": "protein quality evaluation of some commonly consumed bird egg varieties using amino acid scores",
+    "publication_year": 2022,
+    "publication_date": "2022-07-12",
+    "cited_by_count": 13,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Biochemistry Research International",
+    "pdf_url": "https://downloads.hindawi.com/journals/bri/2022/6536826.pdf"
+  },
+  {
     "openalex_id": "W3186516428",
     "openalex_url": "https://openalex.org/W3186516428",
     "doi": "10.29333/pr/11087",
@@ -530,20 +544,6 @@
     "type_": "article",
     "source_title": "Pedagogical Research",
     "pdf_url": "https://www.pedagogicalresearch.com/download/assessment-of-socio-demographic-factors-and-students-satisfaction-with-the-study-of-ict-in-secondary-11087.pdf"
-  },
-  {
-    "openalex_id": "W4318334573",
-    "openalex_url": "https://openalex.org/W4318334573",
-    "doi": "10.4103/jehp.jehp_545_22",
-    "title": "Cognitive behavioral therapy as treatment intervention for aggressive behaviors in clients with intellectual disabilities and concomitant mental health conditions",
-    "title_norm": "cognitive behavioral therapy as treatment intervention for aggressive behaviors in clients with intellectual disabilities and concomitant mental health conditions",
-    "publication_year": 2022,
-    "publication_date": "2022-01-01",
-    "cited_by_count": 11,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Journal of Education and Health Promotion",
-    "pdf_url": null
   },
   {
     "openalex_id": "W4318618282",
@@ -591,8 +591,8 @@
     "openalex_id": "W3211502822",
     "openalex_url": "https://openalex.org/W3211502822",
     "doi": null,
-    "title": "Changes in Teaching and Learning in Higher Education during&#13;\\nCovid-19 Lockdown: A Study of LIS Students in India",
-    "title_norm": "changes in teaching and learning in higher education during 13 ncovid 19 lockdown a study of lis students in india",
+    "title": "Changes in Teaching and Learning in Higher Education during \\nCovid-19 Lockdown: A Study of LIS Students in India",
+    "title_norm": "changes in teaching and learning in higher education during ncovid 19 lockdown a study of lis students in india",
     "publication_year": 2021,
     "publication_date": "2021-01-01",
     "cited_by_count": 9,
@@ -630,20 +630,6 @@
     "pdf_url": "https://www.richtmann.org/journal/index.php/jicd/article/download/12715/12314"
   },
   {
-    "openalex_id": "W4388669050",
-    "openalex_url": "https://openalex.org/W4388669050",
-    "doi": "10.17718/tojde.1138050",
-    "title": "DISTANCE EDUCATION STUDENTS’ INDULGENCE IN SIX SHARP PRACTICES: GENERAL LINEAR MODELLING OF PREDICTIVE PARAMETERS",
-    "title_norm": "distance education students indulgence in six sharp practices general linear modelling of predictive parameters",
-    "publication_year": 2023,
-    "publication_date": "2023-07-01",
-    "cited_by_count": 6,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Turkish Online Journal of Distance Education",
-    "pdf_url": "https://dergipark.org.tr/en/download/article-file/2516030"
-  },
-  {
     "openalex_id": "W4313856399",
     "openalex_url": "https://openalex.org/W4313856399",
     "doi": "10.37074/jalt.2023.6.1.5",
@@ -672,6 +658,20 @@
     "pdf_url": "https://journals.sfu.ca/jalt/index.php/jalt/article/download/1315/683"
   },
   {
+    "openalex_id": "W4399989844",
+    "openalex_url": "https://openalex.org/W4399989844",
+    "doi": "10.1016/j.ssaho.2024.100983",
+    "title": "Demographic variables and perceptions of corruption among undergraduates: Evidence from a nigerian federal university",
+    "title_norm": "demographic variables and perceptions of corruption among undergraduates evidence from a nigerian federal university",
+    "publication_year": 2024,
+    "publication_date": "2024-01-01",
+    "cited_by_count": 5,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Social Sciences & Humanities Open",
+    "pdf_url": null
+  },
+  {
     "openalex_id": "W4386468589",
     "openalex_url": "https://openalex.org/W4386468589",
     "doi": "10.36941/jesr-2023-0128",
@@ -697,7 +697,7 @@
     "cited_by_api_url": null,
     "type_": "article",
     "source_title": "Open Education Studies",
-    "pdf_url": "https://www.degruyter.com/document/doi/10.1515/edu-2024-0009/pdf"
+    "pdf_url": null
   },
   {
     "openalex_id": "W4410519240",
@@ -742,6 +742,20 @@
     "pdf_url": null
   },
   {
+    "openalex_id": "W4318334573",
+    "openalex_url": "https://openalex.org/W4318334573",
+    "doi": "10.4103/jehp.jehp_545_22",
+    "title": "Cognitive behavioral therapy as treatment intervention for aggressive behaviors in clients with intellectual disabilities and concomitant mental health conditions",
+    "title_norm": "cognitive behavioral therapy as treatment intervention for aggressive behaviors in clients with intellectual disabilities and concomitant mental health conditions",
+    "publication_year": 2022,
+    "publication_date": "2022-01-01",
+    "cited_by_count": 11,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Journal of Education and Health Promotion",
+    "pdf_url": null
+  },
+  {
     "openalex_id": "W3137566644",
     "openalex_url": "https://openalex.org/W3137566644",
     "doi": "10.13140/rg.2.2.35015.55200",
@@ -754,20 +768,6 @@
     "type_": "book",
     "source_title": "PhilPapers (PhilPapers Foundation)",
     "pdf_url": "https://philpapers.org/archive/OWACMS.pdf"
-  },
-  {
-    "openalex_id": "W3099903559",
-    "openalex_url": "https://openalex.org/W3099903559",
-    "doi": "10.5281/zenodo.4320508",
-    "title": "Innovation management and effectiveness of educational research in tertiary institutions in Cross River State, Nigeria",
-    "title_norm": "innovation management and effectiveness of educational research in tertiary institutions in cross river state nigeria",
-    "publication_year": 2020,
-    "publication_date": "2020-12-14",
-    "cited_by_count": 9,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Zenodo (CERN European Organization for Nuclear Research)",
-    "pdf_url": "https://zenodo.org/record/4320509"
   },
   {
     "openalex_id": "W3092467165",
@@ -823,7 +823,7 @@
     "cited_by_api_url": null,
     "type_": "article",
     "source_title": "PhilPapers (PhilPapers Foundation)",
-    "pdf_url": null
+    "pdf_url": "https://philpapers.org/archive/MADANS-2.pdf"
   },
   {
     "openalex_id": "W4307368972",
@@ -840,18 +840,18 @@
     "pdf_url": "https://journals.sfu.ca/jalt/index.php/jalt/article/download/617/503"
   },
   {
-    "openalex_id": "W3033835510",
-    "openalex_url": "https://openalex.org/W3033835510",
-    "doi": "10.5281/zenodo.4320553",
-    "title": "School hazards management and teachers' job effectiveness in secondary schools in Ikom Local Government Area, Cross River State, Nigeria",
-    "title_norm": "school hazards management and teachers job effectiveness in secondary schools in ikom local government area cross river state nigeria",
-    "publication_year": 2020,
-    "publication_date": "2020-12-14",
-    "cited_by_count": 5,
+    "openalex_id": "W4388669050",
+    "openalex_url": "https://openalex.org/W4388669050",
+    "doi": "10.17718/tojde.1138050",
+    "title": "DISTANCE EDUCATION STUDENTS’ INDULGENCE IN SIX SHARP PRACTICES: GENERAL LINEAR MODELLING OF PREDICTIVE PARAMETERS",
+    "title_norm": "distance education students indulgence in six sharp practices general linear modelling of predictive parameters",
+    "publication_year": 2023,
+    "publication_date": "2023-07-01",
+    "cited_by_count": 6,
     "cited_by_api_url": null,
     "type_": "article",
-    "source_title": "PhilPapers (PhilPapers Foundation)",
-    "pdf_url": "https://philpapers.org/archive/AROSHM.pdf"
+    "source_title": "Turkish Online Journal of Distance Education",
+    "pdf_url": "https://dergipark.org.tr/en/download/article-file/2516030"
   },
   {
     "openalex_id": "W3042353751",
@@ -885,7 +885,7 @@
     "openalex_id": "W4226191219",
     "openalex_url": "https://openalex.org/W4226191219",
     "doi": "10.12688/f1000research.54245.3",
-    "title": "Dataset of the adoption of digital tools for research sharing among academics in African Varsities during the COVID-19 pandemic in 2020",
+    "title": "Dataset of the adoption of digital tools for research sharing among academics in African Varsities during the COVID-19 pandemic in 2020",
     "title_norm": "dataset of the adoption of digital tools for research sharing among academics in african varsities during the covid 19 pandemic in 2020",
     "publication_year": 2022,
     "publication_date": "2022-04-04",
@@ -910,34 +910,6 @@
     "pdf_url": "https://www.sciedupress.com/journal/index.php/jct/article/download/22797/14160"
   },
   {
-    "openalex_id": "W4283167266",
-    "openalex_url": "https://openalex.org/W4283167266",
-    "doi": "10.4018/978-1-6684-3364-5.ch009",
-    "title": "A Data Mining Algorithm for Accessing Research Literature in Electronic Databases",
-    "title_norm": "a data mining algorithm for accessing research literature in electronic databases",
-    "publication_year": 2022,
-    "publication_date": "2022-06-20",
-    "cited_by_count": 4,
-    "cited_by_api_url": null,
-    "type_": "book-chapter",
-    "source_title": "Advances in knowledge acquisition, transfer, and management book series/Advances in knowledge acquisition, transfer and management book series",
-    "pdf_url": null
-  },
-  {
-    "openalex_id": "W4392343738",
-    "openalex_url": "https://openalex.org/W4392343738",
-    "doi": "10.37074/jalt.2024.7.1.19",
-    "title": "Metrics in research impact assessment and grant funding: Insights from researchers in the “Reviewer 2 Must Be Stopped!” Facebook group",
-    "title_norm": "metrics in research impact assessment and grant funding insights from researchers in the reviewer 2 must be stopped facebook group",
-    "publication_year": 2024,
-    "publication_date": "2024-03-03",
-    "cited_by_count": 4,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Journal of Applied Learning & Teaching",
-    "pdf_url": "https://journals.sfu.ca/jalt/index.php/jalt/article/download/1593/749"
-  },
-  {
     "openalex_id": "W3112778414",
     "openalex_url": "https://openalex.org/W3112778414",
     "doi": null,
@@ -952,10 +924,24 @@
     "pdf_url": null
   },
   {
+    "openalex_id": "W3178086433",
+    "openalex_url": "https://openalex.org/W3178086433",
+    "doi": "10.17632/69k939yr4n.1",
+    "title": "Electronic Cross-Sectional Data of Academic Staff Preparedness to Adopt Digital Tools for Research Sharing in African Varsities",
+    "title_norm": "electronic cross sectional data of academic staff preparedness to adopt digital tools for research sharing in african varsities",
+    "publication_year": 2021,
+    "publication_date": "2021-04-01",
+    "cited_by_count": 3,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Data Archiving and Networked Services (DANS)",
+    "pdf_url": null
+  },
+  {
     "openalex_id": "W4207049272",
     "openalex_url": "https://openalex.org/W4207049272",
     "doi": "10.12688/f1000research.54245.1",
-    "title": "Dataset of the adoption of digital tools for research sharing among academics in African Varsities during the COVID-19 pandemic in 2020",
+    "title": "Dataset of the adoption of digital tools for research sharing among academics in African Varsities during the COVID-19 pandemic in 2020",
     "title_norm": "dataset of the adoption of digital tools for research sharing among academics in african varsities during the covid 19 pandemic in 2020",
     "publication_year": 2022,
     "publication_date": "2022-01-24",
@@ -980,76 +966,6 @@
     "pdf_url": "http://jeredajournal.com/index.php/home/article/download/174/103"
   },
   {
-    "openalex_id": "W4413409749",
-    "openalex_url": "https://openalex.org/W4413409749",
-    "doi": "10.29333/pr/16808",
-    "title": "An evaluation of the input, processes, and outcomes of the national youth service corps program in Nigeria",
-    "title_norm": "an evaluation of the input processes and outcomes of the national youth service corps program in nigeria",
-    "publication_year": 2025,
-    "publication_date": "2025-08-22",
-    "cited_by_count": 2,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Pedagogical Research",
-    "pdf_url": "https://www.pedagogicalresearch.com/download/an-evaluation-of-the-input-processes-and-outcomes-of-the-national-youth-service-corps-program-in-16808.pdf"
-  },
-  {
-    "openalex_id": "W4390281097",
-    "openalex_url": "https://openalex.org/W4390281097",
-    "doi": "10.33422/7th.icreconf.2023.09.100",
-    "title": "Institutional Variables as Antecedents of Academic Staff Teaching, Research Productivity and Community Service in Universities",
-    "title_norm": "institutional variables as antecedents of academic staff teaching research productivity and community service in universities",
-    "publication_year": 2023,
-    "publication_date": "2023-09-15",
-    "cited_by_count": 1,
-    "cited_by_api_url": null,
-    "type_": "conference-paper",
-    "source_title": null,
-    "pdf_url": "https://www.dpublication.com/wp-content/uploads/2023/09/57-5911-IC.pdf"
-  },
-  {
-    "openalex_id": "W4402005734",
-    "openalex_url": "https://openalex.org/W4402005734",
-    "doi": "10.4314/gjedr.v23i3.2",
-    "title": "Process Errors Committed By Senior Secondary School Students In Solving Problems In Geometry In Cross River State, Nigeria",
-    "title_norm": "process errors committed by senior secondary school students in solving problems in geometry in cross river state nigeria",
-    "publication_year": 2024,
-    "publication_date": "2024-08-20",
-    "cited_by_count": 1,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Global Journal of Educational Research",
-    "pdf_url": "https://www.ajol.info/index.php/gjedr/article/download/276551/260964"
-  },
-  {
-    "openalex_id": "W4417095323",
-    "openalex_url": "https://openalex.org/W4417095323",
-    "doi": "10.1007/s44217-025-01018-z",
-    "title": "Multi group analysis of demographic differences in higher education students ChatGPT use behaviour within a modified UTAUT2 model",
-    "title_norm": "multi group analysis of demographic differences in higher education students chatgpt use behaviour within a modified utaut2 model",
-    "publication_year": 2025,
-    "publication_date": "2025-12-07",
-    "cited_by_count": 1,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Discover Education",
-    "pdf_url": null
-  },
-  {
-    "openalex_id": "W7118174720",
-    "openalex_url": "https://openalex.org/W7118174720",
-    "doi": "10.4314/gjedr.v24i4.3",
-    "title": "Educational evaluation in a political context: whose interests are served?",
-    "title_norm": "educational evaluation in a political context whose interests are served",
-    "publication_year": 2025,
-    "publication_date": "2025-11-12",
-    "cited_by_count": 1,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Global Journal of Educational Research",
-    "pdf_url": null
-  },
-  {
     "openalex_id": "W3162799968",
     "openalex_url": "https://openalex.org/W3162799968",
     "doi": "10.5281/zenodo.4320461",
@@ -1060,8 +976,22 @@
     "cited_by_count": 12,
     "cited_by_api_url": null,
     "type_": "article",
-    "source_title": "Zenodo (CERN European Organization for Nuclear Research)",
-    "pdf_url": "https://zenodo.org/record/4320462"
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": "https://philpapers.org/archive/OWAPOS.pdf"
+  },
+  {
+    "openalex_id": "W3099903559",
+    "openalex_url": "https://openalex.org/W3099903559",
+    "doi": "10.5281/zenodo.4320508",
+    "title": "Innovation management and effectiveness of educational research in tertiary institutions in Cross River State, Nigeria",
+    "title_norm": "innovation management and effectiveness of educational research in tertiary institutions in cross river state nigeria",
+    "publication_year": 2020,
+    "publication_date": "2020-12-14",
+    "cited_by_count": 9,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": "https://philpapers.org/archive/BASIMA.pdf"
   },
   {
     "openalex_id": "W4293496196",
@@ -1076,34 +1006,6 @@
     "type_": "article",
     "source_title": "Global Journal of Educational Research",
     "pdf_url": "https://www.ajol.info/index.php/gjedr/article/download/230544/217667"
-  },
-  {
-    "openalex_id": "W2963793174",
-    "openalex_url": "https://openalex.org/W2963793174",
-    "doi": "10.29333/pr/5855",
-    "title": "School Characteristics and Enrollment Trend in Upper Basic Schools in Akwa Ibom State, Nigeria from 2008-2016",
-    "title_norm": "school characteristics and enrollment trend in upper basic schools in akwa ibom state nigeria from 2008 2016",
-    "publication_year": 2019,
-    "publication_date": "2019-07-21",
-    "cited_by_count": 6,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Pedagogical Research",
-    "pdf_url": "https://www.pedagogicalresearch.com/download/school-characteristics-and-enrollment-trend-in-upper-basic-schools-in-akwa-ibom-state-nigeria-from-5855.pdf"
-  },
-  {
-    "openalex_id": "W3152425087",
-    "openalex_url": "https://openalex.org/W3152425087",
-    "doi": "10.30935/mjosbr/10805",
-    "title": "Complications Connected to Using the Impact Factor of Journals for the Assessment of Researchers in Higher Education",
-    "title_norm": "complications connected to using the impact factor of journals for the assessment of researchers in higher education",
-    "publication_year": 2021,
-    "publication_date": "2021-03-31",
-    "cited_by_count": 6,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Mediterranean Journal of Social & Behavioral Research",
-    "pdf_url": "https://www.mjosbr.com/download/complications-connected-to-using-the-impact-factor-of-journals-for-the-assessment-of-researchers-in-10805.pdf"
   },
   {
     "openalex_id": "W4292401930",
@@ -1134,18 +1036,18 @@
     "pdf_url": "https://archive.conscientiabeam.com/index.php/119/article/download/2739/4282"
   },
   {
-    "openalex_id": "W2949687252",
-    "openalex_url": "https://openalex.org/W2949687252",
-    "doi": "10.11648/j.ijpbs.20190402.12",
-    "title": "Students’ Personnel Management and Academic Effectiveness of Secondary School Students in Calabar Education Zone of Cross River State, Nigeria",
-    "title_norm": "students personnel management and academic effectiveness of secondary school students in calabar education zone of cross river state nigeria",
-    "publication_year": 2019,
-    "publication_date": "2019-01-01",
+    "openalex_id": "W3033835510",
+    "openalex_url": "https://openalex.org/W3033835510",
+    "doi": "10.5281/zenodo.4320553",
+    "title": "School hazards management and teachers' job effectiveness in secondary schools in Ikom Local Government Area, Cross River State, Nigeria",
+    "title_norm": "school hazards management and teachers job effectiveness in secondary schools in ikom local government area cross river state nigeria",
+    "publication_year": 2020,
+    "publication_date": "2020-12-14",
     "cited_by_count": 5,
     "cited_by_api_url": null,
     "type_": "article",
-    "source_title": "International Journal of Psychological and Brain Sciences",
-    "pdf_url": "http://article.sciencepublishinggroup.com/pdf/10.11648.j.ijpbs.20190402.12.pdf"
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": "https://philpapers.org/archive/AROSHM.pdf"
   },
   {
     "openalex_id": "W3092914367",
@@ -1176,18 +1078,18 @@
     "pdf_url": "https://philpapers.org/archive/OWACSO.pdf"
   },
   {
-    "openalex_id": "W3101951373",
-    "openalex_url": "https://openalex.org/W3101951373",
-    "doi": null,
-    "title": "School Quality Indicators and Secondary School Teachers Job Performance in Cross River State, Nigeria",
-    "title_norm": "school quality indicators and secondary school teachers job performance in cross river state nigeria",
-    "publication_year": 2019,
-    "publication_date": "2019-03-31",
+    "openalex_id": "W4387821093",
+    "openalex_url": "https://openalex.org/W4387821093",
+    "doi": "10.33902/jpsp.202320925",
+    "title": "Beyond school grades: Measuring students learning outcomes and the emergence of achievers and underachievers",
+    "title_norm": "beyond school grades measuring students learning outcomes and the emergence of achievers and underachievers",
+    "publication_year": 2023,
+    "publication_date": "2023-10-20",
     "cited_by_count": 5,
     "cited_by_api_url": null,
     "type_": "article",
-    "source_title": "PhilPapers (PhilPapers Foundation)",
-    "pdf_url": "https://philpapers.org/archive/AROSQI.pdf"
+    "source_title": "Journal of Pedagogical Sociology and Psychology",
+    "pdf_url": "https://www.j-psp.com/download/beyond-school-grades-measuring-students-learning-outcomes-and-the-emergence-of-achievers-and-13788.pdf"
   },
   {
     "openalex_id": "W3003234242",
@@ -1218,20 +1120,6 @@
     "pdf_url": "https://philpapers.org/archive/OWAMOT.pdf"
   },
   {
-    "openalex_id": "W3128415636",
-    "openalex_url": "https://openalex.org/W3128415636",
-    "doi": "10.30935/conmaths/9681",
-    "title": "Standardised Predictive Linear Models of Managerial Processes and the Sustainability of Graduate Programmes (SGPs) in Universities: A Case Study",
-    "title_norm": "standardised predictive linear models of managerial processes and the sustainability of graduate programmes sgps in universities a case study",
-    "publication_year": 2021,
-    "publication_date": "2021-02-04",
-    "cited_by_count": 4,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Contemporary Mathematics and Science Education",
-    "pdf_url": "https://www.conmaths.com/download/standardised-predictive-linear-models-of-managerial-processes-and-the-sustainability-of-graduate-9681.pdf"
-  },
-  {
     "openalex_id": "W3209337955",
     "openalex_url": "https://openalex.org/W3209337955",
     "doi": null,
@@ -1257,6 +1145,20 @@
     "cited_by_api_url": null,
     "type_": "article",
     "source_title": "Zenodo (CERN European Organization for Nuclear Research)",
+    "pdf_url": null
+  },
+  {
+    "openalex_id": "W4283167266",
+    "openalex_url": "https://openalex.org/W4283167266",
+    "doi": "10.4018/978-1-6684-3364-5.ch009",
+    "title": "A Data Mining Algorithm for Accessing Research Literature in Electronic Databases",
+    "title_norm": "a data mining algorithm for accessing research literature in electronic databases",
+    "publication_year": 2022,
+    "publication_date": "2022-06-20",
+    "cited_by_count": 4,
+    "cited_by_api_url": null,
+    "type_": "book-chapter",
+    "source_title": "Advances in knowledge acquisition, transfer, and management book series/Advances in knowledge acquisition, transfer and management book series",
     "pdf_url": null
   },
   {
@@ -1330,32 +1232,18 @@
     "pdf_url": "https://nurture.org.pk/index.php/NURTURE/article/download/311/118"
   },
   {
-    "openalex_id": "W4387821093",
-    "openalex_url": "https://openalex.org/W4387821093",
-    "doi": "10.33902/jpsp.202320925",
-    "title": "Beyond school grades: Measuring students learning outcomes and the emergence of achievers and underachievers",
-    "title_norm": "beyond school grades measuring students learning outcomes and the emergence of achievers and underachievers",
-    "publication_year": 2023,
-    "publication_date": "2023-10-20",
+    "openalex_id": "W4392343738",
+    "openalex_url": "https://openalex.org/W4392343738",
+    "doi": "10.37074/jalt.2024.7.1.19",
+    "title": "Metrics in research impact assessment and grant funding: Insights from researchers in the “Reviewer 2 Must Be Stopped!” Facebook group",
+    "title_norm": "metrics in research impact assessment and grant funding insights from researchers in the reviewer 2 must be stopped facebook group",
+    "publication_year": 2024,
+    "publication_date": "2024-03-03",
     "cited_by_count": 4,
     "cited_by_api_url": null,
     "type_": "article",
-    "source_title": "Journal of Pedagogical Sociology and Psychology",
-    "pdf_url": "https://www.j-psp.com/download/beyond-school-grades-measuring-students-learning-outcomes-and-the-emergence-of-achievers-and-13788.pdf"
-  },
-  {
-    "openalex_id": "W3101579847",
-    "openalex_url": "https://openalex.org/W3101579847",
-    "doi": "10.5281/zenodo.4458626",
-    "title": "Classroom management variables and primary school system effectiveness in Calabar-South Local Government Area, Cross River State, Nigeria",
-    "title_norm": "classroom management variables and primary school system effectiveness in calabar south local government area cross river state nigeria",
-    "publication_year": 2020,
-    "publication_date": "2020-12-28",
-    "cited_by_count": 3,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "PhilPapers (PhilPapers Foundation)",
-    "pdf_url": null
+    "source_title": "Journal of Applied Learning & Teaching",
+    "pdf_url": "https://journals.sfu.ca/jalt/index.php/jalt/article/download/1593/749"
   },
   {
     "openalex_id": "W3112642192",
@@ -1400,20 +1288,6 @@
     "pdf_url": "https://journals.sfu.ca/jalt/index.php/jalt/article/download/793/617"
   },
   {
-    "openalex_id": "W4385501973",
-    "openalex_url": "https://openalex.org/W4385501973",
-    "doi": "10.4018/978-1-6684-7024-4.ch001",
-    "title": "Reviving Indigenous Clay Pot Production for Students' Entrepreneurial and Vocational Inspiration",
-    "title_norm": "reviving indigenous clay pot production for students entrepreneurial and vocational inspiration",
-    "publication_year": 2023,
-    "publication_date": "2023-08-03",
-    "cited_by_count": 3,
-    "cited_by_api_url": null,
-    "type_": "book-chapter",
-    "source_title": "Advances in information quality and management",
-    "pdf_url": null
-  },
-  {
     "openalex_id": "W4282831957",
     "openalex_url": "https://openalex.org/W4282831957",
     "doi": "10.12688/f1000research.122328.1",
@@ -1442,17 +1316,185 @@
     "pdf_url": null
   },
   {
-    "openalex_id": "W4283159968",
-    "openalex_url": "https://openalex.org/W4283159968",
-    "doi": "10.4018/978-1-6684-3364-5.ch003",
-    "title": "Contemporary Trends and Technologies in Research Libraries",
-    "title_norm": "contemporary trends and technologies in research libraries",
-    "publication_year": 2022,
-    "publication_date": "2022-06-20",
-    "cited_by_count": 3,
+    "openalex_id": "W4413409749",
+    "openalex_url": "https://openalex.org/W4413409749",
+    "doi": "10.29333/pr/16808",
+    "title": "An evaluation of the input, processes, and outcomes of the national youth service corps program in Nigeria",
+    "title_norm": "an evaluation of the input processes and outcomes of the national youth service corps program in nigeria",
+    "publication_year": 2025,
+    "publication_date": "2025-08-22",
+    "cited_by_count": 2,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Pedagogical Research",
+    "pdf_url": "https://www.pedagogicalresearch.com/download/an-evaluation-of-the-input-processes-and-outcomes-of-the-national-youth-service-corps-program-in-16808.pdf"
+  },
+  {
+    "openalex_id": "W4323824993",
+    "openalex_url": "https://openalex.org/W4323824993",
+    "doi": "10.4018/978-1-6684-6859-3.ch016",
+    "title": "Basics of Research Report Writing for Behavioural Science Students and Emerging Scholars",
+    "title_norm": "basics of research report writing for behavioural science students and emerging scholars",
+    "publication_year": 2023,
+    "publication_date": "2023-03-10",
+    "cited_by_count": 1,
     "cited_by_api_url": null,
     "type_": "book-chapter",
     "source_title": "Advances in knowledge acquisition, transfer, and management book series/Advances in knowledge acquisition, transfer and management book series",
+    "pdf_url": null
+  },
+  {
+    "openalex_id": "W4390281097",
+    "openalex_url": "https://openalex.org/W4390281097",
+    "doi": "10.33422/7th.icreconf.2023.09.100",
+    "title": "Institutional Variables as Antecedents of Academic Staff Teaching, Research Productivity and Community Service in Universities",
+    "title_norm": "institutional variables as antecedents of academic staff teaching research productivity and community service in universities",
+    "publication_year": 2023,
+    "publication_date": "2023-09-15",
+    "cited_by_count": 1,
+    "cited_by_api_url": null,
+    "type_": "conference-paper",
+    "source_title": null,
+    "pdf_url": "https://www.dpublication.com/wp-content/uploads/2023/09/57-5911-IC.pdf"
+  },
+  {
+    "openalex_id": "W4402005734",
+    "openalex_url": "https://openalex.org/W4402005734",
+    "doi": "10.4314/gjedr.v23i3.2",
+    "title": "Process Errors Committed By Senior Secondary School Students In Solving Problems In Geometry In Cross River State, Nigeria",
+    "title_norm": "process errors committed by senior secondary school students in solving problems in geometry in cross river state nigeria",
+    "publication_year": 2024,
+    "publication_date": "2024-08-20",
+    "cited_by_count": 1,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Global Journal of Educational Research",
+    "pdf_url": null
+  },
+  {
+    "openalex_id": "W4417095323",
+    "openalex_url": "https://openalex.org/W4417095323",
+    "doi": "10.1007/s44217-025-01018-z",
+    "title": "Multi group analysis of demographic differences in higher education students ChatGPT use behaviour within a modified UTAUT2 model",
+    "title_norm": "multi group analysis of demographic differences in higher education students chatgpt use behaviour within a modified utaut2 model",
+    "publication_year": 2025,
+    "publication_date": "2025-12-07",
+    "cited_by_count": 1,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Discover Education",
+    "pdf_url": null
+  },
+  {
+    "openalex_id": "W7118174720",
+    "openalex_url": "https://openalex.org/W7118174720",
+    "doi": "10.4314/gjedr.v24i4.3",
+    "title": "Educational evaluation in a political context: whose interests are served?",
+    "title_norm": "educational evaluation in a political context whose interests are served",
+    "publication_year": 2025,
+    "publication_date": "2025-11-12",
+    "cited_by_count": 1,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Global Journal of Educational Research",
+    "pdf_url": null
+  },
+  {
+    "openalex_id": "W2963793174",
+    "openalex_url": "https://openalex.org/W2963793174",
+    "doi": "10.29333/pr/5855",
+    "title": "School Characteristics and Enrollment Trend in Upper Basic Schools in Akwa Ibom State, Nigeria from 2008-2016",
+    "title_norm": "school characteristics and enrollment trend in upper basic schools in akwa ibom state nigeria from 2008 2016",
+    "publication_year": 2019,
+    "publication_date": "2019-07-21",
+    "cited_by_count": 6,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Pedagogical Research",
+    "pdf_url": "https://www.pedagogicalresearch.com/download/school-characteristics-and-enrollment-trend-in-upper-basic-schools-in-akwa-ibom-state-nigeria-from-5855.pdf"
+  },
+  {
+    "openalex_id": "W3152425087",
+    "openalex_url": "https://openalex.org/W3152425087",
+    "doi": "10.30935/mjosbr/10805",
+    "title": "Complications Connected to Using the Impact Factor of Journals for the Assessment of Researchers in Higher Education",
+    "title_norm": "complications connected to using the impact factor of journals for the assessment of researchers in higher education",
+    "publication_year": 2021,
+    "publication_date": "2021-03-31",
+    "cited_by_count": 6,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Mediterranean Journal of Social & Behavioral Research",
+    "pdf_url": "https://www.mjosbr.com/download/complications-connected-to-using-the-impact-factor-of-journals-for-the-assessment-of-researchers-in-10805.pdf"
+  },
+  {
+    "openalex_id": "W2949687252",
+    "openalex_url": "https://openalex.org/W2949687252",
+    "doi": "10.11648/j.ijpbs.20190402.12",
+    "title": "Students’ Personnel Management and Academic Effectiveness of Secondary School Students in Calabar Education Zone of Cross River State, Nigeria",
+    "title_norm": "students personnel management and academic effectiveness of secondary school students in calabar education zone of cross river state nigeria",
+    "publication_year": 2019,
+    "publication_date": "2019-01-01",
+    "cited_by_count": 5,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "International Journal of Psychological and Brain Sciences",
+    "pdf_url": "http://article.sciencepublishinggroup.com/pdf/10.11648.j.ijpbs.20190402.12.pdf"
+  },
+  {
+    "openalex_id": "W3101951373",
+    "openalex_url": "https://openalex.org/W3101951373",
+    "doi": null,
+    "title": "School Quality Indicators and Secondary School Teachers Job Performance in Cross River State, Nigeria",
+    "title_norm": "school quality indicators and secondary school teachers job performance in cross river state nigeria",
+    "publication_year": 2019,
+    "publication_date": "2019-01-01",
+    "cited_by_count": 5,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": "https://philpapers.org/archive/AROSQI.pdf"
+  },
+  {
+    "openalex_id": "W3128415636",
+    "openalex_url": "https://openalex.org/W3128415636",
+    "doi": "10.30935/conmaths/9681",
+    "title": "Standardised Predictive Linear Models of Managerial Processes and the Sustainability of Graduate Programmes (SGPs) in Universities: A Case Study",
+    "title_norm": "standardised predictive linear models of managerial processes and the sustainability of graduate programmes sgps in universities a case study",
+    "publication_year": 2021,
+    "publication_date": "2021-02-04",
+    "cited_by_count": 4,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Contemporary Mathematics and Science Education",
+    "pdf_url": "https://www.conmaths.com/download/standardised-predictive-linear-models-of-managerial-processes-and-the-sustainability-of-graduate-9681.pdf"
+  },
+  {
+    "openalex_id": "W3101579847",
+    "openalex_url": "https://openalex.org/W3101579847",
+    "doi": "10.5281/zenodo.4458626",
+    "title": "Classroom management variables and primary school system effectiveness in Calabar-South Local Government Area, Cross River State, Nigeria",
+    "title_norm": "classroom management variables and primary school system effectiveness in calabar south local government area cross river state nigeria",
+    "publication_year": 2020,
+    "publication_date": "2020-12-28",
+    "cited_by_count": 3,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": "https://philpapers.org/archive/OWACMV.pdf"
+  },
+  {
+    "openalex_id": "W4385501973",
+    "openalex_url": "https://openalex.org/W4385501973",
+    "doi": "10.4018/978-1-6684-7024-4.ch001",
+    "title": "Reviving Indigenous Clay Pot Production for Students' Entrepreneurial and Vocational Inspiration",
+    "title_norm": "reviving indigenous clay pot production for students entrepreneurial and vocational inspiration",
+    "publication_year": 2023,
+    "publication_date": "2023-08-03",
+    "cited_by_count": 3,
+    "cited_by_api_url": null,
+    "type_": "book-chapter",
+    "source_title": "Advances in information quality and management",
     "pdf_url": null
   },
   {
@@ -1468,20 +1510,6 @@
     "type_": "article",
     "source_title": "International Journal of Innovative Business Strategies",
     "pdf_url": "https://doi.org/10.20533/ijibs.2046.3626.2020.0049"
-  },
-  {
-    "openalex_id": "W4385558156",
-    "openalex_url": "https://openalex.org/W4385558156",
-    "doi": "10.4018/978-1-6684-7024-4.ch003",
-    "title": "Students' Entrepreneurship Development Through Indigenous Palm Wine Production and Alcohol Distillation",
-    "title_norm": "students entrepreneurship development through indigenous palm wine production and alcohol distillation",
-    "publication_year": 2023,
-    "publication_date": "2023-08-03",
-    "cited_by_count": 2,
-    "cited_by_api_url": null,
-    "type_": "book-chapter",
-    "source_title": "Advances in information quality and management",
-    "pdf_url": null
   },
   {
     "openalex_id": "W3003982381",
@@ -1512,34 +1540,6 @@
     "pdf_url": null
   },
   {
-    "openalex_id": "W4385558157",
-    "openalex_url": "https://openalex.org/W4385558157",
-    "doi": "10.4018/978-1-6684-7024-4.ch018",
-    "title": "Indigenous Research and Data Management in Electronic Archives",
-    "title_norm": "indigenous research and data management in electronic archives",
-    "publication_year": 2023,
-    "publication_date": "2023-08-03",
-    "cited_by_count": 1,
-    "cited_by_api_url": null,
-    "type_": "book-chapter",
-    "source_title": "Advances in information quality and management",
-    "pdf_url": null
-  },
-  {
-    "openalex_id": "W4391827681",
-    "openalex_url": "https://openalex.org/W4391827681",
-    "doi": "10.4018/979-8-3693-3132-3.ch015",
-    "title": "Development and Validation of the Perception of Interdisciplinary Research Collaboration (PIRC) Scale",
-    "title_norm": "development and validation of the perception of interdisciplinary research collaboration pirc scale",
-    "publication_year": 2023,
-    "publication_date": "2023-12-29",
-    "cited_by_count": 1,
-    "cited_by_api_url": null,
-    "type_": "book-chapter",
-    "source_title": "Advances in educational technologies and instructional design book series",
-    "pdf_url": null
-  },
-  {
     "openalex_id": "W3103673365",
     "openalex_url": "https://openalex.org/W3103673365",
     "doi": "10.5281/zenodo.4458687",
@@ -1552,20 +1552,6 @@
     "type_": "article",
     "source_title": "PhilPapers (PhilPapers Foundation)",
     "pdf_url": "https://philpapers.org/archive/MBOAOT.pdf"
-  },
-  {
-    "openalex_id": "W3103391280",
-    "openalex_url": "https://openalex.org/W3103391280",
-    "doi": "10.5281/zenodo.4320660",
-    "title": "Principals' supervisory techniques for combating corruption and the attainment of quality school governance in public secondary schools in Aba Education Zone of Abia State, Nigeria",
-    "title_norm": "principals supervisory techniques for combating corruption and the attainment of quality school governance in public secondary schools in aba education zone of abia state nigeria",
-    "publication_year": 2019,
-    "publication_date": "2019-06-18",
-    "cited_by_count": 3,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "PhilPapers (PhilPapers Foundation)",
-    "pdf_url": "https://philpapers.org/archive/MADPST-2.pdf"
   },
   {
     "openalex_id": "W3103753349",
@@ -1610,6 +1596,118 @@
     "pdf_url": "https://philpapers.org/archive/OWAAOT.pdf"
   },
   {
+    "openalex_id": "W4283159968",
+    "openalex_url": "https://openalex.org/W4283159968",
+    "doi": "10.4018/978-1-6684-3364-5.ch003",
+    "title": "Contemporary Trends and Technologies in Research Libraries",
+    "title_norm": "contemporary trends and technologies in research libraries",
+    "publication_year": 2022,
+    "publication_date": "2022-06-20",
+    "cited_by_count": 3,
+    "cited_by_api_url": null,
+    "type_": "book-chapter",
+    "source_title": "Advances in knowledge acquisition, transfer, and management book series/Advances in knowledge acquisition, transfer and management book series",
+    "pdf_url": null
+  },
+  {
+    "openalex_id": "W4385558156",
+    "openalex_url": "https://openalex.org/W4385558156",
+    "doi": "10.4018/978-1-6684-7024-4.ch003",
+    "title": "Students' Entrepreneurship Development Through Indigenous Palm Wine Production and Alcohol Distillation",
+    "title_norm": "students entrepreneurship development through indigenous palm wine production and alcohol distillation",
+    "publication_year": 2023,
+    "publication_date": "2023-08-03",
+    "cited_by_count": 2,
+    "cited_by_api_url": null,
+    "type_": "book-chapter",
+    "source_title": "Advances in information quality and management",
+    "pdf_url": null
+  },
+  {
+    "openalex_id": "W3166174111",
+    "openalex_url": "https://openalex.org/W3166174111",
+    "doi": null,
+    "title": "School Characteristics and Enrollment Trend in Upper Basic Schools in Akwa Ibom State, Nigeria from 2008-2016",
+    "title_norm": "school characteristics and enrollment trend in upper basic schools in akwa ibom state nigeria from 2008 2016",
+    "publication_year": 2019,
+    "publication_date": "2019-08-12",
+    "cited_by_count": 1,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": "https://philpapers.org/archive/EKASCA.pdf"
+  },
+  {
+    "openalex_id": "W3207616233",
+    "openalex_url": "https://openalex.org/W3207616233",
+    "doi": null,
+    "title": "Principals’ Management of Library Resources and Teachers’ Lesson Preparation Practices in Secondary Schools: A Predictive Evaluation",
+    "title_norm": "principals management of library resources and teachers lesson preparation practices in secondary schools a predictive evaluation",
+    "publication_year": 2021,
+    "publication_date": "2021-01-01",
+    "cited_by_count": 1,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Lincoln (University of Nebraska)",
+    "pdf_url": "https://scholarworks.sjsu.edu/cgi/viewcontent.cgi?article=11693&context=libphilprac"
+  },
+  {
+    "openalex_id": "W4293436002",
+    "openalex_url": "https://openalex.org/W4293436002",
+    "doi": "10.29333/ejmets/12411",
+    "title": "Availability of digital resources and institutional compliance with COVID-19 mitigation measures in a Nigerian university: A descriptive study",
+    "title_norm": "availability of digital resources and institutional compliance with covid 19 mitigation measures in a nigerian university a descriptive study",
+    "publication_year": 2022,
+    "publication_date": "2022-08-29",
+    "cited_by_count": 1,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "Electronic Journal of Medical and Educational Technologies",
+    "pdf_url": "https://www.ejmets.com/download/availability-of-digital-resources-and-institutional-compliance-with-covid-19-mitigation-measures-in-12411.pdf"
+  },
+  {
+    "openalex_id": "W4385558157",
+    "openalex_url": "https://openalex.org/W4385558157",
+    "doi": "10.4018/978-1-6684-7024-4.ch018",
+    "title": "Indigenous Research and Data Management in Electronic Archives",
+    "title_norm": "indigenous research and data management in electronic archives",
+    "publication_year": 2023,
+    "publication_date": "2023-08-03",
+    "cited_by_count": 1,
+    "cited_by_api_url": null,
+    "type_": "book-chapter",
+    "source_title": "Advances in information quality and management",
+    "pdf_url": null
+  },
+  {
+    "openalex_id": "W4391827681",
+    "openalex_url": "https://openalex.org/W4391827681",
+    "doi": "10.4018/979-8-3693-3132-3.ch015",
+    "title": "Development and Validation of the Perception of Interdisciplinary Research Collaboration (PIRC) Scale",
+    "title_norm": "development and validation of the perception of interdisciplinary research collaboration pirc scale",
+    "publication_year": 2023,
+    "publication_date": "2023-12-29",
+    "cited_by_count": 1,
+    "cited_by_api_url": null,
+    "type_": "book-chapter",
+    "source_title": "Advances in educational technologies and instructional design book series",
+    "pdf_url": null
+  },
+  {
+    "openalex_id": "W3103391280",
+    "openalex_url": "https://openalex.org/W3103391280",
+    "doi": "10.5281/zenodo.4320660",
+    "title": "Principals' supervisory techniques for combating corruption and the attainment of quality school governance in public secondary schools in Aba Education Zone of Abia State, Nigeria",
+    "title_norm": "principals supervisory techniques for combating corruption and the attainment of quality school governance in public secondary schools in aba education zone of abia state nigeria",
+    "publication_year": 2019,
+    "publication_date": "2019-06-18",
+    "cited_by_count": 3,
+    "cited_by_api_url": null,
+    "type_": "article",
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": "https://philpapers.org/archive/MADPST-2.pdf"
+  },
+  {
     "openalex_id": "W3014681614",
     "openalex_url": "https://openalex.org/W3014681614",
     "doi": "10.6007/ijarbss/v9-i6/5967",
@@ -1652,20 +1750,6 @@
     "pdf_url": "https://digitalcommons.unl.edu/libphilprac/6150"
   },
   {
-    "openalex_id": "W3207616233",
-    "openalex_url": "https://openalex.org/W3207616233",
-    "doi": null,
-    "title": "Principals’ Management of Library Resources and Teachers’ Lesson Preparation Practices in Secondary Schools: A Predictive Evaluation",
-    "title_norm": "principals management of library resources and teachers lesson preparation practices in secondary schools a predictive evaluation",
-    "publication_year": 2021,
-    "publication_date": "2021-01-01",
-    "cited_by_count": 1,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Lincoln (University of Nebraska)",
-    "pdf_url": "https://digitalcommons.unl.edu/libphilprac/6180"
-  },
-  {
     "openalex_id": "W4283160667",
     "openalex_url": "https://openalex.org/W4283160667",
     "doi": "10.4018/978-1-6684-3364-5.ch006",
@@ -1678,20 +1762,6 @@
     "type_": "book-chapter",
     "source_title": "Advances in knowledge acquisition, transfer, and management book series/Advances in knowledge acquisition, transfer and management book series",
     "pdf_url": null
-  },
-  {
-    "openalex_id": "W4293436002",
-    "openalex_url": "https://openalex.org/W4293436002",
-    "doi": "10.29333/ejmets/12411",
-    "title": "Availability of digital resources and institutional compliance with COVID-19 mitigation measures in a Nigerian university: A descriptive study",
-    "title_norm": "availability of digital resources and institutional compliance with covid 19 mitigation measures in a nigerian university a descriptive study",
-    "publication_year": 2022,
-    "publication_date": "2022-08-29",
-    "cited_by_count": 1,
-    "cited_by_api_url": null,
-    "type_": "article",
-    "source_title": "Electronic Journal of Medical and Educational Technologies",
-    "pdf_url": "https://www.ejmets.com/download/availability-of-digital-resources-and-institutional-compliance-with-covid-19-mitigation-measures-in-12411.pdf"
   },
   {
     "openalex_id": "W4319792737",
@@ -1720,20 +1790,6 @@
     "type_": "article",
     "source_title": "International Journal of Education and Practice",
     "pdf_url": "https://archive.conscientiabeam.com/index.php/61/article/download/3433/7683"
-  },
-  {
-    "openalex_id": "W3092675154",
-    "openalex_url": "https://openalex.org/W3092675154",
-    "doi": "10.5281/zenodo.4458640",
-    "title": "Quality assurance practices and students' performance evaluation in universities of South-South Nigeria: A structural equation modelling approach",
-    "title_norm": "quality assurance practices and students performance evaluation in universities of south south nigeria a structural equation modelling approach",
-    "publication_year": 2021,
-    "publication_date": "2021-01-22",
-    "cited_by_count": 22,
-    "cited_by_api_url": null,
-    "type_": "preprint",
-    "source_title": "SSRN Electronic Journal",
-    "pdf_url": null
   },
   {
     "openalex_id": "W3105540759",
@@ -1786,20 +1842,6 @@
     "publication_year": 2019,
     "publication_date": "2019-08-12",
     "cited_by_count": 12,
-    "cited_by_api_url": null,
-    "type_": "preprint",
-    "source_title": "SSRN Electronic Journal",
-    "pdf_url": null
-  },
-  {
-    "openalex_id": "W3193654849",
-    "openalex_url": "https://openalex.org/W3193654849",
-    "doi": null,
-    "title": "Teaching Personnel Management and Attitude to Work in Secondary Schools of Calabar Education Zone of Cross River State, Nigeria",
-    "title_norm": "teaching personnel management and attitude to work in secondary schools of calabar education zone of cross river state nigeria",
-    "publication_year": 2019,
-    "publication_date": "2019-06-30",
-    "cited_by_count": 11,
     "cited_by_api_url": null,
     "type_": "preprint",
     "source_title": "SSRN Electronic Journal",
@@ -1879,8 +1921,8 @@
     "openalex_id": "W3117581331",
     "openalex_url": "https://openalex.org/W3117581331",
     "doi": "10.2139/ssrn.3221784",
-    "title": "Some Causes of Poor PerformanceOf Pupils in Primary School Mathematics.A Case Study in Akamkpa Local Government Area of Cross River State, Nigeria.",
-    "title_norm": "some causes of poor performanceof pupils in primary school mathematics a case study in akamkpa local government area of cross river state nigeria",
+    "title": "Some Causes of Poor Performance Of Pupils in Primary School Mathematics. A Case Study in Akamkpa Local Government Area of Cross River State, Nigeria.",
+    "title_norm": "some causes of poor performance of pupils in primary school mathematics a case study in akamkpa local government area of cross river state nigeria",
     "publication_year": 2018,
     "publication_date": "2018-01-01",
     "cited_by_count": 8,
@@ -1971,20 +2013,6 @@
     "cited_by_api_url": null,
     "type_": "preprint",
     "source_title": "SSRN Electronic Journal",
-    "pdf_url": null
-  },
-  {
-    "openalex_id": "W3178086433",
-    "openalex_url": "https://openalex.org/W3178086433",
-    "doi": "10.17632/69k939yr4n.1",
-    "title": "Electronic Cross-Sectional Data of Academic Staff Preparedness to Adopt Digital Tools for Research Sharing in African Varsities",
-    "title_norm": "electronic cross sectional data of academic staff preparedness to adopt digital tools for research sharing in african varsities",
-    "publication_year": 2021,
-    "publication_date": "2021-04-01",
-    "cited_by_count": 3,
-    "cited_by_api_url": null,
-    "type_": "other",
-    "source_title": "Data Archiving and Networked Services (DANS)",
     "pdf_url": null
   },
   {
@@ -2093,20 +2121,6 @@
     "title_norm": "effects of gender test anxiety and test items scrambling on students performance in mathematics a quasi experimental study",
     "publication_year": 2020,
     "publication_date": "2020-01-01",
-    "cited_by_count": 1,
-    "cited_by_api_url": null,
-    "type_": "preprint",
-    "source_title": "SSRN Electronic Journal",
-    "pdf_url": null
-  },
-  {
-    "openalex_id": "W3166174111",
-    "openalex_url": "https://openalex.org/W3166174111",
-    "doi": null,
-    "title": "School Characteristics and Enrollment Trend in Upper Basic Schools in Akwa Ibom State, Nigeria from 2008-2016",
-    "title_norm": "school characteristics and enrollment trend in upper basic schools in akwa ibom state nigeria from 2008 2016",
-    "publication_year": 2019,
-    "publication_date": "2019-08-12",
     "cited_by_count": 1,
     "cited_by_api_url": null,
     "type_": "preprint",
@@ -2263,7 +2277,7 @@
     "publication_date": "2019-02-01",
     "cited_by_count": 0,
     "cited_by_api_url": null,
-    "type_": "other",
+    "type_": "article",
     "source_title": "Data Archiving and Networked Services (DANS)",
     "pdf_url": null
   },
@@ -2291,9 +2305,9 @@
     "publication_date": "2019-09-21",
     "cited_by_count": 0,
     "cited_by_api_url": null,
-    "type_": "preprint",
-    "source_title": "SSRN Electronic Journal",
-    "pdf_url": null
+    "type_": "article",
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": "https://philpapers.org/archive/OWASCA.pdf"
   },
   {
     "openalex_id": "W3161670702",
@@ -2347,9 +2361,9 @@
     "publication_date": "2020-05-06",
     "cited_by_count": 0,
     "cited_by_api_url": null,
-    "type_": "preprint",
-    "source_title": "SSRN Electronic Journal",
-    "pdf_url": null
+    "type_": "article",
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": "https://philpapers.org/archive/BASPOU.pdf"
   },
   {
     "openalex_id": "W3166643955",
@@ -2417,9 +2431,9 @@
     "publication_date": "2020-03-20",
     "cited_by_count": 0,
     "cited_by_api_url": null,
-    "type_": "preprint",
-    "source_title": "SSRN Electronic Journal",
-    "pdf_url": null
+    "type_": "article",
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": "https://philpapers.org/archive/OWAVOA.pdf"
   },
   {
     "openalex_id": "W3187697707",
@@ -2501,9 +2515,9 @@
     "publication_date": "2021-02-11",
     "cited_by_count": 0,
     "cited_by_api_url": null,
-    "type_": "preprint",
-    "source_title": "SSRN Electronic Journal",
-    "pdf_url": null
+    "type_": "article",
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": "https://philpapers.org/archive/OWATEO-3.pdf"
   },
   {
     "openalex_id": "W3201917349",
@@ -2515,7 +2529,7 @@
     "publication_date": "2021-10-05",
     "cited_by_count": 0,
     "cited_by_api_url": null,
-    "type_": "other",
+    "type_": "article",
     "source_title": "Data Archiving and Networked Services (DANS)",
     "pdf_url": null
   },
@@ -2557,9 +2571,9 @@
     "publication_date": "2021-07-17",
     "cited_by_count": 0,
     "cited_by_api_url": null,
-    "type_": "preprint",
-    "source_title": "SSRN Electronic Journal",
-    "pdf_url": null
+    "type_": "article",
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": "https://philpapers.org/archive/OWAAOS-2.pdf"
   },
   {
     "openalex_id": "W3204138879",
@@ -2635,7 +2649,7 @@
     "openalex_id": "W4220923436",
     "openalex_url": "https://openalex.org/W4220923436",
     "doi": "10.12688/f1000research.54245.2",
-    "title": "Dataset of the adoption of digital tools for research sharing among academics in African Varsities during the COVID-19 pandemic in 2020",
+    "title": "Dataset of the adoption of digital tools for research sharing among academics in African Varsities during the COVID-19 pandemic in 2020",
     "title_norm": "dataset of the adoption of digital tools for research sharing among academics in african varsities during the covid 19 pandemic in 2020",
     "publication_year": 2022,
     "publication_date": "2022-03-02",
@@ -2730,20 +2744,6 @@
     "pdf_url": "https://www.unibulletin.com/index/makale_indir/274"
   },
   {
-    "openalex_id": "W4323824993",
-    "openalex_url": "https://openalex.org/W4323824993",
-    "doi": "10.4018/978-1-6684-6859-3.ch016",
-    "title": "Basics of Research Report Writing for Behavioural Science Students and Emerging Scholars",
-    "title_norm": "basics of research report writing for behavioural science students and emerging scholars",
-    "publication_year": 2023,
-    "publication_date": "2023-03-10",
-    "cited_by_count": 0,
-    "cited_by_api_url": null,
-    "type_": "book-chapter",
-    "source_title": "Advances in knowledge acquisition, transfer, and management book series/Advances in knowledge acquisition, transfer and management book series",
-    "pdf_url": null
-  },
-  {
     "openalex_id": "W4385502565",
     "openalex_url": "https://openalex.org/W4385502565",
     "doi": "10.4018/978-1-6684-7024-4.ch013",
@@ -2784,6 +2784,76 @@
     "type_": "article",
     "source_title": "Eureka Journal of Educational Research",
     "pdf_url": "https://eureka.id-sre.org/index.php/ejer/article/download/82/46"
+  },
+  {
+    "openalex_id": "W4416612010",
+    "openalex_url": "https://openalex.org/W4416612010",
+    "doi": "10.5256/f1000research.123027.r129800",
+    "title": "Peer Review Report For: Dataset of the adoption of digital tools for research sharing among academics in African Varsities during the COVID-19 pandemic in 2020 [version 3; peer review: 2 approved]",
+    "title_norm": "peer review report for dataset of the adoption of digital tools for research sharing among academics in african varsities during the covid 19 pandemic in 2020 version 3 peer review 2 approved",
+    "publication_year": 2022,
+    "publication_date": "2022-04-27",
+    "cited_by_count": 0,
+    "cited_by_api_url": null,
+    "type_": "peer-review",
+    "source_title": null,
+    "pdf_url": null
+  },
+  {
+    "openalex_id": "W4416627805",
+    "openalex_url": "https://openalex.org/W4416627805",
+    "doi": "10.5256/f1000research.123027.r126004",
+    "title": "Peer Review Report For: Dataset of the adoption of digital tools for research sharing among academics in African Varsities during the COVID-19 pandemic in 2020 [version 3; peer review: 2 approved]",
+    "title_norm": "peer review report for dataset of the adoption of digital tools for research sharing among academics in african varsities during the covid 19 pandemic in 2020 version 3 peer review 2 approved",
+    "publication_year": 2022,
+    "publication_date": "2022-04-14",
+    "cited_by_count": 0,
+    "cited_by_api_url": null,
+    "type_": "peer-review",
+    "source_title": null,
+    "pdf_url": null
+  },
+  {
+    "openalex_id": "W4416659133",
+    "openalex_url": "https://openalex.org/W4416659133",
+    "doi": "10.5256/f1000research.121855.r126003",
+    "title": "Peer Review Report For: Dataset of the adoption of digital tools for research sharing among academics in African Varsities during the COVID-19 pandemic in 2020 [version 2; peer review: 1 approved, 1 approved with reservations]",
+    "title_norm": "peer review report for dataset of the adoption of digital tools for research sharing among academics in african varsities during the covid 19 pandemic in 2020 version 2 peer review 1 approved 1 approved with reservations",
+    "publication_year": 2022,
+    "publication_date": "2022-03-28",
+    "cited_by_count": 0,
+    "cited_by_api_url": null,
+    "type_": "peer-review",
+    "source_title": null,
+    "pdf_url": null
+  },
+  {
+    "openalex_id": "W4416662726",
+    "openalex_url": "https://openalex.org/W4416662726",
+    "doi": "10.5256/f1000research.57710.r120882",
+    "title": "Peer Review Report For: Dataset of the adoption of digital tools for research sharing among academics in African Varsities during the COVID-19 pandemic in 2020 [version 1; peer review: 1 approved, 1 approved with reservations]",
+    "title_norm": "peer review report for dataset of the adoption of digital tools for research sharing among academics in african varsities during the covid 19 pandemic in 2020 version 1 peer review 1 approved 1 approved with reservations",
+    "publication_year": 2022,
+    "publication_date": "2022-02-18",
+    "cited_by_count": 0,
+    "cited_by_api_url": null,
+    "type_": "peer-review",
+    "source_title": null,
+    "pdf_url": "https://f1000research.com/articles/11-82/pdf"
+  },
+  {
+    "openalex_id": "W4416662727",
+    "openalex_url": "https://openalex.org/W4416662727",
+    "doi": "10.5256/f1000research.57710.r121430",
+    "title": "Peer Review Report For: Dataset of the adoption of digital tools for research sharing among academics in African Varsities during the COVID-19 pandemic in 2020 [version 1; peer review: 1 approved, 1 approved with reservations]",
+    "title_norm": "peer review report for dataset of the adoption of digital tools for research sharing among academics in african varsities during the covid 19 pandemic in 2020 version 1 peer review 1 approved 1 approved with reservations",
+    "publication_year": 2022,
+    "publication_date": "2022-02-25",
+    "cited_by_count": 0,
+    "cited_by_api_url": null,
+    "type_": "peer-review",
+    "source_title": null,
+    "pdf_url": null
   },
   {
     "openalex_id": "W7118133423",
@@ -2831,7 +2901,7 @@
     "openalex_id": "W7164677569",
     "openalex_url": "https://openalex.org/W7164677569",
     "doi": "10.47434/svbb3k72",
-    "title": "Trigtastrophe: Analysis of the process errors senior secondary students commit in solving  trigonometric problems",
+    "title": "Trigtastrophe: Analysis of the process errors senior secondary students commit in solving trigonometric problems",
     "title_norm": "trigtastrophe analysis of the process errors senior secondary students commit in solving trigonometric problems",
     "publication_year": 2023,
     "publication_date": "2023-05-03",
@@ -2929,8 +2999,8 @@
     "openalex_id": "W7202165698",
     "openalex_url": "https://openalex.org/W7202165698",
     "doi": "10.64726/bt5ppw26",
-    "title": "&lt;b&gt;Crisis Management variables as predictors of student enrolment, teacher retention and school completion in private secondary schools&lt;/b&gt;&lt;b&gt;&lt;/b&gt;",
-    "title_norm": "lt b gt crisis management variables as predictors of student enrolment teacher retention and school completion in private secondary schools lt b gt lt b gt lt b gt",
+    "title": "Crisis Management variables as predictors of student enrolment, teacher retention and school completion in private secondary schools",
+    "title_norm": "crisis management variables as predictors of student enrolment teacher retention and school completion in private secondary schools",
     "publication_year": 2026,
     "publication_date": "2026-08-06",
     "cited_by_count": 0,
@@ -2943,8 +3013,8 @@
     "openalex_id": "W7202266142",
     "openalex_url": "https://openalex.org/W7202266142",
     "doi": "10.64726/1jdev375",
-    "title": "&lt;b&gt;Street food safety and foodborne illness in Nigeria: An integrative review of epidemiology, vendor practices, and consumer behaviour&lt;/b&gt;&lt;b&gt;&lt;/b&gt;",
-    "title_norm": "lt b gt street food safety and foodborne illness in nigeria an integrative review of epidemiology vendor practices and consumer behaviour lt b gt lt b gt lt b gt",
+    "title": "Street food safety and foodborne illness in Nigeria: An integrative review of epidemiology, vendor practices, and consumer behaviour",
+    "title_norm": "street food safety and foodborne illness in nigeria an integrative review of epidemiology vendor practices and consumer behaviour",
     "publication_year": 2026,
     "publication_date": "2026-06-18",
     "cited_by_count": 0,
@@ -2957,8 +3027,8 @@
     "openalex_id": "W7202291231",
     "openalex_url": "https://openalex.org/W7202291231",
     "doi": "10.64726/w0nw5555",
-    "title": "&lt;b&gt;Publish or perish revisited&lt;/b&gt;&lt;b&gt;: Persistence, academic labour, and institutional logics in scholarly publishing &lt;/b&gt;&lt;b&gt;&lt;/b&gt;",
-    "title_norm": "lt b gt publish or perish revisited lt b gt lt b gt persistence academic labour and institutional logics in scholarly publishing lt b gt lt b gt lt b gt",
+    "title": "Publish or perish revisited: Persistence, academic labour, and institutional logics in scholarly publishing",
+    "title_norm": "publish or perish revisited persistence academic labour and institutional logics in scholarly publishing",
     "publication_year": 2026,
     "publication_date": "2026-06-18",
     "cited_by_count": 0,
@@ -2966,5 +3036,19 @@
     "type_": "article",
     "source_title": "Aminu Kano Academic Scholars Association Multidisciplinary Journal",
     "pdf_url": "https://akasa.com.ng/ojs/index.php/journal/article/download/533/590"
+  },
+  {
+    "openalex_id": "W7204218517",
+    "openalex_url": "https://openalex.org/W7204218517",
+    "doi": null,
+    "title": "Research competence in higher education: An integrative synthesis of international and Nigerian evidence",
+    "title_norm": "research competence in higher education an integrative synthesis of international and nigerian evidence",
+    "publication_year": 2026,
+    "publication_date": "2026-01-01",
+    "cited_by_count": 0,
+    "cited_by_api_url": null,
+    "type_": "book",
+    "source_title": "PhilPapers (PhilPapers Foundation)",
+    "pdf_url": null
   }
 ]
