@@ -5,6 +5,8 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 DATA_FILE = ROOT / "data" / "publications.xlsx"
 OUTPUT_FILE = ROOT / "sitemap.xml"
+PROJECTS_ARCHIVE = ROOT / "research-projects.html"
+PROJECTS_DIR = ROOT / "individual-projects"
 
 SITE_URL = "https://www.valentineowan.com"
 
@@ -57,6 +59,7 @@ def main():
         ("index.html", today, "weekly", "1.0"),
         ("about.html", today, "monthly", "0.9"),
         ("publications.html", today, "weekly", "0.95"),
+        ("research-projects.html", today, "monthly", "0.85"),
         ("books.html", today, "weekly", "0.9"),
         ("south-south-rankings.html", today, "monthly", "0.9"),
         ("tro.html", today, "monthly", "0.8"),
@@ -83,6 +86,15 @@ def main():
         else:
             loc = f"{SITE_URL}/{page}"
         add_url(urls, loc, lastmod, changefreq, priority)
+
+    # Educational project detail pages are manually maintained static pages.
+    # Include the archive and every existing HTML page in individual-projects/.
+    if PROJECTS_ARCHIVE.exists():
+        add_url(urls, f"{SITE_URL}/research-projects.html", today, "monthly", "0.85")
+    if PROJECTS_DIR.exists():
+        for project_page in sorted(PROJECTS_DIR.glob("*.html")):
+            relative_path = project_page.relative_to(ROOT).as_posix()
+            add_url(urls, f"{SITE_URL}/{relative_path}", today, "yearly", "0.65")
 
     # Publication pages from Excel
     if not DATA_FILE.exists():

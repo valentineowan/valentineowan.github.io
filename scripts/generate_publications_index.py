@@ -382,12 +382,31 @@ def main():
     with PUBLICATIONS_FILE.open("r", encoding="utf-8") as f:
         html_text = f.read()
 
-    if 'href="books.html"' not in html_text:
-        html_text = html_text.replace(
-            '<a class="nav-link" href="publications.html">Publications</a>',
-            '<a class="nav-link" href="publications.html">Publications</a>\n        <a class="nav-link" href="books.html">Books</a>',
-            1,
-        )
+    # Keep the Educational Projects link in the primary navigation whenever this
+    # generator updates publications.html. This operation is idempotent.
+    nav_start = html_text.find('<nav id="site-nav"')
+    nav_end = html_text.find('</nav>', nav_start) if nav_start >= 0 else -1
+    if nav_start >= 0 and nav_end >= 0:
+        nav_html = html_text[nav_start:nav_end]
+        if 'href="research-projects.html"' not in nav_html:
+            pub_link = '<a class="nav-link" href="publications.html">Publications</a>'
+            if pub_link in nav_html:
+                nav_html = nav_html.replace(
+                    pub_link,
+                    pub_link + '\n        <a class="nav-link" href="research-projects.html">Educational Projects</a>',
+                    1,
+                )
+            else:
+                print('Warning: Could not locate Publications link in primary navigation.')
+        if 'href="books.html"' not in nav_html:
+            pub_link = '<a class="nav-link" href="publications.html">Publications</a>'
+            if pub_link in nav_html:
+                nav_html = nav_html.replace(
+                    pub_link,
+                    pub_link + '\n        <a class="nav-link" href="books.html">Books</a>',
+                    1,
+                )
+        html_text = html_text[:nav_start] + nav_html + html_text[nav_end:]
 
     html_text = re.sub(
         rf"{re.escape(START_MARKER)}.*?{re.escape(END_MARKER)}",

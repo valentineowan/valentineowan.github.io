@@ -1,25 +1,74 @@
+#!/usr/bin/env python3
+"""Idempotently ensure the Educational Projects link survives site generation.
+
+Patches only the primary navigation in root-level HTML pages and generated
+publication detail pages. It does not replace headers, footers, page content,
+styles, or active-page classes.
+"""
+from __future__ import annotations
+
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1]
-PUB=ROOT/"publications"
-NAV=[("Home","index.html"),("About","about.html"),("Publications","publications.html"),("Books","books.html"),("Teaching","teaching.html"),("CV","cv.html"),("Updates","updates.html"),("Reflections","quotes.html"),("Rankings","south-south-rankings.html"),("Contact","contact.html")]
+import re
 
-def patch(p):
-    s=p.read_text(encoding="utf-8")
-    a=s.find('<header class="site-header">')
-    if a>=0:
-        b=s.find("</header>",a)
-        links=''.join(f'<a class="nav-link{" active" if href=="publications.html" else ""}" href="../{href}">{label}</a>' for label,href in NAV)
-        h='<header class="site-header"><div class="container header-inner"><div class="brand"><a href="../index.html" class="brand-name">Valentine Joseph Owan, PhD</a><div class="brand-tag">Research Evaluation • Scientometrics • Scholarly Communication</div></div><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" class="site-nav" aria-label="Primary">'+links+'</nav></div></header>'
-        s=s[:a]+h+s[b+9:]
-    a=s.find('<footer class="site-footer">')
-    if a>=0:
-        b=s.find("</footer>",a)
-        links=''.join(f'<a href="../{href}">{label}</a>' for label,href in NAV)
-        f='<footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-copy">© <span id="year"></span> Valentine Joseph Owan <span class="footer-sep">•</span> Department of Educational Psychology, University of Calabar</div><nav class="footer-links" aria-label="Footer Navigation">'+links+'</nav></div><div class="footer-note">Academic website featuring research, publications, teaching, and professional activities in <strong>Research Evaluation</strong>, <strong>Scientometrics</strong>, <strong>Scholarly Communication</strong>, <strong>Educational Measurement</strong>, and <strong>Research Analytics</strong>.</div><div class="footer-logos"><img class="footer-logo" src="../assets/img/logos/unical-logo.png" alt="University of Calabar"><img class="footer-logo" src="../assets/img/logos/vinkwell-logo.png" alt="Vinkwell Publishing"><img class="footer-logo" src="../assets/img/logos/ultimate-research-network-logo.png" alt="Ultimate Research Network"></div></div></footer>'
-        s=s[:a]+f+s[b+9:]
-    p.write_text(s,encoding="utf-8")
+ROOT = Path(__file__).resolve().parents[1]
+NAV_ID = 'site-nav'
+LINK_LABEL = 'Educational Projects'
 
-n=0
-for p in PUB.glob("*.html"):
-    patch(p); n+=1
-print(f"Navigation synchronised: {n} publication pages")
+
+def relative_href(page: Path) -> str:
+    return 'research-projects.html' if page.parent == ROOT else '../research-projects.html'
+
+
+def ensure_link(page: Path) -> bool:
+    original = page.read_text(encoding='utf-8')
+    updated = original
+    pattern = re.compile(r'(<nav\b[^>]*\bid=["\']site-nav["\'][^>]*>)(.*?)(</nav>)', re.I | re.S)
+    match = pattern.search(updated)
+    if not match:
+        return False
+
+    nav = match.group(2)
+    href = relative_href(page)
+    # Remove duplicate Educational Projects links in this primary navigation,
+    # then insert exactly one after Publications while preserving all other links.
+    link_pattern = re.compile(r'<a\b(?=[^>]*\bhref=["\'][^"\']*research-projects\.html["\'])[^>]*>\s*Educational Projects\s*</a>', re.I)
+    nav_clean = link_pattern.sub('', nav)
+    if 'href="publications.html"' in nav_clean or "href='../publications.html'" in nav_clean or 'href="../publications.html"' in nav_clean:
+        pub_pattern = re.compile(r'(<a\b(?=[^>]*\bhref=["\'][^"\']*publications\.html["\'])[^>]*>\s*Publications\s*</a>)', re.I)
+        link = f'<a class="nav-link" href="{href}">{LINK_LABEL}</a>'
+        nav_new, count = pub_pattern.subn(r'\1' + '\n        ' + link, nav_clean, count=1)
+        if count == 0:
+            nav_new = nav_clean.rstrip() + '\n        ' + link + '\n      '
+    else:
+        link = f'<a class="nav-link" href="{href}">{LINK_LABEL}</a>'
+        nav_new = nav_clean.rstrip() + '\n        ' + link + '\n      '
+
+    updated = updated[:match.start(2)] + nav_new + updated[match.end(2):]
+    if updated != original:
+        page.write_text(updated, encoding='utf-8')
+        return True
+    return False
+
+
+def main() -> int:
+    candidates = set(ROOT.glob('*.html'))
+    publication_dir = ROOT / 'publications'
+    if publication_dir.exists():
+        candidates.update(publication_dir.glob('*.html'))
+    project_dir = ROOT / 'individual-projects'
+    if project_dir.exists():
+        candidates.update(project_dir.glob('*.html'))
+    changed = 0
+    checked = 0
+    for page in sorted(candidates):
+        if page.name == 'research-projects.html':
+            continue
+        checked += 1
+        if ensure_link(page):
+            changed += 1
+    print(f'Navigation check complete: {checked} pages checked; {changed} updated.')
+    return 0
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())
